@@ -1,0 +1,8 @@
+@import "~normalize.css";
+@import "./_fonts";
+
+html, body {
+	font-family: $main-font-family;
+	font-size: 14px;
+	background-color: #FAF3F3;
+}

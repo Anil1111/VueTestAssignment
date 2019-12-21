@@ -1,6 +1,6 @@
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
-import EnterPage from "./pages/EnterPage";
+import EnterPage from "./pages/EnterPage/EnterPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import DashboardPage from "./pages/DashboardPage";
 import SignOutPage from "./pages/SignOutPage";

@@ -13,7 +13,7 @@
 				Sign Up
 			</VButton>
 			<VButton @onClick="signInButtonClick" theme="primary" is-square>
-				<RightArrowIcon/>
+				<RightArrowIcon style="width: 100%; height: 100%;"/>
 			</VButton>
 		</div>
 		<EnterPageWoman class="woman"/>

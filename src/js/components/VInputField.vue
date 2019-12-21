@@ -70,18 +70,26 @@ export default {
 		height: $spacer * 3;
 		padding: 0 $spacer * 1.5;
 		width: 100%;
-		border: none;
+		border: 1px solid transparent;
 		outline: none;
+		transition: border-color $animation-duration;
+	}
+	.input:focus {
+		border: 1px solid $primary-color;
 	}
 	.input-button {
+		cursor: pointer;
 		position: absolute;
-		right: $spacer / 2;
-		bottom: 0;
-		height: $spacer * 3;
+		right: 1px;
+		padding-right: $spacer;
+		bottom: 1px;
+		padding-left: $spacer;
+		height: calc(#{$spacer} * 3 - 2px);
 		background-color: $input-bg-color;
 		outline: none;
 		border: none;
 		display: flex;
 		align-items: center;
+		border-radius: $border-radius;
 	}
 </style>

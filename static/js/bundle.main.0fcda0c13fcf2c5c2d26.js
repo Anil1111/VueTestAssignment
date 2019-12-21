@@ -9913,7 +9913,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".button[data-v-808e31a8] {\n  border-radius: 50px;\n  padding: 12px 30px;\n  outline: none;\n  border: none;\n  background-color: white;\n  font-weight: 500;\n  white-space: nowrap;\n  height: 48px;\n}\n.button.theme-primary[data-v-808e31a8] {\n  background-color: #181C43;\n  color: white;\n  transition: opacity 0.3s;\n}\n.button[data-v-808e31a8]:disabled {\n  background-color: #d5d5d5;\n}\n.button.theme-primary[data-v-808e31a8]:disabled {\n  background-color: #181C43;\n  opacity: .4;\n}\n.button.square[data-v-808e31a8] {\n  width: 48px;\n  padding: 12px;\n}\n", ""]);
+exports.push([module.i, ".button[data-v-808e31a8] {\n  cursor: pointer;\n  border-radius: 50px;\n  padding: 12px 30px;\n  outline: none;\n  border: 1px solid transparent;\n  background-color: white;\n  font-weight: 500;\n  white-space: nowrap;\n  height: 48px;\n  transition: border-color 0.2s;\n}\n.button.theme-primary[data-v-808e31a8] {\n  background-color: #181C43;\n  color: white;\n  border: 1px solid #181C43;\n  transition: opacity 0.2s, background-color 0.2s, color 0.2s;\n}\n.button[data-v-808e31a8]:disabled {\n  background-color: #d5d5d5;\n}\n.button.theme-primary[data-v-808e31a8]:disabled {\n  background-color: #181C43;\n  opacity: .4;\n}\n.button[data-v-808e31a8]:hover {\n  border: 1px solid #181C43;\n}\n.button.theme-primary[data-v-808e31a8]:hover {\n  color: #181C43;\n  background-color: white;\n}\n.button.square[data-v-808e31a8] {\n  width: 48px;\n  padding: 12px;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -9949,7 +9949,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".field[data-v-180db16c] {\n  margin-bottom: 18px;\n  position: relative;\n}\n.label[data-v-180db16c] {\n  padding-left: 18px;\n  font-weight: 600;\n  font-size: 12px;\n  margin-bottom: 3px;\n  display: block;\n}\n.input[data-v-180db16c]::placeholder {\n  color: #9999bc;\n}\n.input[data-v-180db16c] {\n  background-color: #F3F3FA;\n  border-radius: 50px;\n  height: 36px;\n  padding: 0 18px;\n  width: 100%;\n  border: none;\n  outline: none;\n}\n.input-button[data-v-180db16c] {\n  position: absolute;\n  right: 6px;\n  bottom: 0;\n  height: 36px;\n  background-color: #F3F3FA;\n  outline: none;\n  border: none;\n  display: flex;\n  align-items: center;\n}\n", ""]);
+exports.push([module.i, ".field[data-v-180db16c] {\n  margin-bottom: 18px;\n  position: relative;\n}\n.label[data-v-180db16c] {\n  padding-left: 18px;\n  font-weight: 600;\n  font-size: 12px;\n  margin-bottom: 3px;\n  display: block;\n}\n.input[data-v-180db16c]::placeholder {\n  color: #9999bc;\n}\n.input[data-v-180db16c] {\n  background-color: #F3F3FA;\n  border-radius: 50px;\n  height: 36px;\n  padding: 0 18px;\n  width: 100%;\n  border: 1px solid transparent;\n  outline: none;\n  transition: border-color 0.2s;\n}\n.input[data-v-180db16c]:focus {\n  border: 1px solid #181C43;\n}\n.input-button[data-v-180db16c] {\n  cursor: pointer;\n  position: absolute;\n  right: 1px;\n  padding-right: 12px;\n  bottom: 1px;\n  padding-left: 12px;\n  height: calc(12px * 3 - 2px);\n  background-color: #F3F3FA;\n  outline: none;\n  border: none;\n  display: flex;\n  align-items: center;\n  border-radius: 50px;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -36460,9 +36460,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: "VButton",
 	props: {
-		theme: {
-			type: String
-		},
+		theme: {type: String},
 		isSquare: {
 			type: Boolean,
 			default: false
@@ -37712,7 +37710,11 @@ var render = function() {
               attrs: { theme: "primary", "is-square": "" },
               on: { onClick: _vm.signInButtonClick }
             },
-            [_c("RightArrowIcon")],
+            [
+              _c("RightArrowIcon", {
+                staticStyle: { width: "100%", height: "100%" }
+              })
+            ],
             1
           )
         ],
@@ -53781,4 +53783,4 @@ const store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.main.8d27ecf96be95d2fef62.js.map
+//# sourceMappingURL=bundle.main.0fcda0c13fcf2c5c2d26.js.map

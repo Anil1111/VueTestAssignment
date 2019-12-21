@@ -1,12 +1,14 @@
 <template>
-	<div>
+	<VPage>
 		Not found page
-	</div>
+	</VPage>
 </template>
 
 
 <script>
+import VPage from "../components/VPage";
 export default {
-	name: "NotFoundPage"
+	name: "NotFoundPage",
+	components: {VPage}
 };
 </script>

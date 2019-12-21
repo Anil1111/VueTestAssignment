@@ -1,35 +1,36 @@
 <template>
-	<div>
-		<PageTitle>
+	<VPage>
+		<VPageTitle>
 			Ready for a great<br/>
 			User experience?
-		</PageTitle>
-		<PageLead>
+		</VPageTitle>
+		<VPageLead>
 			Bring your media to the next<br/>
 			level!
-		</PageLead>
+		</VPageLead>
 		<div class="buttons">
-			<BaseButton @onClick="signUpButtonClick">
+			<VButton @onClick="signUpButtonClick">
 				Sign Up
-			</BaseButton>
-			<BaseButton @onClick="signInButtonClick" theme="primary" is-square>
+			</VButton>
+			<VButton @onClick="signInButtonClick" theme="primary" is-square>
 				<RightArrowIcon/>
-			</BaseButton>
+			</VButton>
 		</div>
 		<EnterPageWoman class="woman"/>
-	</div>
+	</VPage>
 </template>
 
 
 <script>
-import PageTitle from "../../components/PageTitle";
-import PageLead from "../../components/PageLead";
-import BaseButton from "../../components/BaseButton";
+import VPageTitle from "../../components/VPageTitle";
+import VPageLead from "../../components/VPageLead";
+import VButton from "../../components/VButton";
 import RightArrowIcon from "../../icons/RightArrowIcon";
 import EnterPageWoman from "./EnterPageWoman";
+import VPage from "../../components/VPage";
 export default {
 	name: "EnterPage",
-	components: {EnterPageWoman, RightArrowIcon, PageLead, PageTitle, BaseButton},
+	components: {VPage, EnterPageWoman, RightArrowIcon, VPageLead, VPageTitle, VButton},
 	methods: {
 		signUpButtonClick() {
 			this.$router.push("/sign-up");
@@ -56,6 +57,7 @@ export default {
 		width: 100%;
 		position: absolute;
 		bottom: 0;
+		left: 0;
 		max-height: 55%;
 	}
 </style>

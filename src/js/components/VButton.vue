@@ -1,5 +1,5 @@
 <template>
-	<button :class="['btn', themeClass, isSquare ? 'square' : '']" @click="$emit('onClick')">
+	<button :class="['button', themeClass, isSquare ? 'square' : '']" @click="$emit('onClick')">
 		<slot/>
 	</button>
 </template>
@@ -7,7 +7,7 @@
 
 <script>
 export default {
-	name: "BaseButton",
+	name: "VButton",
 	props: {
 		theme: {
 			type: String
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-	.btn {
+	.button {
 		border-radius: $border-radius;
 		padding: $spacer $spacer * 2.5;
 		outline: none;
@@ -34,22 +34,22 @@ export default {
 		background-color: white;
 		font-weight: 500;
 		white-space: nowrap;
+		height: 48px;
 	}
-	.btn.theme-primary {
+	.button.theme-primary {
 		background-color: $primary-color;
 		color: white;
 		transition: opacity $transition-duration;
 	}
-	.btn:disabled {
+	.button:disabled {
 		background-color: #d5d5d5;
 	}
-	.btn.theme-primary:disabled {
+	.button.theme-primary:disabled {
 		background-color: $primary-color;
 		opacity: .4;
 	}
-	.btn.square {
+	.button.square {
 		width: 48px;
-		height: 48px;
 		padding: $spacer;
 	}
 </style>

@@ -1,23 +1,19 @@
 <template>
-	<h1 class="page-title">
+	<p class="page-lead">
 		<slot/>
-	</h1>
+	</p>
 </template>
 
 <script>
 export default {
-	name: "PageTitle"
+	name: "VPageLead"
 }
 </script>
 
 <style scoped lang="scss">
-	.page-title {
-		margin-top: $spacer * 5;
+	.page-lead {
 		width: 100%;
 		text-align: center;
 		color: $primary-color;
-		font-size: 22px;
-		font-weight: 800;
-		line-height: 30px;
 	}
 </style>

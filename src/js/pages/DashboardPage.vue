@@ -1,12 +1,14 @@
 <template>
-	<div>
+	<VPage>
 		dashboard page
-	</div>
+	</VPage>
 </template>
 
 
 <script>
+import VPage from "../components/VPage";
 export default {
-	name: "DashboardPage"
+	name: "DashboardPage",
+	components: {VPage}
 };
 </script>

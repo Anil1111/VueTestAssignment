@@ -1,12 +1,14 @@
 <template>
-	<div>
+	<VPage>
 		Sign in page
-	</div>
+	</VPage>
 </template>
 
 
 <script>
+import VPage from "../components/VPage";
 export default {
-	name: "SignInPage"
+	name: "SignInPage",
+	components: {VPage}
 };
 </script>

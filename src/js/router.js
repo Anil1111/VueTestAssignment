@@ -3,6 +3,7 @@ import SignInPage from "./pages/SignInPage";
 import EnterPage from "./pages/EnterPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import DashboardPage from "./pages/DashboardPage";
+import SignOutPage from "./pages/SignOutPage";
 import VueRouter from "vue-router";
 import Vue from "vue";
 import has from "lodash/has";
@@ -11,10 +12,11 @@ import {store} from "./store/store";
 Vue.use(VueRouter);
 
 export const routes = [
-	{path: "/dashboard", alias: "/", component: DashboardPage, meta: {redirectToIfNotSignedIn: "/sign-in"}},
+	{path: "/dashboard", alias: "/", component: DashboardPage, meta: {redirectToIfNotSignedIn: "/enter"}},
 	{path: "/enter", component: EnterPage, meta: {redirectToIfSignedIn: "/"}},
 	{path: "/sign-up", component: SignUpPage, meta: {redirectToIfSignedIn: "/"}},
 	{path: "/sign-in", component: SignInPage, meta: {redirectToIfSignedIn: "/"}},
+	{path: "/sign-out", component: SignOutPage, meta: {redirectToIfNotSignedIn: "/"}},
 	{path: "/*", component: NotFoundPage}
 ];
 

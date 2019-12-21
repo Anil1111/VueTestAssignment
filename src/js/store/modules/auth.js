@@ -1,37 +1,50 @@
-import authAPI from "../../api/auth";
+import * as authAPI from "../../api/auth";
 
 export default {
 	state: {
 		isSignedIn: false,
-		user: null
+		user: null,
+		jwt: null
 	},
 	mutations: {
-		signIn(state, user) {
+		signIn(state, {user, jwt}) {
 			state.isSignedIn = true;
 			state.user = user;
+			state.jwt = jwt;
+			window.localStorage.setItem("jwt", jwt);
 		},
 		signOut(state) {
 			state.isSignedIn = false;
 			state.user = null;
+			state.jwt = null;
+			window.localStorage.removeItem("jwt");
 		}
 	},
 	actions: {
-		signUp({commit}, username, password) {
-			authAPI
+		signInFromLocalStorage({commit}) {
+			const jwt = window.localStorage.getItem("jwt");
+			if (!jwt)
+				return Promise.resolve();
+
+			return authAPI
+				.checkAuth(jwt)
+				.then(user => commit("signIn", {user, jwt}))
+				.catch(() => commit("signOut", user));
+		},
+		signUp({commit}, {username, password}) {
+			return authAPI
 				.signUp(username, password)
-				.then(user => commit("signIn", user))
+				.then(({jwt, user}) => commit("signIn", {user, jwt}))
 				.catch(() => commit("signOut"));
 		},
-		signIn({commit}, username, password) {
-			authAPI
+		signIn({commit}, {username, password}) {
+			return authAPI
 				.signIn(username, password)
-				.then(user => commit("signIn", user))
+				.then(({jwt, user}) => commit("signIn", {user, jwt}))
 				.catch(() => commit("signOut"));
 		},
 		signOut({commit}) {
-			authAPI
-				.signOut()
-				.then(() => commit("signOut"));
+			commit("signOut");
 		}
 	},
 	getters: {

@@ -1,12 +1,12 @@
 <template>
 	<div>
-		Sign in page
+		Not found page
 	</div>
 </template>
 
 
 <script>
 export default {
-	name: "SignInPage"
+	name: "NotFoundPage"
 };
 </script>

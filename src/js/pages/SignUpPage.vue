@@ -1,9 +1,9 @@
 <template>
-	<VPage>
+	<VPage class="sign-up-page">
 		<VPageTitle>
 			Sign Up
 		</VPageTitle>
-		<VForm @onSubmit="submit">
+		<VForm class="form" @onSubmit="submit">
 			<VInputField autocomplete="name" id="full-name" type="text" label="Full name" placeholder="John Doe" v-model="fullName"/>
 			<VInputField autocomplete="email" id="email" type="email" label="Email" placeholder="example@mail.com" v-model="email"/>
 
@@ -52,6 +52,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+	.sign-up-page {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.form {
+		width: 100%;
+		max-width: 400px;
+	}
 	.sign-up-button {
 		margin-top: $spacer;
 	}

@@ -10057,7 +10057,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".sign-up-button[data-v-56217e22] {\n  margin-top: 12px;\n}\n", ""]);
+exports.push([module.i, ".sign-up-page[data-v-56217e22] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.form[data-v-56217e22] {\n  width: 100%;\n  max-width: 400px;\n}\n.sign-up-button[data-v-56217e22] {\n  margin-top: 12px;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -38795,12 +38795,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "VPage",
+    { staticClass: "sign-up-page" },
     [
       _c("VPageTitle", [_vm._v("\n\t\tSign Up\n\t")]),
       _vm._v(" "),
       _c(
         "VForm",
-        { on: { onSubmit: _vm.submit } },
+        { staticClass: "form", on: { onSubmit: _vm.submit } },
         [
           _c("VInputField", {
             attrs: {
@@ -53780,4 +53781,4 @@ const store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.main.7a9761e2a5ccfca718fa.js.map
+//# sourceMappingURL=bundle.main.8d27ecf96be95d2fef62.js.map

@@ -9913,7 +9913,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".button[data-v-808e31a8] {\n  cursor: pointer;\n  border-radius: 50px;\n  padding: 12px 30px;\n  outline: none;\n  border: 1px solid transparent;\n  background-color: white;\n  font-weight: 500;\n  white-space: nowrap;\n  height: 48px;\n  transition: border-color 0.2s;\n}\n.button.theme-primary[data-v-808e31a8] {\n  background-color: #181C43;\n  color: white;\n  border: 1px solid #181C43;\n  transition: opacity 0.2s, background-color 0.2s, color 0.2s;\n}\n.button[data-v-808e31a8]:disabled {\n  background-color: #d5d5d5;\n}\n.button.theme-primary[data-v-808e31a8]:disabled {\n  background-color: #181C43;\n  opacity: .4;\n}\n.button[data-v-808e31a8]:hover {\n  border: 1px solid #181C43;\n}\n.button.theme-primary[data-v-808e31a8]:hover {\n  color: #181C43;\n  background-color: white;\n}\n.button.square[data-v-808e31a8] {\n  width: 48px;\n  padding: 12px;\n}\n", ""]);
+exports.push([module.i, ".button[data-v-808e31a8] {\n  cursor: pointer;\n  border-radius: 50px;\n  padding: 12px 30px;\n  outline: none;\n  border: 1px solid transparent;\n  background-color: white;\n  font-weight: 500;\n  white-space: nowrap;\n  height: 48px;\n  transition: border-color 0.2s;\n}\n.button.theme-primary[data-v-808e31a8] {\n  background-color: #181C43;\n  color: white;\n  border: 1px solid #181C43;\n  transition: opacity 0.2s, background-color 0.2s, color 0.2s;\n}\n.button[data-v-808e31a8]:disabled {\n  background-color: #d5d5d5;\n}\n.button.theme-primary[data-v-808e31a8]:disabled {\n  background-color: #181C43;\n  opacity: .4;\n}\n.button[data-v-808e31a8]:not(:disabled):hover {\n  border: 1px solid #181C43;\n}\n.button.theme-primary[data-v-808e31a8]:not(:disabled):hover {\n  color: #181C43;\n  background-color: white;\n}\n.button.square[data-v-808e31a8] {\n  width: 48px;\n  padding: 12px;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -53783,4 +53783,4 @@ const store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.main.0fcda0c13fcf2c5c2d26.js.map
+//# sourceMappingURL=bundle.main.fe8c34300b7bef4b2c09.js.map

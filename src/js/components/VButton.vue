@@ -50,10 +50,10 @@ export default {
 		background-color: $primary-color;
 		opacity: .4;
 	}
-	.button:hover {
+	.button:not(:disabled):hover {
 		border: 1px solid $primary-color;
 	}
-	.button.theme-primary:hover {
+	.button.theme-primary:not(:disabled):hover {
 		color: $primary-color;
 		background-color: white;
 	}

@@ -31,7 +31,7 @@ export default {
 	.dashboard-page {
 		position: relative;
 		height: 100vh;
-		overflow-y: hidden;
+		overflow: hidden;
 	}
 	.page-title {
 		margin-top: $spacer * 8;

@@ -1,7 +1,6 @@
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 import EnterPage from "./pages/EnterPage/EnterPage";
-import NotFoundPage from "./pages/NotFoundPage";
 import DashboardPage from "./pages/DashboardPage/DashboardPage";
 import SignOutPage from "./pages/SignOutPage";
 import VueRouter from "vue-router";
@@ -16,8 +15,7 @@ export const routes = [
 	{path: "/enter", component: EnterPage, meta: {redirectToIfSignedIn: "/"}},
 	{path: "/sign-up", component: SignUpPage, meta: {redirectToIfSignedIn: "/"}},
 	{path: "/sign-in", component: SignInPage, meta: {redirectToIfSignedIn: "/"}},
-	{path: "/sign-out", component: SignOutPage, meta: {redirectToIfNotSignedIn: "/"}},
-	{path: "/*", component: NotFoundPage}
+	{path: "/sign-out", component: SignOutPage, meta: {redirectToIfNotSignedIn: "/"}}
 ];
 
 export const router = new VueRouter({

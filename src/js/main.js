@@ -5,7 +5,7 @@ import {store} from "./store/store";
 
 import "./tooltip";
 
-store.dispatch("signInFromLocalStorage").catch().then(() => {
+store.dispatch("signInFromLocalStorage").catch(() => {}).then(() => {
 	new Vue({
 		el: "#app",
 		render: createElement => createElement(App),

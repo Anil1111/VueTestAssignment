@@ -22,7 +22,8 @@ export const routes = [
 
 export const router = new VueRouter({
 	mode: "history",
-	routes
+	routes,
+	base: "/VueTestAssignment/"
 });
 
 router.beforeEach((to, from, next) => {

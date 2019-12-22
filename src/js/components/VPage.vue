@@ -13,7 +13,7 @@ export default {
 <style scoped lang="scss">
 	.page {
 		padding: $spacer * 3 $spacer;
-		background-color: #FAF3F3;
+		background-color: $background-color;
 		min-height: 100%;
 	}
 </style>

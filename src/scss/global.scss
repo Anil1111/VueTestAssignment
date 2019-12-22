@@ -1,6 +1,8 @@
 @import "~normalize.css";
 @import "./_fonts";
 
+@import "./tooltip";
+
 html, body {
 	font-family: $main-font-family;
 	font-size: 14px;

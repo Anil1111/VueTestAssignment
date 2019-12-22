@@ -40,7 +40,7 @@ export default {
 	.button.theme-primary {
 		background-color: $primary-color;
 		color: white;
-		border: 1px solid $primary-color;
+		border: 1px solid $primary-border-color;
 		transition: opacity $animation-duration, background-color $animation-duration, color $animation-duration;
 	}
 	.button:disabled {

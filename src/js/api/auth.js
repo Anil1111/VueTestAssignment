@@ -6,8 +6,8 @@ import find from "lodash/find";
 import omit from "lodash/omit";
 
 const users = [
-	{id: uuid.v4(), username: "admin", password: "AdminAdmin123"},
-	{id: uuid.v4(), username: "petya", password: "VueIs2Awesome"}
+	{id: uuid.v4(), fullName: "admin", email: "admin@admin.admin", password: "AdminAdmin123"},
+	{id: uuid.v4(), fullName: "petya", email: "petya@petya.petya", password: "VueIs2Awesome"}
 ];
 
 const secretKey = "iYcuprLU3gKiO6hACtVUab9U";
@@ -24,18 +24,18 @@ function prepareUser(user) {
 	return omit(cloneDeep(user), "password");
 }
 
-export function signUp({username, password}) {
+export function signUp({fullName, email, password}) {
 	return delay((resolve, reject) => {
-		const user = {id: uuid.v4(), username, password};
+		const user = {id: uuid.v4(), fullName, email, password};
 		users.push(user);
 		const jwt = jsonwebtoken.sign({userID: user.id}, secretKey);
 		resolve({jwt, user: prepareUser(user)});
 	});
 }
 
-export function signIn(username, password) {
+export function signIn(email, password) {
 	return delay((resolve, reject) => {
-		const user = find(users, {username, password});
+		const user = find(users, {email, password});
 		if (!user) {
 			reject();
 			return;

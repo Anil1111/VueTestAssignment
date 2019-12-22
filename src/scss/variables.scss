@@ -1,4 +1,13 @@
 $primary-color: #181C43;
+$primary-background-color: #F3F3FA;
+$primary-border-color: $primary-color;
+
+$background-color: #FAF3F3;
+
+$error-color: #FF6683;
+$error-background-color: mix(#FF6683, white, 20%);
+$error-border-color: darken(#FF6683, 40%);
+
 
 $border-radius: 50px;
 $spacer: 12px;

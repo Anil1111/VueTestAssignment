@@ -1,5 +1,5 @@
 <template>
-	<VInputField :type="showPassword ? 'text' : 'password'" v-bind="$attrs"
+	<VInputField ref="input" :type="showPassword ? 'text' : 'password'" v-bind="$attrs"
 	             @onButtonClick="showPassword = !showPassword" v-model="inputValue">
 		<template v-slot:button>
 			<CrossedEyeIcon v-if="showPassword"/>
@@ -19,6 +19,11 @@ export default {
 		return {
 			showPassword: false,
 			inputValue: this.value
+		}
+	},
+	computed: {
+		nativeInput() {
+			return this.$refs.input.$refs.nativeInput;
 		}
 	},
 	watch: {

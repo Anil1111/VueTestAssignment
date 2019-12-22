@@ -31,15 +31,15 @@ export default {
 				.then(user => commit("signIn", {user, jwt}))
 				.catch(() => commit("signOut", user));
 		},
-		signUp({commit}, {username, password}) {
+		signUp({commit}, {fullName, email, password}) {
 			return authAPI
-				.signUp(username, password)
+				.signUp(fullName, email, password)
 				.then(({jwt, user}) => commit("signIn", {user, jwt}))
 				.catch(() => commit("signOut"));
 		},
-		signIn({commit}, {username, password}) {
+		signIn({commit}, {email, password}) {
 			return authAPI
-				.signIn(username, password)
+				.signIn(email, password)
 				.then(({jwt, user}) => commit("signIn", {user, jwt}))
 				.catch(() => commit("signOut"));
 		},

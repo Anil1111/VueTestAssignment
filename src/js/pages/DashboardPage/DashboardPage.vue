@@ -37,11 +37,9 @@ export default {
 		margin-top: $spacer * 8;
 	}
 	.woman {
-		width: 100%;
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		transform: translateY(2px);
 		max-height: 80%;
 	}
 </style>

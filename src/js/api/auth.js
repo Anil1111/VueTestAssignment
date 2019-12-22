@@ -54,6 +54,10 @@ export function checkAuth(jwt) {
 				return;
 			}
 			const user = find(users, {id: decoded.userID});
+			if (!user) {
+				reject();
+				return;
+			}
 			resolve(prepareUser(user));
 		});
 	});

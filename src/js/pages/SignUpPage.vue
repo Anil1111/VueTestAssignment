@@ -50,9 +50,7 @@ export default {
 		password: "",
 		repeatPassword: "",
 		passwordErrorMessage: "",
-		repeatPasswordErrorMessage: "",
-		showPassword: false,
-		showRepeatPassword: false
+		repeatPasswordErrorMessage: ""
 	}),
 	methods: {
 		submit(event) {

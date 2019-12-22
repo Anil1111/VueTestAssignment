@@ -10,6 +10,7 @@ html, body {
 	height: 100%;
 	line-height: 20px;
 	color: $primary-color;
+	background-color: $background-color;
 }
 * {
 	box-sizing: border-box;
@@ -20,4 +21,12 @@ a {
 
 .icon {
 	fill: currentColor;
+}
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity $animation-duration;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }

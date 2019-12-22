@@ -1,5 +1,5 @@
 <template>
-	<VPage>
+	<VPage class="enter-page">
 		<VPageTitle>
 			Ready for a great<br/>
 			User experience?
@@ -44,6 +44,11 @@ export default {
 
 
 <style scoped lang="scss">
+	.enter-page {
+		position: relative;
+		height: 100vh;
+		overflow-y: hidden;
+	}
 	.buttons {
 		margin-top: $spacer * 2;
 		display: grid;
@@ -58,6 +63,7 @@ export default {
 		position: absolute;
 		bottom: 0;
 		left: 0;
+		transform: translateY(2px);
 		max-height: 55%;
 	}
 </style>

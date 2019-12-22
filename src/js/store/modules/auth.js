@@ -29,19 +29,28 @@ export default {
 			return authAPI
 				.checkAuth(jwt)
 				.then(user => commit("signIn", {user, jwt}))
-				.catch(() => commit("signOut", user));
+				.catch(err => {
+					commit("signOut");
+					throw err;
+				});
 		},
 		signUp({commit}, {fullName, email, password}) {
 			return authAPI
 				.signUp(fullName, email, password)
 				.then(({jwt, user}) => commit("signIn", {user, jwt}))
-				.catch(() => commit("signOut"));
+				.catch(err => {
+					commit("signOut");
+					throw err;
+				});
 		},
 		signIn({commit}, {email, password}) {
 			return authAPI
 				.signIn(email, password)
 				.then(({jwt, user}) => commit("signIn", {user, jwt}))
-				.catch(() => commit("signOut"));
+				.catch(err => {
+					commit("signOut");
+					throw err;
+				});
 		},
 		signOut({commit}) {
 			commit("signOut");

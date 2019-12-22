@@ -7342,59 +7342,6 @@ module.exports = verify
 
 /***/ }),
 
-/***/ "./node_modules/buffer-equal-constant-time/index.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/buffer-equal-constant-time/index.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*jshint node:true */
-
-var Buffer = __webpack_require__(/*! buffer */ "./node_modules/buffer/index.js").Buffer; // browserify
-var SlowBuffer = __webpack_require__(/*! buffer */ "./node_modules/buffer/index.js").SlowBuffer;
-
-module.exports = bufferEq;
-
-function bufferEq(a, b) {
-
-  // shortcutting on type is necessary for correctness
-  if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) {
-    return false;
-  }
-
-  // buffer sizes should be well-known information, so despite this
-  // shortcutting, it doesn't leak any information about the *contents* of the
-  // buffers.
-  if (a.length !== b.length) {
-    return false;
-  }
-
-  var c = 0;
-  for (var i = 0; i < a.length; i++) {
-    /*jshint bitwise:false */
-    c |= a[i] ^ b[i]; // XOR
-  }
-  return c === 0;
-}
-
-bufferEq.install = function() {
-  Buffer.prototype.equal = SlowBuffer.prototype.equal = function equal(that) {
-    return bufferEq(this, that);
-  };
-};
-
-var origBufEqual = Buffer.prototype.equal;
-var origSlowBufEqual = SlowBuffer.prototype.equal;
-bufferEq.restore = function() {
-  Buffer.prototype.equal = origBufEqual;
-  SlowBuffer.prototype.equal = origSlowBufEqual;
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/buffer-xor/index.js":
 /*!******************************************!*\
   !*** ./node_modules/buffer-xor/index.js ***!
@@ -10058,6 +10005,24 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.i, ".page-title[data-v-3a09ed7f] {\n  width: 100%;\n  text-align: center;\n  color: #181C43;\n  font-size: 22px;\n  font-weight: 800;\n  line-height: 30px;\n}\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-resources-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-resources-loader/lib/loader.js??ref--0-3!./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".dashboard-page[data-v-21286702] {\n  position: relative;\n  height: 100vh;\n  overflow-y: hidden;\n}\n.page-title[data-v-21286702] {\n  margin-top: 96px;\n}\n.woman[data-v-21286702] {\n  width: 100%;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  transform: translateY(2px);\n  max-height: 80%;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -15536,10 +15501,10 @@ utils.intFromLE = intFromLE;
 /*!********************************************!*\
   !*** ./node_modules/elliptic/package.json ***!
   \********************************************/
-/*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, dependencies, deprecated, description, devDependencies, files, homepage, keywords, license, main, name, repository, scripts, version, default */
+/*! exports provided: _args, _development, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, bugs, dependencies, description, devDependencies, files, homepage, keywords, license, main, name, repository, scripts, version, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"_from\":\"elliptic@^6.0.0\",\"_id\":\"elliptic@6.5.2\",\"_inBundle\":false,\"_integrity\":\"sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==\",\"_location\":\"/elliptic\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"range\",\"registry\":true,\"raw\":\"elliptic@^6.0.0\",\"name\":\"elliptic\",\"escapedName\":\"elliptic\",\"rawSpec\":\"^6.0.0\",\"saveSpec\":null,\"fetchSpec\":\"^6.0.0\"},\"_requiredBy\":[\"/browserify-sign\",\"/create-ecdh\"],\"_resolved\":\"https://registry.npmjs.org/elliptic/-/elliptic-6.5.2.tgz\",\"_shasum\":\"05c5678d7173c049d8ca433552224a495d0e3762\",\"_spec\":\"elliptic@^6.0.0\",\"_where\":\"C:\\\\Users\\\\obore\\\\Desktop\\\\Work\\\\VueTestAssignment\\\\node_modules\\\\browserify-sign\",\"author\":{\"name\":\"Fedor Indutny\",\"email\":\"fedor@indutny.com\"},\"bugs\":{\"url\":\"https://github.com/indutny/elliptic/issues\"},\"bundleDependencies\":false,\"dependencies\":{\"bn.js\":\"^4.4.0\",\"brorand\":\"^1.0.1\",\"hash.js\":\"^1.0.0\",\"hmac-drbg\":\"^1.0.0\",\"inherits\":\"^2.0.1\",\"minimalistic-assert\":\"^1.0.0\",\"minimalistic-crypto-utils\":\"^1.0.0\"},\"deprecated\":false,\"description\":\"EC cryptography\",\"devDependencies\":{\"brfs\":\"^1.4.3\",\"coveralls\":\"^3.0.8\",\"grunt\":\"^1.0.4\",\"grunt-browserify\":\"^5.0.0\",\"grunt-cli\":\"^1.2.0\",\"grunt-contrib-connect\":\"^1.0.0\",\"grunt-contrib-copy\":\"^1.0.0\",\"grunt-contrib-uglify\":\"^1.0.1\",\"grunt-mocha-istanbul\":\"^3.0.1\",\"grunt-saucelabs\":\"^9.0.1\",\"istanbul\":\"^0.4.2\",\"jscs\":\"^3.0.7\",\"jshint\":\"^2.10.3\",\"mocha\":\"^6.2.2\"},\"files\":[\"lib\"],\"homepage\":\"https://github.com/indutny/elliptic\",\"keywords\":[\"EC\",\"Elliptic\",\"curve\",\"Cryptography\"],\"license\":\"MIT\",\"main\":\"lib/elliptic.js\",\"name\":\"elliptic\",\"repository\":{\"type\":\"git\",\"url\":\"git+ssh://git@github.com/indutny/elliptic.git\"},\"scripts\":{\"jscs\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"jshint\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"lint\":\"npm run jscs && npm run jshint\",\"test\":\"npm run lint && npm run unit\",\"unit\":\"istanbul test _mocha --reporter=spec test/index.js\",\"version\":\"grunt dist && git add dist/\"},\"version\":\"6.5.2\"}");
+module.exports = JSON.parse("{\"_args\":[[\"elliptic@6.5.2\",\"C:\\\\Users\\\\obore\\\\Desktop\\\\Work\\\\VueTestAssignment\"]],\"_development\":true,\"_from\":\"elliptic@6.5.2\",\"_id\":\"elliptic@6.5.2\",\"_inBundle\":false,\"_integrity\":\"sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==\",\"_location\":\"/elliptic\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"elliptic@6.5.2\",\"name\":\"elliptic\",\"escapedName\":\"elliptic\",\"rawSpec\":\"6.5.2\",\"saveSpec\":null,\"fetchSpec\":\"6.5.2\"},\"_requiredBy\":[\"/browserify-sign\",\"/create-ecdh\"],\"_resolved\":\"https://registry.npmjs.org/elliptic/-/elliptic-6.5.2.tgz\",\"_spec\":\"6.5.2\",\"_where\":\"C:\\\\Users\\\\obore\\\\Desktop\\\\Work\\\\VueTestAssignment\",\"author\":{\"name\":\"Fedor Indutny\",\"email\":\"fedor@indutny.com\"},\"bugs\":{\"url\":\"https://github.com/indutny/elliptic/issues\"},\"dependencies\":{\"bn.js\":\"^4.4.0\",\"brorand\":\"^1.0.1\",\"hash.js\":\"^1.0.0\",\"hmac-drbg\":\"^1.0.0\",\"inherits\":\"^2.0.1\",\"minimalistic-assert\":\"^1.0.0\",\"minimalistic-crypto-utils\":\"^1.0.0\"},\"description\":\"EC cryptography\",\"devDependencies\":{\"brfs\":\"^1.4.3\",\"coveralls\":\"^3.0.8\",\"grunt\":\"^1.0.4\",\"grunt-browserify\":\"^5.0.0\",\"grunt-cli\":\"^1.2.0\",\"grunt-contrib-connect\":\"^1.0.0\",\"grunt-contrib-copy\":\"^1.0.0\",\"grunt-contrib-uglify\":\"^1.0.1\",\"grunt-mocha-istanbul\":\"^3.0.1\",\"grunt-saucelabs\":\"^9.0.1\",\"istanbul\":\"^0.4.2\",\"jscs\":\"^3.0.7\",\"jshint\":\"^2.10.3\",\"mocha\":\"^6.2.2\"},\"files\":[\"lib\"],\"homepage\":\"https://github.com/indutny/elliptic\",\"keywords\":[\"EC\",\"Elliptic\",\"curve\",\"Cryptography\"],\"license\":\"MIT\",\"main\":\"lib/elliptic.js\",\"name\":\"elliptic\",\"repository\":{\"type\":\"git\",\"url\":\"git+ssh://git@github.com/indutny/elliptic.git\"},\"scripts\":{\"jscs\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"jshint\":\"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js\",\"lint\":\"npm run jscs && npm run jshint\",\"test\":\"npm run lint && npm run unit\",\"unit\":\"istanbul test _mocha --reporter=spec test/index.js\",\"version\":\"grunt dist && git add dist/\"},\"version\":\"6.5.2\"}");
 
 /***/ }),
 
@@ -17787,3175 +17752,6 @@ var toString = {}.toString;
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/decode.js":
-/*!*********************************************!*\
-  !*** ./node_modules/jsonwebtoken/decode.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var jws = __webpack_require__(/*! jws */ "./node_modules/jws/index.js");
-
-module.exports = function (jwt, options) {
-  options = options || {};
-  var decoded = jws.decode(jwt, options);
-  if (!decoded) { return null; }
-  var payload = decoded.payload;
-
-  //try parse the payload
-  if(typeof payload === 'string') {
-    try {
-      var obj = JSON.parse(payload);
-      if(obj !== null && typeof obj === 'object') {
-        payload = obj;
-      }
-    } catch (e) { }
-  }
-
-  //return header if `complete` option is enabled.  header includes claims
-  //such as `kid` and `alg` used to select the key within a JWKS needed to
-  //verify the signature
-  if (options.complete === true) {
-    return {
-      header: decoded.header,
-      payload: payload,
-      signature: decoded.signature
-    };
-  }
-  return payload;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/index.js":
-/*!********************************************!*\
-  !*** ./node_modules/jsonwebtoken/index.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = {
-  decode: __webpack_require__(/*! ./decode */ "./node_modules/jsonwebtoken/decode.js"),
-  verify: __webpack_require__(/*! ./verify */ "./node_modules/jsonwebtoken/verify.js"),
-  sign: __webpack_require__(/*! ./sign */ "./node_modules/jsonwebtoken/sign.js"),
-  JsonWebTokenError: __webpack_require__(/*! ./lib/JsonWebTokenError */ "./node_modules/jsonwebtoken/lib/JsonWebTokenError.js"),
-  NotBeforeError: __webpack_require__(/*! ./lib/NotBeforeError */ "./node_modules/jsonwebtoken/lib/NotBeforeError.js"),
-  TokenExpiredError: __webpack_require__(/*! ./lib/TokenExpiredError */ "./node_modules/jsonwebtoken/lib/TokenExpiredError.js"),
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/lib/JsonWebTokenError.js":
-/*!************************************************************!*\
-  !*** ./node_modules/jsonwebtoken/lib/JsonWebTokenError.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var JsonWebTokenError = function (message, error) {
-  Error.call(this, message);
-  if(Error.captureStackTrace) {
-    Error.captureStackTrace(this, this.constructor);
-  }
-  this.name = 'JsonWebTokenError';
-  this.message = message;
-  if (error) this.inner = error;
-};
-
-JsonWebTokenError.prototype = Object.create(Error.prototype);
-JsonWebTokenError.prototype.constructor = JsonWebTokenError;
-
-module.exports = JsonWebTokenError;
-
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/lib/NotBeforeError.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/jsonwebtoken/lib/NotBeforeError.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var JsonWebTokenError = __webpack_require__(/*! ./JsonWebTokenError */ "./node_modules/jsonwebtoken/lib/JsonWebTokenError.js");
-
-var NotBeforeError = function (message, date) {
-  JsonWebTokenError.call(this, message);
-  this.name = 'NotBeforeError';
-  this.date = date;
-};
-
-NotBeforeError.prototype = Object.create(JsonWebTokenError.prototype);
-
-NotBeforeError.prototype.constructor = NotBeforeError;
-
-module.exports = NotBeforeError;
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/lib/TokenExpiredError.js":
-/*!************************************************************!*\
-  !*** ./node_modules/jsonwebtoken/lib/TokenExpiredError.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var JsonWebTokenError = __webpack_require__(/*! ./JsonWebTokenError */ "./node_modules/jsonwebtoken/lib/JsonWebTokenError.js");
-
-var TokenExpiredError = function (message, expiredAt) {
-  JsonWebTokenError.call(this, message);
-  this.name = 'TokenExpiredError';
-  this.expiredAt = expiredAt;
-};
-
-TokenExpiredError.prototype = Object.create(JsonWebTokenError.prototype);
-
-TokenExpiredError.prototype.constructor = TokenExpiredError;
-
-module.exports = TokenExpiredError;
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/lib/psSupported.js":
-/*!******************************************************!*\
-  !*** ./node_modules/jsonwebtoken/lib/psSupported.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {var semver = __webpack_require__(/*! semver */ "./node_modules/semver/semver.js");
-
-module.exports = semver.satisfies(process.version, '^6.12.0 || >=8.0.0');
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/lib/timespan.js":
-/*!***************************************************!*\
-  !*** ./node_modules/jsonwebtoken/lib/timespan.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var ms = __webpack_require__(/*! ms */ "./node_modules/jsonwebtoken/node_modules/ms/index.js");
-
-module.exports = function (time, iat) {
-  var timestamp = iat || Math.floor(Date.now() / 1000);
-
-  if (typeof time === 'string') {
-    var milliseconds = ms(time);
-    if (typeof milliseconds === 'undefined') {
-      return;
-    }
-    return Math.floor(timestamp + milliseconds / 1000);
-  } else if (typeof time === 'number') {
-    return timestamp + time;
-  } else {
-    return;
-  }
-
-};
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/node_modules/ms/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/jsonwebtoken/node_modules/ms/index.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Helpers.
- */
-
-var s = 1000;
-var m = s * 60;
-var h = m * 60;
-var d = h * 24;
-var w = d * 7;
-var y = d * 365.25;
-
-/**
- * Parse or format the given `val`.
- *
- * Options:
- *
- *  - `long` verbose formatting [false]
- *
- * @param {String|Number} val
- * @param {Object} [options]
- * @throws {Error} throw an error if val is not a non-empty string or a number
- * @return {String|Number}
- * @api public
- */
-
-module.exports = function(val, options) {
-  options = options || {};
-  var type = typeof val;
-  if (type === 'string' && val.length > 0) {
-    return parse(val);
-  } else if (type === 'number' && isFinite(val)) {
-    return options.long ? fmtLong(val) : fmtShort(val);
-  }
-  throw new Error(
-    'val is not a non-empty string or a valid number. val=' +
-      JSON.stringify(val)
-  );
-};
-
-/**
- * Parse the given `str` and return milliseconds.
- *
- * @param {String} str
- * @return {Number}
- * @api private
- */
-
-function parse(str) {
-  str = String(str);
-  if (str.length > 100) {
-    return;
-  }
-  var match = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(
-    str
-  );
-  if (!match) {
-    return;
-  }
-  var n = parseFloat(match[1]);
-  var type = (match[2] || 'ms').toLowerCase();
-  switch (type) {
-    case 'years':
-    case 'year':
-    case 'yrs':
-    case 'yr':
-    case 'y':
-      return n * y;
-    case 'weeks':
-    case 'week':
-    case 'w':
-      return n * w;
-    case 'days':
-    case 'day':
-    case 'd':
-      return n * d;
-    case 'hours':
-    case 'hour':
-    case 'hrs':
-    case 'hr':
-    case 'h':
-      return n * h;
-    case 'minutes':
-    case 'minute':
-    case 'mins':
-    case 'min':
-    case 'm':
-      return n * m;
-    case 'seconds':
-    case 'second':
-    case 'secs':
-    case 'sec':
-    case 's':
-      return n * s;
-    case 'milliseconds':
-    case 'millisecond':
-    case 'msecs':
-    case 'msec':
-    case 'ms':
-      return n;
-    default:
-      return undefined;
-  }
-}
-
-/**
- * Short format for `ms`.
- *
- * @param {Number} ms
- * @return {String}
- * @api private
- */
-
-function fmtShort(ms) {
-  var msAbs = Math.abs(ms);
-  if (msAbs >= d) {
-    return Math.round(ms / d) + 'd';
-  }
-  if (msAbs >= h) {
-    return Math.round(ms / h) + 'h';
-  }
-  if (msAbs >= m) {
-    return Math.round(ms / m) + 'm';
-  }
-  if (msAbs >= s) {
-    return Math.round(ms / s) + 's';
-  }
-  return ms + 'ms';
-}
-
-/**
- * Long format for `ms`.
- *
- * @param {Number} ms
- * @return {String}
- * @api private
- */
-
-function fmtLong(ms) {
-  var msAbs = Math.abs(ms);
-  if (msAbs >= d) {
-    return plural(ms, msAbs, d, 'day');
-  }
-  if (msAbs >= h) {
-    return plural(ms, msAbs, h, 'hour');
-  }
-  if (msAbs >= m) {
-    return plural(ms, msAbs, m, 'minute');
-  }
-  if (msAbs >= s) {
-    return plural(ms, msAbs, s, 'second');
-  }
-  return ms + ' ms';
-}
-
-/**
- * Pluralization helper.
- */
-
-function plural(ms, msAbs, n, name) {
-  var isPlural = msAbs >= n * 1.5;
-  return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/sign.js":
-/*!*******************************************!*\
-  !*** ./node_modules/jsonwebtoken/sign.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(Buffer) {var timespan = __webpack_require__(/*! ./lib/timespan */ "./node_modules/jsonwebtoken/lib/timespan.js");
-var PS_SUPPORTED = __webpack_require__(/*! ./lib/psSupported */ "./node_modules/jsonwebtoken/lib/psSupported.js");
-var jws = __webpack_require__(/*! jws */ "./node_modules/jws/index.js");
-var includes = __webpack_require__(/*! lodash.includes */ "./node_modules/lodash.includes/index.js");
-var isBoolean = __webpack_require__(/*! lodash.isboolean */ "./node_modules/lodash.isboolean/index.js");
-var isInteger = __webpack_require__(/*! lodash.isinteger */ "./node_modules/lodash.isinteger/index.js");
-var isNumber = __webpack_require__(/*! lodash.isnumber */ "./node_modules/lodash.isnumber/index.js");
-var isPlainObject = __webpack_require__(/*! lodash.isplainobject */ "./node_modules/lodash.isplainobject/index.js");
-var isString = __webpack_require__(/*! lodash.isstring */ "./node_modules/lodash.isstring/index.js");
-var once = __webpack_require__(/*! lodash.once */ "./node_modules/lodash.once/index.js");
-
-var SUPPORTED_ALGS = ['RS256', 'RS384', 'RS512', 'ES256', 'ES384', 'ES512', 'HS256', 'HS384', 'HS512', 'none']
-if (PS_SUPPORTED) {
-  SUPPORTED_ALGS.splice(3, 0, 'PS256', 'PS384', 'PS512');
-}
-
-var sign_options_schema = {
-  expiresIn: { isValid: function(value) { return isInteger(value) || (isString(value) && value); }, message: '"expiresIn" should be a number of seconds or string representing a timespan' },
-  notBefore: { isValid: function(value) { return isInteger(value) || (isString(value) && value); }, message: '"notBefore" should be a number of seconds or string representing a timespan' },
-  audience: { isValid: function(value) { return isString(value) || Array.isArray(value); }, message: '"audience" must be a string or array' },
-  algorithm: { isValid: includes.bind(null, SUPPORTED_ALGS), message: '"algorithm" must be a valid string enum value' },
-  header: { isValid: isPlainObject, message: '"header" must be an object' },
-  encoding: { isValid: isString, message: '"encoding" must be a string' },
-  issuer: { isValid: isString, message: '"issuer" must be a string' },
-  subject: { isValid: isString, message: '"subject" must be a string' },
-  jwtid: { isValid: isString, message: '"jwtid" must be a string' },
-  noTimestamp: { isValid: isBoolean, message: '"noTimestamp" must be a boolean' },
-  keyid: { isValid: isString, message: '"keyid" must be a string' },
-  mutatePayload: { isValid: isBoolean, message: '"mutatePayload" must be a boolean' }
-};
-
-var registered_claims_schema = {
-  iat: { isValid: isNumber, message: '"iat" should be a number of seconds' },
-  exp: { isValid: isNumber, message: '"exp" should be a number of seconds' },
-  nbf: { isValid: isNumber, message: '"nbf" should be a number of seconds' }
-};
-
-function validate(schema, allowUnknown, object, parameterName) {
-  if (!isPlainObject(object)) {
-    throw new Error('Expected "' + parameterName + '" to be a plain object.');
-  }
-  Object.keys(object)
-    .forEach(function(key) {
-      var validator = schema[key];
-      if (!validator) {
-        if (!allowUnknown) {
-          throw new Error('"' + key + '" is not allowed in "' + parameterName + '"');
-        }
-        return;
-      }
-      if (!validator.isValid(object[key])) {
-        throw new Error(validator.message);
-      }
-    });
-}
-
-function validateOptions(options) {
-  return validate(sign_options_schema, false, options, 'options');
-}
-
-function validatePayload(payload) {
-  return validate(registered_claims_schema, true, payload, 'payload');
-}
-
-var options_to_payload = {
-  'audience': 'aud',
-  'issuer': 'iss',
-  'subject': 'sub',
-  'jwtid': 'jti'
-};
-
-var options_for_objects = [
-  'expiresIn',
-  'notBefore',
-  'noTimestamp',
-  'audience',
-  'issuer',
-  'subject',
-  'jwtid',
-];
-
-module.exports = function (payload, secretOrPrivateKey, options, callback) {
-  if (typeof options === 'function') {
-    callback = options;
-    options = {};
-  } else {
-    options = options || {};
-  }
-
-  var isObjectPayload = typeof payload === 'object' &&
-                        !Buffer.isBuffer(payload);
-
-  var header = Object.assign({
-    alg: options.algorithm || 'HS256',
-    typ: isObjectPayload ? 'JWT' : undefined,
-    kid: options.keyid
-  }, options.header);
-
-  function failure(err) {
-    if (callback) {
-      return callback(err);
-    }
-    throw err;
-  }
-
-  if (!secretOrPrivateKey && options.algorithm !== 'none') {
-    return failure(new Error('secretOrPrivateKey must have a value'));
-  }
-
-  if (typeof payload === 'undefined') {
-    return failure(new Error('payload is required'));
-  } else if (isObjectPayload) {
-    try {
-      validatePayload(payload);
-    }
-    catch (error) {
-      return failure(error);
-    }
-    if (!options.mutatePayload) {
-      payload = Object.assign({},payload);
-    }
-  } else {
-    var invalid_options = options_for_objects.filter(function (opt) {
-      return typeof options[opt] !== 'undefined';
-    });
-
-    if (invalid_options.length > 0) {
-      return failure(new Error('invalid ' + invalid_options.join(',') + ' option for ' + (typeof payload ) + ' payload'));
-    }
-  }
-
-  if (typeof payload.exp !== 'undefined' && typeof options.expiresIn !== 'undefined') {
-    return failure(new Error('Bad "options.expiresIn" option the payload already has an "exp" property.'));
-  }
-
-  if (typeof payload.nbf !== 'undefined' && typeof options.notBefore !== 'undefined') {
-    return failure(new Error('Bad "options.notBefore" option the payload already has an "nbf" property.'));
-  }
-
-  try {
-    validateOptions(options);
-  }
-  catch (error) {
-    return failure(error);
-  }
-
-  var timestamp = payload.iat || Math.floor(Date.now() / 1000);
-
-  if (options.noTimestamp) {
-    delete payload.iat;
-  } else if (isObjectPayload) {
-    payload.iat = timestamp;
-  }
-
-  if (typeof options.notBefore !== 'undefined') {
-    try {
-      payload.nbf = timespan(options.notBefore, timestamp);
-    }
-    catch (err) {
-      return failure(err);
-    }
-    if (typeof payload.nbf === 'undefined') {
-      return failure(new Error('"notBefore" should be a number of seconds or string representing a timespan eg: "1d", "20h", 60'));
-    }
-  }
-
-  if (typeof options.expiresIn !== 'undefined' && typeof payload === 'object') {
-    try {
-      payload.exp = timespan(options.expiresIn, timestamp);
-    }
-    catch (err) {
-      return failure(err);
-    }
-    if (typeof payload.exp === 'undefined') {
-      return failure(new Error('"expiresIn" should be a number of seconds or string representing a timespan eg: "1d", "20h", 60'));
-    }
-  }
-
-  Object.keys(options_to_payload).forEach(function (key) {
-    var claim = options_to_payload[key];
-    if (typeof options[key] !== 'undefined') {
-      if (typeof payload[claim] !== 'undefined') {
-        return failure(new Error('Bad "options.' + key + '" option. The payload already has an "' + claim + '" property.'));
-      }
-      payload[claim] = options[key];
-    }
-  });
-
-  var encoding = options.encoding || 'utf8';
-
-  if (typeof callback === 'function') {
-    callback = callback && once(callback);
-
-    jws.createSign({
-      header: header,
-      privateKey: secretOrPrivateKey,
-      payload: payload,
-      encoding: encoding
-    }).once('error', callback)
-      .once('done', function (signature) {
-        callback(null, signature);
-      });
-  } else {
-    return jws.sign({header: header, payload: payload, secret: secretOrPrivateKey, encoding: encoding});
-  }
-};
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../buffer/index.js */ "./node_modules/buffer/index.js").Buffer))
-
-/***/ }),
-
-/***/ "./node_modules/jsonwebtoken/verify.js":
-/*!*********************************************!*\
-  !*** ./node_modules/jsonwebtoken/verify.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var JsonWebTokenError = __webpack_require__(/*! ./lib/JsonWebTokenError */ "./node_modules/jsonwebtoken/lib/JsonWebTokenError.js");
-var NotBeforeError    = __webpack_require__(/*! ./lib/NotBeforeError */ "./node_modules/jsonwebtoken/lib/NotBeforeError.js");
-var TokenExpiredError = __webpack_require__(/*! ./lib/TokenExpiredError */ "./node_modules/jsonwebtoken/lib/TokenExpiredError.js");
-var decode            = __webpack_require__(/*! ./decode */ "./node_modules/jsonwebtoken/decode.js");
-var timespan          = __webpack_require__(/*! ./lib/timespan */ "./node_modules/jsonwebtoken/lib/timespan.js");
-var PS_SUPPORTED      = __webpack_require__(/*! ./lib/psSupported */ "./node_modules/jsonwebtoken/lib/psSupported.js");
-var jws               = __webpack_require__(/*! jws */ "./node_modules/jws/index.js");
-
-var PUB_KEY_ALGS = ['RS256', 'RS384', 'RS512', 'ES256', 'ES384', 'ES512'];
-var RSA_KEY_ALGS = ['RS256', 'RS384', 'RS512'];
-var HS_ALGS = ['HS256', 'HS384', 'HS512'];
-
-if (PS_SUPPORTED) {
-  PUB_KEY_ALGS.splice(3, 0, 'PS256', 'PS384', 'PS512');
-  RSA_KEY_ALGS.splice(3, 0, 'PS256', 'PS384', 'PS512');
-}
-
-module.exports = function (jwtString, secretOrPublicKey, options, callback) {
-  if ((typeof options === 'function') && !callback) {
-    callback = options;
-    options = {};
-  }
-
-  if (!options) {
-    options = {};
-  }
-
-  //clone this object since we are going to mutate it.
-  options = Object.assign({}, options);
-
-  var done;
-
-  if (callback) {
-    done = callback;
-  } else {
-    done = function(err, data) {
-      if (err) throw err;
-      return data;
-    };
-  }
-
-  if (options.clockTimestamp && typeof options.clockTimestamp !== 'number') {
-    return done(new JsonWebTokenError('clockTimestamp must be a number'));
-  }
-
-  if (options.nonce !== undefined && (typeof options.nonce !== 'string' || options.nonce.trim() === '')) {
-    return done(new JsonWebTokenError('nonce must be a non-empty string'));
-  }
-
-  var clockTimestamp = options.clockTimestamp || Math.floor(Date.now() / 1000);
-
-  if (!jwtString){
-    return done(new JsonWebTokenError('jwt must be provided'));
-  }
-
-  if (typeof jwtString !== 'string') {
-    return done(new JsonWebTokenError('jwt must be a string'));
-  }
-
-  var parts = jwtString.split('.');
-
-  if (parts.length !== 3){
-    return done(new JsonWebTokenError('jwt malformed'));
-  }
-
-  var decodedToken;
-
-  try {
-    decodedToken = decode(jwtString, { complete: true });
-  } catch(err) {
-    return done(err);
-  }
-
-  if (!decodedToken) {
-    return done(new JsonWebTokenError('invalid token'));
-  }
-
-  var header = decodedToken.header;
-  var getSecret;
-
-  if(typeof secretOrPublicKey === 'function') {
-    if(!callback) {
-      return done(new JsonWebTokenError('verify must be called asynchronous if secret or public key is provided as a callback'));
-    }
-
-    getSecret = secretOrPublicKey;
-  }
-  else {
-    getSecret = function(header, secretCallback) {
-      return secretCallback(null, secretOrPublicKey);
-    };
-  }
-
-  return getSecret(header, function(err, secretOrPublicKey) {
-    if(err) {
-      return done(new JsonWebTokenError('error in secret or public key callback: ' + err.message));
-    }
-
-    var hasSignature = parts[2].trim() !== '';
-
-    if (!hasSignature && secretOrPublicKey){
-      return done(new JsonWebTokenError('jwt signature is required'));
-    }
-
-    if (hasSignature && !secretOrPublicKey) {
-      return done(new JsonWebTokenError('secret or public key must be provided'));
-    }
-
-    if (!hasSignature && !options.algorithms) {
-      options.algorithms = ['none'];
-    }
-
-    if (!options.algorithms) {
-      options.algorithms = ~secretOrPublicKey.toString().indexOf('BEGIN CERTIFICATE') ||
-        ~secretOrPublicKey.toString().indexOf('BEGIN PUBLIC KEY') ? PUB_KEY_ALGS :
-        ~secretOrPublicKey.toString().indexOf('BEGIN RSA PUBLIC KEY') ? RSA_KEY_ALGS : HS_ALGS;
-
-    }
-
-    if (!~options.algorithms.indexOf(decodedToken.header.alg)) {
-      return done(new JsonWebTokenError('invalid algorithm'));
-    }
-
-    var valid;
-
-    try {
-      valid = jws.verify(jwtString, decodedToken.header.alg, secretOrPublicKey);
-    } catch (e) {
-      return done(e);
-    }
-
-    if (!valid) {
-      return done(new JsonWebTokenError('invalid signature'));
-    }
-
-    var payload = decodedToken.payload;
-
-    if (typeof payload.nbf !== 'undefined' && !options.ignoreNotBefore) {
-      if (typeof payload.nbf !== 'number') {
-        return done(new JsonWebTokenError('invalid nbf value'));
-      }
-      if (payload.nbf > clockTimestamp + (options.clockTolerance || 0)) {
-        return done(new NotBeforeError('jwt not active', new Date(payload.nbf * 1000)));
-      }
-    }
-
-    if (typeof payload.exp !== 'undefined' && !options.ignoreExpiration) {
-      if (typeof payload.exp !== 'number') {
-        return done(new JsonWebTokenError('invalid exp value'));
-      }
-      if (clockTimestamp >= payload.exp + (options.clockTolerance || 0)) {
-        return done(new TokenExpiredError('jwt expired', new Date(payload.exp * 1000)));
-      }
-    }
-
-    if (options.audience) {
-      var audiences = Array.isArray(options.audience) ? options.audience : [options.audience];
-      var target = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
-
-      var match = target.some(function (targetAudience) {
-        return audiences.some(function (audience) {
-          return audience instanceof RegExp ? audience.test(targetAudience) : audience === targetAudience;
-        });
-      });
-
-      if (!match) {
-        return done(new JsonWebTokenError('jwt audience invalid. expected: ' + audiences.join(' or ')));
-      }
-    }
-
-    if (options.issuer) {
-      var invalid_issuer =
-              (typeof options.issuer === 'string' && payload.iss !== options.issuer) ||
-              (Array.isArray(options.issuer) && options.issuer.indexOf(payload.iss) === -1);
-
-      if (invalid_issuer) {
-        return done(new JsonWebTokenError('jwt issuer invalid. expected: ' + options.issuer));
-      }
-    }
-
-    if (options.subject) {
-      if (payload.sub !== options.subject) {
-        return done(new JsonWebTokenError('jwt subject invalid. expected: ' + options.subject));
-      }
-    }
-
-    if (options.jwtid) {
-      if (payload.jti !== options.jwtid) {
-        return done(new JsonWebTokenError('jwt jwtid invalid. expected: ' + options.jwtid));
-      }
-    }
-
-    if (options.nonce) {
-      if (payload.nonce !== options.nonce) {
-        return done(new JsonWebTokenError('jwt nonce invalid. expected: ' + options.nonce));
-      }
-    }
-
-    if (options.maxAge) {
-      if (typeof payload.iat !== 'number') {
-        return done(new JsonWebTokenError('iat required when maxAge is specified'));
-      }
-
-      var maxAgeTimestamp = timespan(options.maxAge, payload.iat);
-      if (typeof maxAgeTimestamp === 'undefined') {
-        return done(new JsonWebTokenError('"maxAge" should be a number of seconds or string representing a timespan eg: "1d", "20h", 60'));
-      }
-      if (clockTimestamp >= maxAgeTimestamp + (options.clockTolerance || 0)) {
-        return done(new TokenExpiredError('maxAge exceeded', new Date(maxAgeTimestamp * 1000)));
-      }
-    }
-
-    if (options.complete === true) {
-      var signature = decodedToken.signature;
-
-      return done(null, {
-        header: header,
-        payload: payload,
-        signature: signature
-      });
-    }
-
-    return done(null, payload);
-  });
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/jwa/index.js":
-/*!***********************************!*\
-  !*** ./node_modules/jwa/index.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var bufferEqual = __webpack_require__(/*! buffer-equal-constant-time */ "./node_modules/buffer-equal-constant-time/index.js");
-var Buffer = __webpack_require__(/*! safe-buffer */ "./node_modules/safe-buffer/index.js").Buffer;
-var crypto = __webpack_require__(/*! crypto */ "./node_modules/crypto-browserify/index.js");
-var formatEcdsa = __webpack_require__(/*! ecdsa-sig-formatter */ "./node_modules/ecdsa-sig-formatter/src/ecdsa-sig-formatter.js");
-var util = __webpack_require__(/*! util */ "./node_modules/util/util.js");
-
-var MSG_INVALID_ALGORITHM = '"%s" is not a valid algorithm.\n  Supported algorithms are:\n  "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "PS256", "PS384", "PS512", "ES256", "ES384", "ES512" and "none".'
-var MSG_INVALID_SECRET = 'secret must be a string or buffer';
-var MSG_INVALID_VERIFIER_KEY = 'key must be a string or a buffer';
-var MSG_INVALID_SIGNER_KEY = 'key must be a string, a buffer or an object';
-
-var supportsKeyObjects = typeof crypto.createPublicKey === 'function';
-if (supportsKeyObjects) {
-  MSG_INVALID_VERIFIER_KEY += ' or a KeyObject';
-  MSG_INVALID_SECRET += 'or a KeyObject';
-}
-
-function checkIsPublicKey(key) {
-  if (Buffer.isBuffer(key)) {
-    return;
-  }
-
-  if (typeof key === 'string') {
-    return;
-  }
-
-  if (!supportsKeyObjects) {
-    throw typeError(MSG_INVALID_VERIFIER_KEY);
-  }
-
-  if (typeof key !== 'object') {
-    throw typeError(MSG_INVALID_VERIFIER_KEY);
-  }
-
-  if (typeof key.type !== 'string') {
-    throw typeError(MSG_INVALID_VERIFIER_KEY);
-  }
-
-  if (typeof key.asymmetricKeyType !== 'string') {
-    throw typeError(MSG_INVALID_VERIFIER_KEY);
-  }
-
-  if (typeof key.export !== 'function') {
-    throw typeError(MSG_INVALID_VERIFIER_KEY);
-  }
-};
-
-function checkIsPrivateKey(key) {
-  if (Buffer.isBuffer(key)) {
-    return;
-  }
-
-  if (typeof key === 'string') {
-    return;
-  }
-
-  if (typeof key === 'object') {
-    return;
-  }
-
-  throw typeError(MSG_INVALID_SIGNER_KEY);
-};
-
-function checkIsSecretKey(key) {
-  if (Buffer.isBuffer(key)) {
-    return;
-  }
-
-  if (typeof key === 'string') {
-    return key;
-  }
-
-  if (!supportsKeyObjects) {
-    throw typeError(MSG_INVALID_SECRET);
-  }
-
-  if (typeof key !== 'object') {
-    throw typeError(MSG_INVALID_SECRET);
-  }
-
-  if (key.type !== 'secret') {
-    throw typeError(MSG_INVALID_SECRET);
-  }
-
-  if (typeof key.export !== 'function') {
-    throw typeError(MSG_INVALID_SECRET);
-  }
-}
-
-function fromBase64(base64) {
-  return base64
-    .replace(/=/g, '')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_');
-}
-
-function toBase64(base64url) {
-  base64url = base64url.toString();
-
-  var padding = 4 - base64url.length % 4;
-  if (padding !== 4) {
-    for (var i = 0; i < padding; ++i) {
-      base64url += '=';
-    }
-  }
-
-  return base64url
-    .replace(/\-/g, '+')
-    .replace(/_/g, '/');
-}
-
-function typeError(template) {
-  var args = [].slice.call(arguments, 1);
-  var errMsg = util.format.bind(util, template).apply(null, args);
-  return new TypeError(errMsg);
-}
-
-function bufferOrString(obj) {
-  return Buffer.isBuffer(obj) || typeof obj === 'string';
-}
-
-function normalizeInput(thing) {
-  if (!bufferOrString(thing))
-    thing = JSON.stringify(thing);
-  return thing;
-}
-
-function createHmacSigner(bits) {
-  return function sign(thing, secret) {
-    checkIsSecretKey(secret);
-    thing = normalizeInput(thing);
-    var hmac = crypto.createHmac('sha' + bits, secret);
-    var sig = (hmac.update(thing), hmac.digest('base64'))
-    return fromBase64(sig);
-  }
-}
-
-function createHmacVerifier(bits) {
-  return function verify(thing, signature, secret) {
-    var computedSig = createHmacSigner(bits)(thing, secret);
-    return bufferEqual(Buffer.from(signature), Buffer.from(computedSig));
-  }
-}
-
-function createKeySigner(bits) {
- return function sign(thing, privateKey) {
-    checkIsPrivateKey(privateKey);
-    thing = normalizeInput(thing);
-    // Even though we are specifying "RSA" here, this works with ECDSA
-    // keys as well.
-    var signer = crypto.createSign('RSA-SHA' + bits);
-    var sig = (signer.update(thing), signer.sign(privateKey, 'base64'));
-    return fromBase64(sig);
-  }
-}
-
-function createKeyVerifier(bits) {
-  return function verify(thing, signature, publicKey) {
-    checkIsPublicKey(publicKey);
-    thing = normalizeInput(thing);
-    signature = toBase64(signature);
-    var verifier = crypto.createVerify('RSA-SHA' + bits);
-    verifier.update(thing);
-    return verifier.verify(publicKey, signature, 'base64');
-  }
-}
-
-function createPSSKeySigner(bits) {
-  return function sign(thing, privateKey) {
-    checkIsPrivateKey(privateKey);
-    thing = normalizeInput(thing);
-    var signer = crypto.createSign('RSA-SHA' + bits);
-    var sig = (signer.update(thing), signer.sign({
-      key: privateKey,
-      padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
-      saltLength: crypto.constants.RSA_PSS_SALTLEN_DIGEST
-    }, 'base64'));
-    return fromBase64(sig);
-  }
-}
-
-function createPSSKeyVerifier(bits) {
-  return function verify(thing, signature, publicKey) {
-    checkIsPublicKey(publicKey);
-    thing = normalizeInput(thing);
-    signature = toBase64(signature);
-    var verifier = crypto.createVerify('RSA-SHA' + bits);
-    verifier.update(thing);
-    return verifier.verify({
-      key: publicKey,
-      padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
-      saltLength: crypto.constants.RSA_PSS_SALTLEN_DIGEST
-    }, signature, 'base64');
-  }
-}
-
-function createECDSASigner(bits) {
-  var inner = createKeySigner(bits);
-  return function sign() {
-    var signature = inner.apply(null, arguments);
-    signature = formatEcdsa.derToJose(signature, 'ES' + bits);
-    return signature;
-  };
-}
-
-function createECDSAVerifer(bits) {
-  var inner = createKeyVerifier(bits);
-  return function verify(thing, signature, publicKey) {
-    signature = formatEcdsa.joseToDer(signature, 'ES' + bits).toString('base64');
-    var result = inner(thing, signature, publicKey);
-    return result;
-  };
-}
-
-function createNoneSigner() {
-  return function sign() {
-    return '';
-  }
-}
-
-function createNoneVerifier() {
-  return function verify(thing, signature) {
-    return signature === '';
-  }
-}
-
-module.exports = function jwa(algorithm) {
-  var signerFactories = {
-    hs: createHmacSigner,
-    rs: createKeySigner,
-    ps: createPSSKeySigner,
-    es: createECDSASigner,
-    none: createNoneSigner,
-  }
-  var verifierFactories = {
-    hs: createHmacVerifier,
-    rs: createKeyVerifier,
-    ps: createPSSKeyVerifier,
-    es: createECDSAVerifer,
-    none: createNoneVerifier,
-  }
-  var match = algorithm.match(/^(RS|PS|ES|HS)(256|384|512)$|^(none)$/i);
-  if (!match)
-    throw typeError(MSG_INVALID_ALGORITHM, algorithm);
-  var algo = (match[1] || match[3]).toLowerCase();
-  var bits = match[2];
-
-  return {
-    sign: signerFactories[algo](bits),
-    verify: verifierFactories[algo](bits),
-  }
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/jws/index.js":
-/*!***********************************!*\
-  !*** ./node_modules/jws/index.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*global exports*/
-var SignStream = __webpack_require__(/*! ./lib/sign-stream */ "./node_modules/jws/lib/sign-stream.js");
-var VerifyStream = __webpack_require__(/*! ./lib/verify-stream */ "./node_modules/jws/lib/verify-stream.js");
-
-var ALGORITHMS = [
-  'HS256', 'HS384', 'HS512',
-  'RS256', 'RS384', 'RS512',
-  'PS256', 'PS384', 'PS512',
-  'ES256', 'ES384', 'ES512'
-];
-
-exports.ALGORITHMS = ALGORITHMS;
-exports.sign = SignStream.sign;
-exports.verify = VerifyStream.verify;
-exports.decode = VerifyStream.decode;
-exports.isValid = VerifyStream.isValid;
-exports.createSign = function createSign(opts) {
-  return new SignStream(opts);
-};
-exports.createVerify = function createVerify(opts) {
-  return new VerifyStream(opts);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/jws/lib/data-stream.js":
-/*!*********************************************!*\
-  !*** ./node_modules/jws/lib/data-stream.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/*global module, process*/
-var Buffer = __webpack_require__(/*! safe-buffer */ "./node_modules/safe-buffer/index.js").Buffer;
-var Stream = __webpack_require__(/*! stream */ "./node_modules/stream-browserify/index.js");
-var util = __webpack_require__(/*! util */ "./node_modules/util/util.js");
-
-function DataStream(data) {
-  this.buffer = null;
-  this.writable = true;
-  this.readable = true;
-
-  // No input
-  if (!data) {
-    this.buffer = Buffer.alloc(0);
-    return this;
-  }
-
-  // Stream
-  if (typeof data.pipe === 'function') {
-    this.buffer = Buffer.alloc(0);
-    data.pipe(this);
-    return this;
-  }
-
-  // Buffer or String
-  // or Object (assumedly a passworded key)
-  if (data.length || typeof data === 'object') {
-    this.buffer = data;
-    this.writable = false;
-    process.nextTick(function () {
-      this.emit('end', data);
-      this.readable = false;
-      this.emit('close');
-    }.bind(this));
-    return this;
-  }
-
-  throw new TypeError('Unexpected data type ('+ typeof data + ')');
-}
-util.inherits(DataStream, Stream);
-
-DataStream.prototype.write = function write(data) {
-  this.buffer = Buffer.concat([this.buffer, Buffer.from(data)]);
-  this.emit('data', data);
-};
-
-DataStream.prototype.end = function end(data) {
-  if (data)
-    this.write(data);
-  this.emit('end', data);
-  this.emit('close');
-  this.writable = false;
-  this.readable = false;
-};
-
-module.exports = DataStream;
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
-
-/***/ }),
-
-/***/ "./node_modules/jws/lib/sign-stream.js":
-/*!*********************************************!*\
-  !*** ./node_modules/jws/lib/sign-stream.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*global module*/
-var Buffer = __webpack_require__(/*! safe-buffer */ "./node_modules/safe-buffer/index.js").Buffer;
-var DataStream = __webpack_require__(/*! ./data-stream */ "./node_modules/jws/lib/data-stream.js");
-var jwa = __webpack_require__(/*! jwa */ "./node_modules/jwa/index.js");
-var Stream = __webpack_require__(/*! stream */ "./node_modules/stream-browserify/index.js");
-var toString = __webpack_require__(/*! ./tostring */ "./node_modules/jws/lib/tostring.js");
-var util = __webpack_require__(/*! util */ "./node_modules/util/util.js");
-
-function base64url(string, encoding) {
-  return Buffer
-    .from(string, encoding)
-    .toString('base64')
-    .replace(/=/g, '')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_');
-}
-
-function jwsSecuredInput(header, payload, encoding) {
-  encoding = encoding || 'utf8';
-  var encodedHeader = base64url(toString(header), 'binary');
-  var encodedPayload = base64url(toString(payload), encoding);
-  return util.format('%s.%s', encodedHeader, encodedPayload);
-}
-
-function jwsSign(opts) {
-  var header = opts.header;
-  var payload = opts.payload;
-  var secretOrKey = opts.secret || opts.privateKey;
-  var encoding = opts.encoding;
-  var algo = jwa(header.alg);
-  var securedInput = jwsSecuredInput(header, payload, encoding);
-  var signature = algo.sign(securedInput, secretOrKey);
-  return util.format('%s.%s', securedInput, signature);
-}
-
-function SignStream(opts) {
-  var secret = opts.secret||opts.privateKey||opts.key;
-  var secretStream = new DataStream(secret);
-  this.readable = true;
-  this.header = opts.header;
-  this.encoding = opts.encoding;
-  this.secret = this.privateKey = this.key = secretStream;
-  this.payload = new DataStream(opts.payload);
-  this.secret.once('close', function () {
-    if (!this.payload.writable && this.readable)
-      this.sign();
-  }.bind(this));
-
-  this.payload.once('close', function () {
-    if (!this.secret.writable && this.readable)
-      this.sign();
-  }.bind(this));
-}
-util.inherits(SignStream, Stream);
-
-SignStream.prototype.sign = function sign() {
-  try {
-    var signature = jwsSign({
-      header: this.header,
-      payload: this.payload.buffer,
-      secret: this.secret.buffer,
-      encoding: this.encoding
-    });
-    this.emit('done', signature);
-    this.emit('data', signature);
-    this.emit('end');
-    this.readable = false;
-    return signature;
-  } catch (e) {
-    this.readable = false;
-    this.emit('error', e);
-    this.emit('close');
-  }
-};
-
-SignStream.sign = jwsSign;
-
-module.exports = SignStream;
-
-
-/***/ }),
-
-/***/ "./node_modules/jws/lib/tostring.js":
-/*!******************************************!*\
-  !*** ./node_modules/jws/lib/tostring.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*global module*/
-var Buffer = __webpack_require__(/*! buffer */ "./node_modules/buffer/index.js").Buffer;
-
-module.exports = function toString(obj) {
-  if (typeof obj === 'string')
-    return obj;
-  if (typeof obj === 'number' || Buffer.isBuffer(obj))
-    return obj.toString();
-  return JSON.stringify(obj);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/jws/lib/verify-stream.js":
-/*!***********************************************!*\
-  !*** ./node_modules/jws/lib/verify-stream.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*global module*/
-var Buffer = __webpack_require__(/*! safe-buffer */ "./node_modules/safe-buffer/index.js").Buffer;
-var DataStream = __webpack_require__(/*! ./data-stream */ "./node_modules/jws/lib/data-stream.js");
-var jwa = __webpack_require__(/*! jwa */ "./node_modules/jwa/index.js");
-var Stream = __webpack_require__(/*! stream */ "./node_modules/stream-browserify/index.js");
-var toString = __webpack_require__(/*! ./tostring */ "./node_modules/jws/lib/tostring.js");
-var util = __webpack_require__(/*! util */ "./node_modules/util/util.js");
-var JWS_REGEX = /^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$/;
-
-function isObject(thing) {
-  return Object.prototype.toString.call(thing) === '[object Object]';
-}
-
-function safeJsonParse(thing) {
-  if (isObject(thing))
-    return thing;
-  try { return JSON.parse(thing); }
-  catch (e) { return undefined; }
-}
-
-function headerFromJWS(jwsSig) {
-  var encodedHeader = jwsSig.split('.', 1)[0];
-  return safeJsonParse(Buffer.from(encodedHeader, 'base64').toString('binary'));
-}
-
-function securedInputFromJWS(jwsSig) {
-  return jwsSig.split('.', 2).join('.');
-}
-
-function signatureFromJWS(jwsSig) {
-  return jwsSig.split('.')[2];
-}
-
-function payloadFromJWS(jwsSig, encoding) {
-  encoding = encoding || 'utf8';
-  var payload = jwsSig.split('.')[1];
-  return Buffer.from(payload, 'base64').toString(encoding);
-}
-
-function isValidJws(string) {
-  return JWS_REGEX.test(string) && !!headerFromJWS(string);
-}
-
-function jwsVerify(jwsSig, algorithm, secretOrKey) {
-  if (!algorithm) {
-    var err = new Error("Missing algorithm parameter for jws.verify");
-    err.code = "MISSING_ALGORITHM";
-    throw err;
-  }
-  jwsSig = toString(jwsSig);
-  var signature = signatureFromJWS(jwsSig);
-  var securedInput = securedInputFromJWS(jwsSig);
-  var algo = jwa(algorithm);
-  return algo.verify(securedInput, signature, secretOrKey);
-}
-
-function jwsDecode(jwsSig, opts) {
-  opts = opts || {};
-  jwsSig = toString(jwsSig);
-
-  if (!isValidJws(jwsSig))
-    return null;
-
-  var header = headerFromJWS(jwsSig);
-
-  if (!header)
-    return null;
-
-  var payload = payloadFromJWS(jwsSig);
-  if (header.typ === 'JWT' || opts.json)
-    payload = JSON.parse(payload, opts.encoding);
-
-  return {
-    header: header,
-    payload: payload,
-    signature: signatureFromJWS(jwsSig)
-  };
-}
-
-function VerifyStream(opts) {
-  opts = opts || {};
-  var secretOrKey = opts.secret||opts.publicKey||opts.key;
-  var secretStream = new DataStream(secretOrKey);
-  this.readable = true;
-  this.algorithm = opts.algorithm;
-  this.encoding = opts.encoding;
-  this.secret = this.publicKey = this.key = secretStream;
-  this.signature = new DataStream(opts.signature);
-  this.secret.once('close', function () {
-    if (!this.signature.writable && this.readable)
-      this.verify();
-  }.bind(this));
-
-  this.signature.once('close', function () {
-    if (!this.secret.writable && this.readable)
-      this.verify();
-  }.bind(this));
-}
-util.inherits(VerifyStream, Stream);
-VerifyStream.prototype.verify = function verify() {
-  try {
-    var valid = jwsVerify(this.signature.buffer, this.algorithm, this.key.buffer);
-    var obj = jwsDecode(this.signature.buffer, this.encoding);
-    this.emit('done', valid, obj);
-    this.emit('data', valid);
-    this.emit('end');
-    this.readable = false;
-    return valid;
-  } catch (e) {
-    this.readable = false;
-    this.emit('error', e);
-    this.emit('close');
-  }
-};
-
-VerifyStream.decode = jwsDecode;
-VerifyStream.isValid = isValidJws;
-VerifyStream.verify = jwsVerify;
-
-module.exports = VerifyStream;
-
-
-/***/ }),
-
-/***/ "./node_modules/lodash.includes/index.js":
-/*!***********************************************!*\
-  !*** ./node_modules/lodash.includes/index.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0,
-    MAX_SAFE_INTEGER = 9007199254740991,
-    MAX_INTEGER = 1.7976931348623157e+308,
-    NAN = 0 / 0;
-
-/** `Object#toString` result references. */
-var argsTag = '[object Arguments]',
-    funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]',
-    stringTag = '[object String]',
-    symbolTag = '[object Symbol]';
-
-/** Used to match leading and trailing whitespace. */
-var reTrim = /^\s+|\s+$/g;
-
-/** Used to detect bad signed hexadecimal string values. */
-var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
-
-/** Used to detect binary string values. */
-var reIsBinary = /^0b[01]+$/i;
-
-/** Used to detect octal string values. */
-var reIsOctal = /^0o[0-7]+$/i;
-
-/** Used to detect unsigned integer values. */
-var reIsUint = /^(?:0|[1-9]\d*)$/;
-
-/** Built-in method references without a dependency on `root`. */
-var freeParseInt = parseInt;
-
-/**
- * A specialized version of `_.map` for arrays without support for iteratee
- * shorthands.
- *
- * @private
- * @param {Array} [array] The array to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns the new mapped array.
- */
-function arrayMap(array, iteratee) {
-  var index = -1,
-      length = array ? array.length : 0,
-      result = Array(length);
-
-  while (++index < length) {
-    result[index] = iteratee(array[index], index, array);
-  }
-  return result;
-}
-
-/**
- * The base implementation of `_.findIndex` and `_.findLastIndex` without
- * support for iteratee shorthands.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {Function} predicate The function invoked per iteration.
- * @param {number} fromIndex The index to search from.
- * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {number} Returns the index of the matched value, else `-1`.
- */
-function baseFindIndex(array, predicate, fromIndex, fromRight) {
-  var length = array.length,
-      index = fromIndex + (fromRight ? 1 : -1);
-
-  while ((fromRight ? index-- : ++index < length)) {
-    if (predicate(array[index], index, array)) {
-      return index;
-    }
-  }
-  return -1;
-}
-
-/**
- * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {*} value The value to search for.
- * @param {number} fromIndex The index to search from.
- * @returns {number} Returns the index of the matched value, else `-1`.
- */
-function baseIndexOf(array, value, fromIndex) {
-  if (value !== value) {
-    return baseFindIndex(array, baseIsNaN, fromIndex);
-  }
-  var index = fromIndex - 1,
-      length = array.length;
-
-  while (++index < length) {
-    if (array[index] === value) {
-      return index;
-    }
-  }
-  return -1;
-}
-
-/**
- * The base implementation of `_.isNaN` without support for number objects.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
- */
-function baseIsNaN(value) {
-  return value !== value;
-}
-
-/**
- * The base implementation of `_.times` without support for iteratee shorthands
- * or max array length checks.
- *
- * @private
- * @param {number} n The number of times to invoke `iteratee`.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns the array of results.
- */
-function baseTimes(n, iteratee) {
-  var index = -1,
-      result = Array(n);
-
-  while (++index < n) {
-    result[index] = iteratee(index);
-  }
-  return result;
-}
-
-/**
- * The base implementation of `_.values` and `_.valuesIn` which creates an
- * array of `object` property values corresponding to the property names
- * of `props`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {Array} props The property names to get values for.
- * @returns {Object} Returns the array of property values.
- */
-function baseValues(object, props) {
-  return arrayMap(props, function(key) {
-    return object[key];
-  });
-}
-
-/**
- * Creates a unary function that invokes `func` with its argument transformed.
- *
- * @private
- * @param {Function} func The function to wrap.
- * @param {Function} transform The argument transform.
- * @returns {Function} Returns the new function.
- */
-function overArg(func, transform) {
-  return function(arg) {
-    return func(transform(arg));
-  };
-}
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/** Built-in value references. */
-var propertyIsEnumerable = objectProto.propertyIsEnumerable;
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeKeys = overArg(Object.keys, Object),
-    nativeMax = Math.max;
-
-/**
- * Creates an array of the enumerable property names of the array-like `value`.
- *
- * @private
- * @param {*} value The value to query.
- * @param {boolean} inherited Specify returning inherited property names.
- * @returns {Array} Returns the array of property names.
- */
-function arrayLikeKeys(value, inherited) {
-  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-  // Safari 9 makes `arguments.length` enumerable in strict mode.
-  var result = (isArray(value) || isArguments(value))
-    ? baseTimes(value.length, String)
-    : [];
-
-  var length = result.length,
-      skipIndexes = !!length;
-
-  for (var key in value) {
-    if ((inherited || hasOwnProperty.call(value, key)) &&
-        !(skipIndexes && (key == 'length' || isIndex(key, length)))) {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-/**
- * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- */
-function baseKeys(object) {
-  if (!isPrototype(object)) {
-    return nativeKeys(object);
-  }
-  var result = [];
-  for (var key in Object(object)) {
-    if (hasOwnProperty.call(object, key) && key != 'constructor') {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-/**
- * Checks if `value` is a valid array-like index.
- *
- * @private
- * @param {*} value The value to check.
- * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
- * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
- */
-function isIndex(value, length) {
-  length = length == null ? MAX_SAFE_INTEGER : length;
-  return !!length &&
-    (typeof value == 'number' || reIsUint.test(value)) &&
-    (value > -1 && value % 1 == 0 && value < length);
-}
-
-/**
- * Checks if `value` is likely a prototype object.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
- */
-function isPrototype(value) {
-  var Ctor = value && value.constructor,
-      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
-
-  return value === proto;
-}
-
-/**
- * Checks if `value` is in `collection`. If `collection` is a string, it's
- * checked for a substring of `value`, otherwise
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * is used for equality comparisons. If `fromIndex` is negative, it's used as
- * the offset from the end of `collection`.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Collection
- * @param {Array|Object|string} collection The collection to inspect.
- * @param {*} value The value to search for.
- * @param {number} [fromIndex=0] The index to search from.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.reduce`.
- * @returns {boolean} Returns `true` if `value` is found, else `false`.
- * @example
- *
- * _.includes([1, 2, 3], 1);
- * // => true
- *
- * _.includes([1, 2, 3], 1, 2);
- * // => false
- *
- * _.includes({ 'a': 1, 'b': 2 }, 1);
- * // => true
- *
- * _.includes('abcd', 'bc');
- * // => true
- */
-function includes(collection, value, fromIndex, guard) {
-  collection = isArrayLike(collection) ? collection : values(collection);
-  fromIndex = (fromIndex && !guard) ? toInteger(fromIndex) : 0;
-
-  var length = collection.length;
-  if (fromIndex < 0) {
-    fromIndex = nativeMax(length + fromIndex, 0);
-  }
-  return isString(collection)
-    ? (fromIndex <= length && collection.indexOf(value, fromIndex) > -1)
-    : (!!length && baseIndexOf(collection, value, fromIndex) > -1);
-}
-
-/**
- * Checks if `value` is likely an `arguments` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an `arguments` object,
- *  else `false`.
- * @example
- *
- * _.isArguments(function() { return arguments; }());
- * // => true
- *
- * _.isArguments([1, 2, 3]);
- * // => false
- */
-function isArguments(value) {
-  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
-    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
-}
-
-/**
- * Checks if `value` is classified as an `Array` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an array, else `false`.
- * @example
- *
- * _.isArray([1, 2, 3]);
- * // => true
- *
- * _.isArray(document.body.children);
- * // => false
- *
- * _.isArray('abc');
- * // => false
- *
- * _.isArray(_.noop);
- * // => false
- */
-var isArray = Array.isArray;
-
-/**
- * Checks if `value` is array-like. A value is considered array-like if it's
- * not a function and has a `value.length` that's an integer greater than or
- * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
- * @example
- *
- * _.isArrayLike([1, 2, 3]);
- * // => true
- *
- * _.isArrayLike(document.body.children);
- * // => true
- *
- * _.isArrayLike('abc');
- * // => true
- *
- * _.isArrayLike(_.noop);
- * // => false
- */
-function isArrayLike(value) {
-  return value != null && isLength(value.length) && !isFunction(value);
-}
-
-/**
- * This method is like `_.isArrayLike` except that it also checks if `value`
- * is an object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an array-like object,
- *  else `false`.
- * @example
- *
- * _.isArrayLikeObject([1, 2, 3]);
- * // => true
- *
- * _.isArrayLikeObject(document.body.children);
- * // => true
- *
- * _.isArrayLikeObject('abc');
- * // => false
- *
- * _.isArrayLikeObject(_.noop);
- * // => false
- */
-function isArrayLikeObject(value) {
-  return isObjectLike(value) && isArrayLike(value);
-}
-
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a function, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in Safari 8-9 which returns 'object' for typed array and other constructors.
-  var tag = isObject(value) ? objectToString.call(value) : '';
-  return tag == funcTag || tag == genTag;
-}
-
-/**
- * Checks if `value` is a valid array-like length.
- *
- * **Note:** This method is loosely based on
- * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
- * @example
- *
- * _.isLength(3);
- * // => true
- *
- * _.isLength(Number.MIN_VALUE);
- * // => false
- *
- * _.isLength(Infinity);
- * // => false
- *
- * _.isLength('3');
- * // => false
- */
-function isLength(value) {
-  return typeof value == 'number' &&
-    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `String` primitive or object.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a string, else `false`.
- * @example
- *
- * _.isString('abc');
- * // => true
- *
- * _.isString(1);
- * // => false
- */
-function isString(value) {
-  return typeof value == 'string' ||
-    (!isArray(value) && isObjectLike(value) && objectToString.call(value) == stringTag);
-}
-
-/**
- * Checks if `value` is classified as a `Symbol` primitive or object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
- * @example
- *
- * _.isSymbol(Symbol.iterator);
- * // => true
- *
- * _.isSymbol('abc');
- * // => false
- */
-function isSymbol(value) {
-  return typeof value == 'symbol' ||
-    (isObjectLike(value) && objectToString.call(value) == symbolTag);
-}
-
-/**
- * Converts `value` to a finite number.
- *
- * @static
- * @memberOf _
- * @since 4.12.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted number.
- * @example
- *
- * _.toFinite(3.2);
- * // => 3.2
- *
- * _.toFinite(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toFinite(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toFinite('3.2');
- * // => 3.2
- */
-function toFinite(value) {
-  if (!value) {
-    return value === 0 ? value : 0;
-  }
-  value = toNumber(value);
-  if (value === INFINITY || value === -INFINITY) {
-    var sign = (value < 0 ? -1 : 1);
-    return sign * MAX_INTEGER;
-  }
-  return value === value ? value : 0;
-}
-
-/**
- * Converts `value` to an integer.
- *
- * **Note:** This method is loosely based on
- * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted integer.
- * @example
- *
- * _.toInteger(3.2);
- * // => 3
- *
- * _.toInteger(Number.MIN_VALUE);
- * // => 0
- *
- * _.toInteger(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toInteger('3.2');
- * // => 3
- */
-function toInteger(value) {
-  var result = toFinite(value),
-      remainder = result % 1;
-
-  return result === result ? (remainder ? result - remainder : result) : 0;
-}
-
-/**
- * Converts `value` to a number.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to process.
- * @returns {number} Returns the number.
- * @example
- *
- * _.toNumber(3.2);
- * // => 3.2
- *
- * _.toNumber(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toNumber(Infinity);
- * // => Infinity
- *
- * _.toNumber('3.2');
- * // => 3.2
- */
-function toNumber(value) {
-  if (typeof value == 'number') {
-    return value;
-  }
-  if (isSymbol(value)) {
-    return NAN;
-  }
-  if (isObject(value)) {
-    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
-    value = isObject(other) ? (other + '') : other;
-  }
-  if (typeof value != 'string') {
-    return value === 0 ? value : +value;
-  }
-  value = value.replace(reTrim, '');
-  var isBinary = reIsBinary.test(value);
-  return (isBinary || reIsOctal.test(value))
-    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
-    : (reIsBadHex.test(value) ? NAN : +value);
-}
-
-/**
- * Creates an array of the own enumerable property names of `object`.
- *
- * **Note:** Non-object values are coerced to objects. See the
- * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
- * for more details.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Object
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.keys(new Foo);
- * // => ['a', 'b'] (iteration order is not guaranteed)
- *
- * _.keys('hi');
- * // => ['0', '1']
- */
-function keys(object) {
-  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
-}
-
-/**
- * Creates an array of the own enumerable string keyed property values of `object`.
- *
- * **Note:** Non-object values are coerced to objects.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Object
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property values.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.values(new Foo);
- * // => [1, 2] (iteration order is not guaranteed)
- *
- * _.values('hi');
- * // => ['h', 'i']
- */
-function values(object) {
-  return object ? baseValues(object, keys(object)) : [];
-}
-
-module.exports = includes;
-
-
-/***/ }),
-
-/***/ "./node_modules/lodash.isboolean/index.js":
-/*!************************************************!*\
-  !*** ./node_modules/lodash.isboolean/index.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * lodash 3.0.3 (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <https://lodash.com/license>
- */
-
-/** `Object#toString` result references. */
-var boolTag = '[object Boolean]';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/**
- * Checks if `value` is classified as a boolean primitive or object.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isBoolean(false);
- * // => true
- *
- * _.isBoolean(null);
- * // => false
- */
-function isBoolean(value) {
-  return value === true || value === false ||
-    (isObjectLike(value) && objectToString.call(value) == boolTag);
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-module.exports = isBoolean;
-
-
-/***/ }),
-
-/***/ "./node_modules/lodash.isinteger/index.js":
-/*!************************************************!*\
-  !*** ./node_modules/lodash.isinteger/index.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0,
-    MAX_INTEGER = 1.7976931348623157e+308,
-    NAN = 0 / 0;
-
-/** `Object#toString` result references. */
-var symbolTag = '[object Symbol]';
-
-/** Used to match leading and trailing whitespace. */
-var reTrim = /^\s+|\s+$/g;
-
-/** Used to detect bad signed hexadecimal string values. */
-var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
-
-/** Used to detect binary string values. */
-var reIsBinary = /^0b[01]+$/i;
-
-/** Used to detect octal string values. */
-var reIsOctal = /^0o[0-7]+$/i;
-
-/** Built-in method references without a dependency on `root`. */
-var freeParseInt = parseInt;
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/**
- * Checks if `value` is an integer.
- *
- * **Note:** This method is based on
- * [`Number.isInteger`](https://mdn.io/Number/isInteger).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an integer, else `false`.
- * @example
- *
- * _.isInteger(3);
- * // => true
- *
- * _.isInteger(Number.MIN_VALUE);
- * // => false
- *
- * _.isInteger(Infinity);
- * // => false
- *
- * _.isInteger('3');
- * // => false
- */
-function isInteger(value) {
-  return typeof value == 'number' && value == toInteger(value);
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `Symbol` primitive or object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
- * @example
- *
- * _.isSymbol(Symbol.iterator);
- * // => true
- *
- * _.isSymbol('abc');
- * // => false
- */
-function isSymbol(value) {
-  return typeof value == 'symbol' ||
-    (isObjectLike(value) && objectToString.call(value) == symbolTag);
-}
-
-/**
- * Converts `value` to a finite number.
- *
- * @static
- * @memberOf _
- * @since 4.12.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted number.
- * @example
- *
- * _.toFinite(3.2);
- * // => 3.2
- *
- * _.toFinite(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toFinite(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toFinite('3.2');
- * // => 3.2
- */
-function toFinite(value) {
-  if (!value) {
-    return value === 0 ? value : 0;
-  }
-  value = toNumber(value);
-  if (value === INFINITY || value === -INFINITY) {
-    var sign = (value < 0 ? -1 : 1);
-    return sign * MAX_INTEGER;
-  }
-  return value === value ? value : 0;
-}
-
-/**
- * Converts `value` to an integer.
- *
- * **Note:** This method is loosely based on
- * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted integer.
- * @example
- *
- * _.toInteger(3.2);
- * // => 3
- *
- * _.toInteger(Number.MIN_VALUE);
- * // => 0
- *
- * _.toInteger(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toInteger('3.2');
- * // => 3
- */
-function toInteger(value) {
-  var result = toFinite(value),
-      remainder = result % 1;
-
-  return result === result ? (remainder ? result - remainder : result) : 0;
-}
-
-/**
- * Converts `value` to a number.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to process.
- * @returns {number} Returns the number.
- * @example
- *
- * _.toNumber(3.2);
- * // => 3.2
- *
- * _.toNumber(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toNumber(Infinity);
- * // => Infinity
- *
- * _.toNumber('3.2');
- * // => 3.2
- */
-function toNumber(value) {
-  if (typeof value == 'number') {
-    return value;
-  }
-  if (isSymbol(value)) {
-    return NAN;
-  }
-  if (isObject(value)) {
-    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
-    value = isObject(other) ? (other + '') : other;
-  }
-  if (typeof value != 'string') {
-    return value === 0 ? value : +value;
-  }
-  value = value.replace(reTrim, '');
-  var isBinary = reIsBinary.test(value);
-  return (isBinary || reIsOctal.test(value))
-    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
-    : (reIsBadHex.test(value) ? NAN : +value);
-}
-
-module.exports = isInteger;
-
-
-/***/ }),
-
-/***/ "./node_modules/lodash.isnumber/index.js":
-/*!***********************************************!*\
-  !*** ./node_modules/lodash.isnumber/index.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * lodash 3.0.3 (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <https://lodash.com/license>
- */
-
-/** `Object#toString` result references. */
-var numberTag = '[object Number]';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `Number` primitive or object.
- *
- * **Note:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are classified
- * as numbers, use the `_.isFinite` method.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isNumber(3);
- * // => true
- *
- * _.isNumber(Number.MIN_VALUE);
- * // => true
- *
- * _.isNumber(Infinity);
- * // => true
- *
- * _.isNumber('3');
- * // => false
- */
-function isNumber(value) {
-  return typeof value == 'number' ||
-    (isObjectLike(value) && objectToString.call(value) == numberTag);
-}
-
-module.exports = isNumber;
-
-
-/***/ }),
-
-/***/ "./node_modules/lodash.isplainobject/index.js":
-/*!****************************************************!*\
-  !*** ./node_modules/lodash.isplainobject/index.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** `Object#toString` result references. */
-var objectTag = '[object Object]';
-
-/**
- * Checks if `value` is a host object in IE < 9.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
- */
-function isHostObject(value) {
-  // Many host objects are `Object` objects that can coerce to strings
-  // despite having improperly defined `toString` methods.
-  var result = false;
-  if (value != null && typeof value.toString != 'function') {
-    try {
-      result = !!(value + '');
-    } catch (e) {}
-  }
-  return result;
-}
-
-/**
- * Creates a unary function that invokes `func` with its argument transformed.
- *
- * @private
- * @param {Function} func The function to wrap.
- * @param {Function} transform The argument transform.
- * @returns {Function} Returns the new function.
- */
-function overArg(func, transform) {
-  return function(arg) {
-    return func(transform(arg));
-  };
-}
-
-/** Used for built-in method references. */
-var funcProto = Function.prototype,
-    objectProto = Object.prototype;
-
-/** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/** Used to infer the `Object` constructor. */
-var objectCtorString = funcToString.call(Object);
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/** Built-in value references. */
-var getPrototype = overArg(Object.getPrototypeOf, Object);
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is a plain object, that is, an object created by the
- * `Object` constructor or one with a `[[Prototype]]` of `null`.
- *
- * @static
- * @memberOf _
- * @since 0.8.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- * }
- *
- * _.isPlainObject(new Foo);
- * // => false
- *
- * _.isPlainObject([1, 2, 3]);
- * // => false
- *
- * _.isPlainObject({ 'x': 0, 'y': 0 });
- * // => true
- *
- * _.isPlainObject(Object.create(null));
- * // => true
- */
-function isPlainObject(value) {
-  if (!isObjectLike(value) ||
-      objectToString.call(value) != objectTag || isHostObject(value)) {
-    return false;
-  }
-  var proto = getPrototype(value);
-  if (proto === null) {
-    return true;
-  }
-  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
-  return (typeof Ctor == 'function' &&
-    Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString);
-}
-
-module.exports = isPlainObject;
-
-
-/***/ }),
-
-/***/ "./node_modules/lodash.isstring/index.js":
-/*!***********************************************!*\
-  !*** ./node_modules/lodash.isstring/index.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * lodash 4.0.1 (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <https://lodash.com/license>
- */
-
-/** `Object#toString` result references. */
-var stringTag = '[object String]';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/**
- * Checks if `value` is classified as an `Array` object.
- *
- * @static
- * @memberOf _
- * @type Function
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isArray([1, 2, 3]);
- * // => true
- *
- * _.isArray(document.body.children);
- * // => false
- *
- * _.isArray('abc');
- * // => false
- *
- * _.isArray(_.noop);
- * // => false
- */
-var isArray = Array.isArray;
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `String` primitive or object.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isString('abc');
- * // => true
- *
- * _.isString(1);
- * // => false
- */
-function isString(value) {
-  return typeof value == 'string' ||
-    (!isArray(value) && isObjectLike(value) && objectToString.call(value) == stringTag);
-}
-
-module.exports = isString;
-
-
-/***/ }),
-
-/***/ "./node_modules/lodash.once/index.js":
-/*!*******************************************!*\
-  !*** ./node_modules/lodash.once/index.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as the `TypeError` message for "Functions" methods. */
-var FUNC_ERROR_TEXT = 'Expected a function';
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0,
-    MAX_INTEGER = 1.7976931348623157e+308,
-    NAN = 0 / 0;
-
-/** `Object#toString` result references. */
-var symbolTag = '[object Symbol]';
-
-/** Used to match leading and trailing whitespace. */
-var reTrim = /^\s+|\s+$/g;
-
-/** Used to detect bad signed hexadecimal string values. */
-var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
-
-/** Used to detect binary string values. */
-var reIsBinary = /^0b[01]+$/i;
-
-/** Used to detect octal string values. */
-var reIsOctal = /^0o[0-7]+$/i;
-
-/** Built-in method references without a dependency on `root`. */
-var freeParseInt = parseInt;
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/**
- * Creates a function that invokes `func`, with the `this` binding and arguments
- * of the created function, while it's called less than `n` times. Subsequent
- * calls to the created function return the result of the last `func` invocation.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category Function
- * @param {number} n The number of calls at which `func` is no longer invoked.
- * @param {Function} func The function to restrict.
- * @returns {Function} Returns the new restricted function.
- * @example
- *
- * jQuery(element).on('click', _.before(5, addContactToList));
- * // => Allows adding up to 4 contacts to the list.
- */
-function before(n, func) {
-  var result;
-  if (typeof func != 'function') {
-    throw new TypeError(FUNC_ERROR_TEXT);
-  }
-  n = toInteger(n);
-  return function() {
-    if (--n > 0) {
-      result = func.apply(this, arguments);
-    }
-    if (n <= 1) {
-      func = undefined;
-    }
-    return result;
-  };
-}
-
-/**
- * Creates a function that is restricted to invoking `func` once. Repeat calls
- * to the function return the value of the first invocation. The `func` is
- * invoked with the `this` binding and arguments of the created function.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Function
- * @param {Function} func The function to restrict.
- * @returns {Function} Returns the new restricted function.
- * @example
- *
- * var initialize = _.once(createApplication);
- * initialize();
- * initialize();
- * // => `createApplication` is invoked once
- */
-function once(func) {
-  return before(2, func);
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `Symbol` primitive or object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
- * @example
- *
- * _.isSymbol(Symbol.iterator);
- * // => true
- *
- * _.isSymbol('abc');
- * // => false
- */
-function isSymbol(value) {
-  return typeof value == 'symbol' ||
-    (isObjectLike(value) && objectToString.call(value) == symbolTag);
-}
-
-/**
- * Converts `value` to a finite number.
- *
- * @static
- * @memberOf _
- * @since 4.12.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted number.
- * @example
- *
- * _.toFinite(3.2);
- * // => 3.2
- *
- * _.toFinite(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toFinite(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toFinite('3.2');
- * // => 3.2
- */
-function toFinite(value) {
-  if (!value) {
-    return value === 0 ? value : 0;
-  }
-  value = toNumber(value);
-  if (value === INFINITY || value === -INFINITY) {
-    var sign = (value < 0 ? -1 : 1);
-    return sign * MAX_INTEGER;
-  }
-  return value === value ? value : 0;
-}
-
-/**
- * Converts `value` to an integer.
- *
- * **Note:** This method is loosely based on
- * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted integer.
- * @example
- *
- * _.toInteger(3.2);
- * // => 3
- *
- * _.toInteger(Number.MIN_VALUE);
- * // => 0
- *
- * _.toInteger(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toInteger('3.2');
- * // => 3
- */
-function toInteger(value) {
-  var result = toFinite(value),
-      remainder = result % 1;
-
-  return result === result ? (remainder ? result - remainder : result) : 0;
-}
-
-/**
- * Converts `value` to a number.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to process.
- * @returns {number} Returns the number.
- * @example
- *
- * _.toNumber(3.2);
- * // => 3.2
- *
- * _.toNumber(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toNumber(Infinity);
- * // => Infinity
- *
- * _.toNumber('3.2');
- * // => 3.2
- */
-function toNumber(value) {
-  if (typeof value == 'number') {
-    return value;
-  }
-  if (isSymbol(value)) {
-    return NAN;
-  }
-  if (isObject(value)) {
-    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
-    value = isObject(other) ? (other + '') : other;
-  }
-  if (typeof value != 'string') {
-    return value === 0 ? value : +value;
-  }
-  value = value.replace(reTrim, '');
-  var isBinary = reIsBinary.test(value);
-  return (isBinary || reIsOctal.test(value))
-    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
-    : (reIsBadHex.test(value) ? NAN : +value);
-}
-
-module.exports = once;
 
 
 /***/ }),
@@ -27954,6 +24750,516 @@ utils.encode = function encode(arr, enc) {
 
 /***/ }),
 
+/***/ "./node_modules/njwt/index.js":
+/*!************************************!*\
+  !*** ./node_modules/njwt/index.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer, process) {
+
+var util = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+var uuid = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
+var crypto = __webpack_require__(/*! crypto */ "./node_modules/crypto-browserify/index.js");
+var ecdsaSigFormatter = __webpack_require__(/*! ecdsa-sig-formatter */ "./node_modules/ecdsa-sig-formatter/src/ecdsa-sig-formatter.js");
+var properties = __webpack_require__(/*! ./properties.json */ "./node_modules/njwt/properties.json");
+
+var algCryptoMap = {
+  HS256: 'SHA256',
+  HS384: 'SHA384',
+  HS512: 'SHA512',
+  RS256: 'RSA-SHA256',
+  RS384: 'RSA-SHA384',
+  RS512: 'RSA-SHA512',
+  ES256: 'RSA-SHA256',
+  ES384: 'RSA-SHA384',
+  ES512: 'RSA-SHA512',
+  none: 'none'
+};
+
+var algTypeMap = {
+  HS256: 'hmac',
+  HS384: 'hmac',
+  HS512: 'hmac',
+  RS256: 'sign',
+  RS384: 'sign',
+  RS512: 'sign',
+  ES256: 'sign',
+  ES384: 'sign',
+  ES512: 'sign'
+};
+
+function isECDSA(algorithm) {
+  return algorithm.indexOf('ES') === 0;
+}
+
+function nowEpochSeconds(){
+  return Math.floor(new Date().getTime()/1000);
+}
+
+function base64urlEncode(data) {
+  const str = typeof data === 'number' ? data.toString() : data;
+  return Buffer.from(str)
+    .toString('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=/g, '');
+}
+
+function base64urlUnescape(str) {
+  str += new Array(5 - str.length % 4).join('=');
+  return str.replace(/\-/g, '+').replace(/_/g, '/');
+}
+
+function isSupportedAlg(alg){
+  return !!algCryptoMap[alg];
+}
+
+function handleError(cb,err,value){
+  if(typeof cb==='function'){
+    return process.nextTick(function() {
+      cb(err,value);
+    });
+  }else if(err){
+    throw err;
+  }else{
+    return value;
+  }
+}
+
+function defaultKeyResolver(kid, cb) {
+  return cb(null, this.signingKey);
+}
+
+function JwtError(message) {
+  this.name = 'JwtError';
+  this.message = this.userMessage = message;
+}
+util.inherits(JwtError, Error);
+
+function JwtParseError(message,jwtString,parsedHeader,parsedBody,innerError) {
+  this.name = 'JwtParseError';
+  this.message = this.userMessage = message;
+  this.jwtString = jwtString;
+  this.parsedHeader = parsedHeader;
+  this.parsedBody = parsedBody;
+  this.innerError = innerError;
+}
+util.inherits(JwtParseError, Error);
+
+function JwtBody(claims){
+  if(!(this instanceof JwtBody)){
+    return new JwtBody(claims);
+  }
+  var self = this;
+  if(claims){
+    Object.keys(claims).forEach(function(k){
+      self[k] = claims[k];
+    });
+  }
+  return this;
+}
+
+JwtBody.prototype.toJSON = function() {
+  var self = this;
+  return Object.keys(self).reduce(function(acc,key){
+    acc[key] = self[key];
+    return acc;
+  },{});
+};
+JwtBody.prototype.compact = function compact(){
+  return base64urlEncode(JSON.stringify(this));
+};
+
+function JwtHeader(header){
+  if(!(this instanceof JwtHeader)){
+    return new JwtHeader(header);
+  }
+  var self = this;
+  this.typ = header && header.typ || 'JWT';
+  this.alg = header && header.alg || 'HS256';
+
+  if(header){
+    return Object.keys(header).reduce(function(acc,key){
+      if(self.reservedKeys.indexOf(key)===-1 && header.hasOwnProperty(key)){
+        acc[key] = header[key];
+      }
+      return acc;
+    },this);
+  }else{
+    return this;
+  }
+}
+JwtHeader.prototype.reservedKeys = ['typ','alg'];
+JwtHeader.prototype.compact = function compact(){
+  return base64urlEncode(JSON.stringify(this));
+};
+
+function Jwt(claims, enforceDefaultFields){
+  if(!(this instanceof Jwt)){
+    return new Jwt(claims, enforceDefaultFields);
+  }
+
+  this.header = new JwtHeader();
+  this.body = new JwtBody(claims);
+
+  if (enforceDefaultFields !== false) {
+    this.setSigningAlgorithm('none');
+
+    if (!this.body.jti) {
+      this.setJti(uuid.v4());
+    }
+
+    if (!this.body.iat) {
+      this.setIssuedAt(nowEpochSeconds());
+    }
+  }
+
+  return this;
+}
+Jwt.prototype.setClaim = function setClaim(claim, value) {
+  this.body[claim] = value;
+  return this;
+};
+Jwt.prototype.setHeader = function setHeader(param, value) {
+  this.header[param] = value;
+  return this;
+};
+Jwt.prototype.setJti = function setJti(jti) {
+  this.body.jti = jti;
+  return this;
+};
+Jwt.prototype.setSubject = function setSubject(sub) {
+  this.body.sub = sub;
+  return this;
+};
+Jwt.prototype.setIssuer = function setIssuer(iss) {
+  this.body.iss = iss;
+  return this;
+};
+Jwt.prototype.setIssuedAt = function setIssuedAt(iat) {
+  this.body.iat = iat;
+  return this;
+};
+Jwt.prototype.setExpiration = function setExpiration(exp) {
+  if(exp){
+    this.body.exp = Math.floor((exp instanceof Date ? exp : new Date(exp)).getTime() / 1000);
+  }else{
+    delete this.body.exp;
+  }
+
+  return this;
+};
+Jwt.prototype.setNotBefore = function setNotBefore(nbf) {
+  if(nbf) {
+    this.body.nbf = Math.floor((nbf instanceof Date ? nbf : new Date(nbf)).getTime() / 1000);
+  } else {
+    delete this.body.nbf;
+  }
+
+  return this;
+};
+Jwt.prototype.setSigningKey = function setSigningKey(key) {
+  this.signingKey = key;
+  return this;
+};
+Jwt.prototype.setSigningAlgorithm = function setSigningAlgorithm(alg) {
+  if(!this.isSupportedAlg(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.header.alg = alg;
+  return this;
+};
+
+Jwt.prototype.sign = function sign(payload, algorithm, cryptoInput) {
+  var buffer;
+  var signature;
+  var cryptoAlgName = algCryptoMap[algorithm];
+  var signingType = algTypeMap[algorithm];
+
+  if (!cryptoAlgName) {
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+
+  if (signingType === 'hmac') {
+    buffer = crypto.createHmac(cryptoAlgName, cryptoInput).update(payload).digest();
+  } else {
+    buffer = crypto.createSign(cryptoAlgName).update(payload).sign(cryptoInput);
+  }
+
+  if (isECDSA(algorithm)) {
+    signature = ecdsaSigFormatter.derToJose(buffer, algorithm);
+  } else {
+    signature = base64urlEncode(buffer);
+  }
+
+  return signature;
+};
+
+Jwt.prototype.isSupportedAlg = isSupportedAlg;
+
+Jwt.prototype.compact = function compact() {
+
+  var segments = [];
+  segments.push(this.header.compact());
+  segments.push(this.body.compact());
+
+  if(this.header.alg !== 'none'){
+    if (this.signingKey) {
+      this.signature = this.sign(segments.join('.'), this.header.alg, this.signingKey);
+      segments.push(this.signature);
+    }else{
+      throw new Error(properties.errors.SIGNING_KEY_REQUIRED);
+    }
+  }
+
+  return segments.join('.');
+};
+
+Jwt.prototype.toString = function(){
+  return this.compact();
+};
+
+Jwt.prototype.isExpired = function() {
+  return new Date(this.body.exp*1000) < new Date();
+};
+
+Jwt.prototype.isNotBefore = function() {
+  return new Date(this.body.nbf * 1000) >= new Date();
+};
+
+function Parser(options){
+  return this;
+}
+
+Parser.prototype.isSupportedAlg = isSupportedAlg;
+Parser.prototype.safeJsonParse = function(input) {
+  var result;
+  try{
+    result = JSON.parse(Buffer.from(base64urlUnescape(input),'base64'));
+  }catch(e){
+    return e;
+  }
+  return result;
+};
+Parser.prototype.parse = function parse(jwtString,cb){
+
+  var done = handleError.bind(null,cb);
+  var segments = jwtString.split('.');
+  var signature;
+
+  if(segments.length<2 || segments.length>3){
+    return done(new JwtParseError(properties.errors.PARSE_ERROR,jwtString,null,null));
+  }
+
+  var header = this.safeJsonParse(segments[0]);
+  var body = this.safeJsonParse(segments[1]);
+
+  if(segments[2]){
+    signature = Buffer.from(base64urlUnescape(segments[2]),'base64')
+      .toString('base64');
+  }
+
+  if(header instanceof Error){
+    return done(new JwtParseError(properties.errors.PARSE_ERROR,jwtString,null,null,header));
+  }
+  if(body instanceof Error){
+    return done(new JwtParseError(properties.errors.PARSE_ERROR,jwtString,header,null,body));
+  }
+  var jwt = new Jwt(body, false);
+  jwt.setSigningAlgorithm(header.alg);
+  jwt.signature = signature;
+  jwt.verificationInput = segments[0] +'.' + segments[1];
+  jwt.header = new JwtHeader(header);
+  return done(null,jwt);
+};
+
+function Verifier(){
+  if(!(this instanceof Verifier)){
+    return new Verifier();
+  }
+  this.setSigningAlgorithm('HS256');
+  this.setKeyResolver(defaultKeyResolver.bind(this));
+  return this;
+}
+Verifier.prototype.setSigningAlgorithm = function setSigningAlgorithm(alg) {
+  if(!this.isSupportedAlg(alg)){
+    throw new JwtError(properties.errors.UNSUPPORTED_SIGNING_ALG);
+  }
+  this.signingAlgorithm = alg;
+  return this;
+};
+Verifier.prototype.setSigningKey = function setSigningKey(keyStr) {
+  this.signingKey = keyStr;
+  return this;
+};
+Verifier.prototype.setKeyResolver = function setKeyResolver(keyResolver) {
+  this.keyResolver = keyResolver.bind(this);
+};
+Verifier.prototype.isSupportedAlg = isSupportedAlg;
+
+Verifier.prototype.verify = function verify(jwtString,cb){
+  var jwt;
+
+  var done = handleError.bind(null,cb);
+
+  try {
+    jwt = new Parser().parse(jwtString);
+  } catch(e) {
+    return done(e);
+  }
+
+  var body = jwt.body;
+  var header = jwt.header;
+  var signature = jwt.signature;
+
+  var cryptoAlgName = algCryptoMap[header.alg];
+  var signingType = algTypeMap[header.alg];
+
+  if (header.alg !== this.signingAlgorithm) {
+    return done(new JwtParseError(properties.errors.SIGNATURE_ALGORITHM_MISMTACH,jwtString,header,body));
+  }
+
+  if (jwt.isExpired()) {
+    return done(new JwtParseError(properties.errors.EXPIRED,jwtString,header,body));
+  }
+
+  if (jwt.isNotBefore()) {
+    return done(new JwtParseError(properties.errors.NOT_ACTIVE,jwtString,header,body));
+  }
+
+  var digstInput = jwt.verificationInput;
+  var verified, digest;
+
+  return this.keyResolver(header.kid, function(err, signingKey) {
+
+    if (err) {
+      return done(new JwtParseError(util.format(properties.errors.KEY_RESOLVER_ERROR, header.kid),jwtString,header,body, err));
+    }
+
+
+    if( cryptoAlgName==='none') {
+      verified = true;
+    } else if(signingType === 'hmac') {
+      digest = crypto.createHmac(cryptoAlgName, signingKey)
+        .update(digstInput)
+        .digest('base64');
+      verified = signature === digest;
+    } else {
+      var unescapedSignature;
+      var signatureType = undefined;
+
+      if (isECDSA(header.alg)) {
+        try {
+          unescapedSignature = ecdsaSigFormatter.joseToDer(signature, header.alg);
+        } catch (err) {
+          return done(new JwtParseError(properties.errors.SIGNATURE_MISMTACH,jwtString,header,body,err));
+        }
+      } else {
+        signatureType = 'base64';
+        unescapedSignature = base64urlUnescape(signature);
+      }
+
+      verified = crypto.createVerify(cryptoAlgName)
+        .update(digstInput)
+        .verify(signingKey, unescapedSignature, signatureType);
+    }
+
+    var newJwt = new Jwt(body, false);
+
+    newJwt.toString = function () {
+      return jwtString;
+    };
+
+    newJwt.header = new JwtHeader(header);
+
+    if (!verified) {
+      return done(new JwtParseError(properties.errors.SIGNATURE_MISMTACH,jwtString,header,body));
+    }
+
+    return done(null, newJwt);
+  });
+};
+
+Verifier.prototype.withKeyResolver = function withKeyResolver(keyResolver) {
+  this.keyResolver = keyResolver;
+  return this;
+};
+
+var jwtLib = {
+  Jwt: Jwt,
+  JwtBody: JwtBody,
+  JwtHeader: JwtHeader,
+  Verifier: Verifier,
+  base64urlEncode: base64urlEncode,
+  base64urlUnescape:base64urlUnescape,
+  verify: function(/*jwtTokenString, [signingKey], [algOverride], [callbck] */){
+
+    var args = Array.prototype.slice.call(arguments);
+    var cb = typeof args[args.length-1] === 'function' ? args.pop() : null;
+
+    var verifier = new Verifier();
+
+    if(args.length===3){
+      verifier.setSigningAlgorithm(args[2]);
+      verifier.setSigningKey(args[1]);
+    }
+
+    if(args.length===2){
+      verifier.setSigningKey(args[1]);
+    }
+
+    if(args.length===1){
+      verifier.setSigningAlgorithm('none');
+    }
+
+    return verifier.verify(args[0], cb);
+
+  },
+  createVerifier: function(){
+    return new Verifier();
+  },
+  create: function(claims,secret,alg){
+    var args = Array.prototype.slice.call(arguments);
+    var jwt;
+    if(args.length >= 2){
+      jwt = new Jwt(claims);
+    }else if (args.length===1 && typeof claims === 'string'){
+      jwt = new Jwt({});
+      secret = claims;
+    }else{
+      jwt = new Jwt(claims);
+    }
+    if(alg!=='none' && !secret){
+      throw new Error(properties.errors.SIGNING_KEY_REQUIRED);
+    }else{
+      jwt.setSigningAlgorithm(args.length===3 ? alg : 'HS256');
+      jwt.setSigningKey(secret);
+    }
+    jwt.setExpiration((nowEpochSeconds() + (60*60))*1000); // one hour
+    return jwt;
+  }
+};
+
+module.exports = jwtLib;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../buffer/index.js */ "./node_modules/buffer/index.js").Buffer, __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./node_modules/njwt/properties.json":
+/*!*******************************************!*\
+  !*** ./node_modules/njwt/properties.json ***!
+  \*******************************************/
+/*! exports provided: errors, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"errors\":{\"PARSE_ERROR\":\"Jwt cannot be parsed\",\"EXPIRED\":\"Jwt is expired\",\"UNSUPPORTED_SIGNING_ALG\":\"Unsupported signing algorithm\",\"SIGNING_KEY_REQUIRED\":\"Signing key is required\",\"SIGNATURE_MISMTACH\":\"Signature verification failed\",\"SIGNATURE_ALGORITHM_MISMTACH\":\"Unexpected signature algorithm\",\"NOT_ACTIVE\":\"Jwt not active\",\"KEY_RESOLVER_ERROR\":\"Error while resolving signing key for kid \\\"%s\\\"\"}}");
+
+/***/ }),
+
 /***/ "./node_modules/parse-asn1/aesid.json":
 /*!********************************************!*\
   !*** ./node_modules/parse-asn1/aesid.json ***!
@@ -34690,1501 +31996,6 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   return buffer.SlowBuffer(size)
 }
 
-
-/***/ }),
-
-/***/ "./node_modules/semver/semver.js":
-/*!***************************************!*\
-  !*** ./node_modules/semver/semver.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {exports = module.exports = SemVer
-
-var debug
-/* istanbul ignore next */
-if (typeof process === 'object' &&
-    process.env &&
-    process.env.NODE_DEBUG &&
-    /\bsemver\b/i.test(process.env.NODE_DEBUG)) {
-  debug = function () {
-    var args = Array.prototype.slice.call(arguments, 0)
-    args.unshift('SEMVER')
-    console.log.apply(console, args)
-  }
-} else {
-  debug = function () {}
-}
-
-// Note: this is the semver.org version of the spec that it implements
-// Not necessarily the package version of this code.
-exports.SEMVER_SPEC_VERSION = '2.0.0'
-
-var MAX_LENGTH = 256
-var MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER ||
-  /* istanbul ignore next */ 9007199254740991
-
-// Max safe segment length for coercion.
-var MAX_SAFE_COMPONENT_LENGTH = 16
-
-// The actual regexps go on exports.re
-var re = exports.re = []
-var src = exports.src = []
-var R = 0
-
-// The following Regular Expressions can be used for tokenizing,
-// validating, and parsing SemVer version strings.
-
-// ## Numeric Identifier
-// A single `0`, or a non-zero digit followed by zero or more digits.
-
-var NUMERICIDENTIFIER = R++
-src[NUMERICIDENTIFIER] = '0|[1-9]\\d*'
-var NUMERICIDENTIFIERLOOSE = R++
-src[NUMERICIDENTIFIERLOOSE] = '[0-9]+'
-
-// ## Non-numeric Identifier
-// Zero or more digits, followed by a letter or hyphen, and then zero or
-// more letters, digits, or hyphens.
-
-var NONNUMERICIDENTIFIER = R++
-src[NONNUMERICIDENTIFIER] = '\\d*[a-zA-Z-][a-zA-Z0-9-]*'
-
-// ## Main Version
-// Three dot-separated numeric identifiers.
-
-var MAINVERSION = R++
-src[MAINVERSION] = '(' + src[NUMERICIDENTIFIER] + ')\\.' +
-                   '(' + src[NUMERICIDENTIFIER] + ')\\.' +
-                   '(' + src[NUMERICIDENTIFIER] + ')'
-
-var MAINVERSIONLOOSE = R++
-src[MAINVERSIONLOOSE] = '(' + src[NUMERICIDENTIFIERLOOSE] + ')\\.' +
-                        '(' + src[NUMERICIDENTIFIERLOOSE] + ')\\.' +
-                        '(' + src[NUMERICIDENTIFIERLOOSE] + ')'
-
-// ## Pre-release Version Identifier
-// A numeric identifier, or a non-numeric identifier.
-
-var PRERELEASEIDENTIFIER = R++
-src[PRERELEASEIDENTIFIER] = '(?:' + src[NUMERICIDENTIFIER] +
-                            '|' + src[NONNUMERICIDENTIFIER] + ')'
-
-var PRERELEASEIDENTIFIERLOOSE = R++
-src[PRERELEASEIDENTIFIERLOOSE] = '(?:' + src[NUMERICIDENTIFIERLOOSE] +
-                                 '|' + src[NONNUMERICIDENTIFIER] + ')'
-
-// ## Pre-release Version
-// Hyphen, followed by one or more dot-separated pre-release version
-// identifiers.
-
-var PRERELEASE = R++
-src[PRERELEASE] = '(?:-(' + src[PRERELEASEIDENTIFIER] +
-                  '(?:\\.' + src[PRERELEASEIDENTIFIER] + ')*))'
-
-var PRERELEASELOOSE = R++
-src[PRERELEASELOOSE] = '(?:-?(' + src[PRERELEASEIDENTIFIERLOOSE] +
-                       '(?:\\.' + src[PRERELEASEIDENTIFIERLOOSE] + ')*))'
-
-// ## Build Metadata Identifier
-// Any combination of digits, letters, or hyphens.
-
-var BUILDIDENTIFIER = R++
-src[BUILDIDENTIFIER] = '[0-9A-Za-z-]+'
-
-// ## Build Metadata
-// Plus sign, followed by one or more period-separated build metadata
-// identifiers.
-
-var BUILD = R++
-src[BUILD] = '(?:\\+(' + src[BUILDIDENTIFIER] +
-             '(?:\\.' + src[BUILDIDENTIFIER] + ')*))'
-
-// ## Full Version String
-// A main version, followed optionally by a pre-release version and
-// build metadata.
-
-// Note that the only major, minor, patch, and pre-release sections of
-// the version string are capturing groups.  The build metadata is not a
-// capturing group, because it should not ever be used in version
-// comparison.
-
-var FULL = R++
-var FULLPLAIN = 'v?' + src[MAINVERSION] +
-                src[PRERELEASE] + '?' +
-                src[BUILD] + '?'
-
-src[FULL] = '^' + FULLPLAIN + '$'
-
-// like full, but allows v1.2.3 and =1.2.3, which people do sometimes.
-// also, 1.0.0alpha1 (prerelease without the hyphen) which is pretty
-// common in the npm registry.
-var LOOSEPLAIN = '[v=\\s]*' + src[MAINVERSIONLOOSE] +
-                 src[PRERELEASELOOSE] + '?' +
-                 src[BUILD] + '?'
-
-var LOOSE = R++
-src[LOOSE] = '^' + LOOSEPLAIN + '$'
-
-var GTLT = R++
-src[GTLT] = '((?:<|>)?=?)'
-
-// Something like "2.*" or "1.2.x".
-// Note that "x.x" is a valid xRange identifer, meaning "any version"
-// Only the first item is strictly required.
-var XRANGEIDENTIFIERLOOSE = R++
-src[XRANGEIDENTIFIERLOOSE] = src[NUMERICIDENTIFIERLOOSE] + '|x|X|\\*'
-var XRANGEIDENTIFIER = R++
-src[XRANGEIDENTIFIER] = src[NUMERICIDENTIFIER] + '|x|X|\\*'
-
-var XRANGEPLAIN = R++
-src[XRANGEPLAIN] = '[v=\\s]*(' + src[XRANGEIDENTIFIER] + ')' +
-                   '(?:\\.(' + src[XRANGEIDENTIFIER] + ')' +
-                   '(?:\\.(' + src[XRANGEIDENTIFIER] + ')' +
-                   '(?:' + src[PRERELEASE] + ')?' +
-                   src[BUILD] + '?' +
-                   ')?)?'
-
-var XRANGEPLAINLOOSE = R++
-src[XRANGEPLAINLOOSE] = '[v=\\s]*(' + src[XRANGEIDENTIFIERLOOSE] + ')' +
-                        '(?:\\.(' + src[XRANGEIDENTIFIERLOOSE] + ')' +
-                        '(?:\\.(' + src[XRANGEIDENTIFIERLOOSE] + ')' +
-                        '(?:' + src[PRERELEASELOOSE] + ')?' +
-                        src[BUILD] + '?' +
-                        ')?)?'
-
-var XRANGE = R++
-src[XRANGE] = '^' + src[GTLT] + '\\s*' + src[XRANGEPLAIN] + '$'
-var XRANGELOOSE = R++
-src[XRANGELOOSE] = '^' + src[GTLT] + '\\s*' + src[XRANGEPLAINLOOSE] + '$'
-
-// Coercion.
-// Extract anything that could conceivably be a part of a valid semver
-var COERCE = R++
-src[COERCE] = '(?:^|[^\\d])' +
-              '(\\d{1,' + MAX_SAFE_COMPONENT_LENGTH + '})' +
-              '(?:\\.(\\d{1,' + MAX_SAFE_COMPONENT_LENGTH + '}))?' +
-              '(?:\\.(\\d{1,' + MAX_SAFE_COMPONENT_LENGTH + '}))?' +
-              '(?:$|[^\\d])'
-
-// Tilde ranges.
-// Meaning is "reasonably at or greater than"
-var LONETILDE = R++
-src[LONETILDE] = '(?:~>?)'
-
-var TILDETRIM = R++
-src[TILDETRIM] = '(\\s*)' + src[LONETILDE] + '\\s+'
-re[TILDETRIM] = new RegExp(src[TILDETRIM], 'g')
-var tildeTrimReplace = '$1~'
-
-var TILDE = R++
-src[TILDE] = '^' + src[LONETILDE] + src[XRANGEPLAIN] + '$'
-var TILDELOOSE = R++
-src[TILDELOOSE] = '^' + src[LONETILDE] + src[XRANGEPLAINLOOSE] + '$'
-
-// Caret ranges.
-// Meaning is "at least and backwards compatible with"
-var LONECARET = R++
-src[LONECARET] = '(?:\\^)'
-
-var CARETTRIM = R++
-src[CARETTRIM] = '(\\s*)' + src[LONECARET] + '\\s+'
-re[CARETTRIM] = new RegExp(src[CARETTRIM], 'g')
-var caretTrimReplace = '$1^'
-
-var CARET = R++
-src[CARET] = '^' + src[LONECARET] + src[XRANGEPLAIN] + '$'
-var CARETLOOSE = R++
-src[CARETLOOSE] = '^' + src[LONECARET] + src[XRANGEPLAINLOOSE] + '$'
-
-// A simple gt/lt/eq thing, or just "" to indicate "any version"
-var COMPARATORLOOSE = R++
-src[COMPARATORLOOSE] = '^' + src[GTLT] + '\\s*(' + LOOSEPLAIN + ')$|^$'
-var COMPARATOR = R++
-src[COMPARATOR] = '^' + src[GTLT] + '\\s*(' + FULLPLAIN + ')$|^$'
-
-// An expression to strip any whitespace between the gtlt and the thing
-// it modifies, so that `> 1.2.3` ==> `>1.2.3`
-var COMPARATORTRIM = R++
-src[COMPARATORTRIM] = '(\\s*)' + src[GTLT] +
-                      '\\s*(' + LOOSEPLAIN + '|' + src[XRANGEPLAIN] + ')'
-
-// this one has to use the /g flag
-re[COMPARATORTRIM] = new RegExp(src[COMPARATORTRIM], 'g')
-var comparatorTrimReplace = '$1$2$3'
-
-// Something like `1.2.3 - 1.2.4`
-// Note that these all use the loose form, because they'll be
-// checked against either the strict or loose comparator form
-// later.
-var HYPHENRANGE = R++
-src[HYPHENRANGE] = '^\\s*(' + src[XRANGEPLAIN] + ')' +
-                   '\\s+-\\s+' +
-                   '(' + src[XRANGEPLAIN] + ')' +
-                   '\\s*$'
-
-var HYPHENRANGELOOSE = R++
-src[HYPHENRANGELOOSE] = '^\\s*(' + src[XRANGEPLAINLOOSE] + ')' +
-                        '\\s+-\\s+' +
-                        '(' + src[XRANGEPLAINLOOSE] + ')' +
-                        '\\s*$'
-
-// Star ranges basically just allow anything at all.
-var STAR = R++
-src[STAR] = '(<|>)?=?\\s*\\*'
-
-// Compile to actual regexp objects.
-// All are flag-free, unless they were created above with a flag.
-for (var i = 0; i < R; i++) {
-  debug(i, src[i])
-  if (!re[i]) {
-    re[i] = new RegExp(src[i])
-  }
-}
-
-exports.parse = parse
-function parse (version, options) {
-  if (!options || typeof options !== 'object') {
-    options = {
-      loose: !!options,
-      includePrerelease: false
-    }
-  }
-
-  if (version instanceof SemVer) {
-    return version
-  }
-
-  if (typeof version !== 'string') {
-    return null
-  }
-
-  if (version.length > MAX_LENGTH) {
-    return null
-  }
-
-  var r = options.loose ? re[LOOSE] : re[FULL]
-  if (!r.test(version)) {
-    return null
-  }
-
-  try {
-    return new SemVer(version, options)
-  } catch (er) {
-    return null
-  }
-}
-
-exports.valid = valid
-function valid (version, options) {
-  var v = parse(version, options)
-  return v ? v.version : null
-}
-
-exports.clean = clean
-function clean (version, options) {
-  var s = parse(version.trim().replace(/^[=v]+/, ''), options)
-  return s ? s.version : null
-}
-
-exports.SemVer = SemVer
-
-function SemVer (version, options) {
-  if (!options || typeof options !== 'object') {
-    options = {
-      loose: !!options,
-      includePrerelease: false
-    }
-  }
-  if (version instanceof SemVer) {
-    if (version.loose === options.loose) {
-      return version
-    } else {
-      version = version.version
-    }
-  } else if (typeof version !== 'string') {
-    throw new TypeError('Invalid Version: ' + version)
-  }
-
-  if (version.length > MAX_LENGTH) {
-    throw new TypeError('version is longer than ' + MAX_LENGTH + ' characters')
-  }
-
-  if (!(this instanceof SemVer)) {
-    return new SemVer(version, options)
-  }
-
-  debug('SemVer', version, options)
-  this.options = options
-  this.loose = !!options.loose
-
-  var m = version.trim().match(options.loose ? re[LOOSE] : re[FULL])
-
-  if (!m) {
-    throw new TypeError('Invalid Version: ' + version)
-  }
-
-  this.raw = version
-
-  // these are actually numbers
-  this.major = +m[1]
-  this.minor = +m[2]
-  this.patch = +m[3]
-
-  if (this.major > MAX_SAFE_INTEGER || this.major < 0) {
-    throw new TypeError('Invalid major version')
-  }
-
-  if (this.minor > MAX_SAFE_INTEGER || this.minor < 0) {
-    throw new TypeError('Invalid minor version')
-  }
-
-  if (this.patch > MAX_SAFE_INTEGER || this.patch < 0) {
-    throw new TypeError('Invalid patch version')
-  }
-
-  // numberify any prerelease numeric ids
-  if (!m[4]) {
-    this.prerelease = []
-  } else {
-    this.prerelease = m[4].split('.').map(function (id) {
-      if (/^[0-9]+$/.test(id)) {
-        var num = +id
-        if (num >= 0 && num < MAX_SAFE_INTEGER) {
-          return num
-        }
-      }
-      return id
-    })
-  }
-
-  this.build = m[5] ? m[5].split('.') : []
-  this.format()
-}
-
-SemVer.prototype.format = function () {
-  this.version = this.major + '.' + this.minor + '.' + this.patch
-  if (this.prerelease.length) {
-    this.version += '-' + this.prerelease.join('.')
-  }
-  return this.version
-}
-
-SemVer.prototype.toString = function () {
-  return this.version
-}
-
-SemVer.prototype.compare = function (other) {
-  debug('SemVer.compare', this.version, this.options, other)
-  if (!(other instanceof SemVer)) {
-    other = new SemVer(other, this.options)
-  }
-
-  return this.compareMain(other) || this.comparePre(other)
-}
-
-SemVer.prototype.compareMain = function (other) {
-  if (!(other instanceof SemVer)) {
-    other = new SemVer(other, this.options)
-  }
-
-  return compareIdentifiers(this.major, other.major) ||
-         compareIdentifiers(this.minor, other.minor) ||
-         compareIdentifiers(this.patch, other.patch)
-}
-
-SemVer.prototype.comparePre = function (other) {
-  if (!(other instanceof SemVer)) {
-    other = new SemVer(other, this.options)
-  }
-
-  // NOT having a prerelease is > having one
-  if (this.prerelease.length && !other.prerelease.length) {
-    return -1
-  } else if (!this.prerelease.length && other.prerelease.length) {
-    return 1
-  } else if (!this.prerelease.length && !other.prerelease.length) {
-    return 0
-  }
-
-  var i = 0
-  do {
-    var a = this.prerelease[i]
-    var b = other.prerelease[i]
-    debug('prerelease compare', i, a, b)
-    if (a === undefined && b === undefined) {
-      return 0
-    } else if (b === undefined) {
-      return 1
-    } else if (a === undefined) {
-      return -1
-    } else if (a === b) {
-      continue
-    } else {
-      return compareIdentifiers(a, b)
-    }
-  } while (++i)
-}
-
-// preminor will bump the version up to the next minor release, and immediately
-// down to pre-release. premajor and prepatch work the same way.
-SemVer.prototype.inc = function (release, identifier) {
-  switch (release) {
-    case 'premajor':
-      this.prerelease.length = 0
-      this.patch = 0
-      this.minor = 0
-      this.major++
-      this.inc('pre', identifier)
-      break
-    case 'preminor':
-      this.prerelease.length = 0
-      this.patch = 0
-      this.minor++
-      this.inc('pre', identifier)
-      break
-    case 'prepatch':
-      // If this is already a prerelease, it will bump to the next version
-      // drop any prereleases that might already exist, since they are not
-      // relevant at this point.
-      this.prerelease.length = 0
-      this.inc('patch', identifier)
-      this.inc('pre', identifier)
-      break
-    // If the input is a non-prerelease version, this acts the same as
-    // prepatch.
-    case 'prerelease':
-      if (this.prerelease.length === 0) {
-        this.inc('patch', identifier)
-      }
-      this.inc('pre', identifier)
-      break
-
-    case 'major':
-      // If this is a pre-major version, bump up to the same major version.
-      // Otherwise increment major.
-      // 1.0.0-5 bumps to 1.0.0
-      // 1.1.0 bumps to 2.0.0
-      if (this.minor !== 0 ||
-          this.patch !== 0 ||
-          this.prerelease.length === 0) {
-        this.major++
-      }
-      this.minor = 0
-      this.patch = 0
-      this.prerelease = []
-      break
-    case 'minor':
-      // If this is a pre-minor version, bump up to the same minor version.
-      // Otherwise increment minor.
-      // 1.2.0-5 bumps to 1.2.0
-      // 1.2.1 bumps to 1.3.0
-      if (this.patch !== 0 || this.prerelease.length === 0) {
-        this.minor++
-      }
-      this.patch = 0
-      this.prerelease = []
-      break
-    case 'patch':
-      // If this is not a pre-release version, it will increment the patch.
-      // If it is a pre-release it will bump up to the same patch version.
-      // 1.2.0-5 patches to 1.2.0
-      // 1.2.0 patches to 1.2.1
-      if (this.prerelease.length === 0) {
-        this.patch++
-      }
-      this.prerelease = []
-      break
-    // This probably shouldn't be used publicly.
-    // 1.0.0 "pre" would become 1.0.0-0 which is the wrong direction.
-    case 'pre':
-      if (this.prerelease.length === 0) {
-        this.prerelease = [0]
-      } else {
-        var i = this.prerelease.length
-        while (--i >= 0) {
-          if (typeof this.prerelease[i] === 'number') {
-            this.prerelease[i]++
-            i = -2
-          }
-        }
-        if (i === -1) {
-          // didn't increment anything
-          this.prerelease.push(0)
-        }
-      }
-      if (identifier) {
-        // 1.2.0-beta.1 bumps to 1.2.0-beta.2,
-        // 1.2.0-beta.fooblz or 1.2.0-beta bumps to 1.2.0-beta.0
-        if (this.prerelease[0] === identifier) {
-          if (isNaN(this.prerelease[1])) {
-            this.prerelease = [identifier, 0]
-          }
-        } else {
-          this.prerelease = [identifier, 0]
-        }
-      }
-      break
-
-    default:
-      throw new Error('invalid increment argument: ' + release)
-  }
-  this.format()
-  this.raw = this.version
-  return this
-}
-
-exports.inc = inc
-function inc (version, release, loose, identifier) {
-  if (typeof (loose) === 'string') {
-    identifier = loose
-    loose = undefined
-  }
-
-  try {
-    return new SemVer(version, loose).inc(release, identifier).version
-  } catch (er) {
-    return null
-  }
-}
-
-exports.diff = diff
-function diff (version1, version2) {
-  if (eq(version1, version2)) {
-    return null
-  } else {
-    var v1 = parse(version1)
-    var v2 = parse(version2)
-    var prefix = ''
-    if (v1.prerelease.length || v2.prerelease.length) {
-      prefix = 'pre'
-      var defaultResult = 'prerelease'
-    }
-    for (var key in v1) {
-      if (key === 'major' || key === 'minor' || key === 'patch') {
-        if (v1[key] !== v2[key]) {
-          return prefix + key
-        }
-      }
-    }
-    return defaultResult // may be undefined
-  }
-}
-
-exports.compareIdentifiers = compareIdentifiers
-
-var numeric = /^[0-9]+$/
-function compareIdentifiers (a, b) {
-  var anum = numeric.test(a)
-  var bnum = numeric.test(b)
-
-  if (anum && bnum) {
-    a = +a
-    b = +b
-  }
-
-  return a === b ? 0
-    : (anum && !bnum) ? -1
-    : (bnum && !anum) ? 1
-    : a < b ? -1
-    : 1
-}
-
-exports.rcompareIdentifiers = rcompareIdentifiers
-function rcompareIdentifiers (a, b) {
-  return compareIdentifiers(b, a)
-}
-
-exports.major = major
-function major (a, loose) {
-  return new SemVer(a, loose).major
-}
-
-exports.minor = minor
-function minor (a, loose) {
-  return new SemVer(a, loose).minor
-}
-
-exports.patch = patch
-function patch (a, loose) {
-  return new SemVer(a, loose).patch
-}
-
-exports.compare = compare
-function compare (a, b, loose) {
-  return new SemVer(a, loose).compare(new SemVer(b, loose))
-}
-
-exports.compareLoose = compareLoose
-function compareLoose (a, b) {
-  return compare(a, b, true)
-}
-
-exports.rcompare = rcompare
-function rcompare (a, b, loose) {
-  return compare(b, a, loose)
-}
-
-exports.sort = sort
-function sort (list, loose) {
-  return list.sort(function (a, b) {
-    return exports.compare(a, b, loose)
-  })
-}
-
-exports.rsort = rsort
-function rsort (list, loose) {
-  return list.sort(function (a, b) {
-    return exports.rcompare(a, b, loose)
-  })
-}
-
-exports.gt = gt
-function gt (a, b, loose) {
-  return compare(a, b, loose) > 0
-}
-
-exports.lt = lt
-function lt (a, b, loose) {
-  return compare(a, b, loose) < 0
-}
-
-exports.eq = eq
-function eq (a, b, loose) {
-  return compare(a, b, loose) === 0
-}
-
-exports.neq = neq
-function neq (a, b, loose) {
-  return compare(a, b, loose) !== 0
-}
-
-exports.gte = gte
-function gte (a, b, loose) {
-  return compare(a, b, loose) >= 0
-}
-
-exports.lte = lte
-function lte (a, b, loose) {
-  return compare(a, b, loose) <= 0
-}
-
-exports.cmp = cmp
-function cmp (a, op, b, loose) {
-  switch (op) {
-    case '===':
-      if (typeof a === 'object')
-        a = a.version
-      if (typeof b === 'object')
-        b = b.version
-      return a === b
-
-    case '!==':
-      if (typeof a === 'object')
-        a = a.version
-      if (typeof b === 'object')
-        b = b.version
-      return a !== b
-
-    case '':
-    case '=':
-    case '==':
-      return eq(a, b, loose)
-
-    case '!=':
-      return neq(a, b, loose)
-
-    case '>':
-      return gt(a, b, loose)
-
-    case '>=':
-      return gte(a, b, loose)
-
-    case '<':
-      return lt(a, b, loose)
-
-    case '<=':
-      return lte(a, b, loose)
-
-    default:
-      throw new TypeError('Invalid operator: ' + op)
-  }
-}
-
-exports.Comparator = Comparator
-function Comparator (comp, options) {
-  if (!options || typeof options !== 'object') {
-    options = {
-      loose: !!options,
-      includePrerelease: false
-    }
-  }
-
-  if (comp instanceof Comparator) {
-    if (comp.loose === !!options.loose) {
-      return comp
-    } else {
-      comp = comp.value
-    }
-  }
-
-  if (!(this instanceof Comparator)) {
-    return new Comparator(comp, options)
-  }
-
-  debug('comparator', comp, options)
-  this.options = options
-  this.loose = !!options.loose
-  this.parse(comp)
-
-  if (this.semver === ANY) {
-    this.value = ''
-  } else {
-    this.value = this.operator + this.semver.version
-  }
-
-  debug('comp', this)
-}
-
-var ANY = {}
-Comparator.prototype.parse = function (comp) {
-  var r = this.options.loose ? re[COMPARATORLOOSE] : re[COMPARATOR]
-  var m = comp.match(r)
-
-  if (!m) {
-    throw new TypeError('Invalid comparator: ' + comp)
-  }
-
-  this.operator = m[1]
-  if (this.operator === '=') {
-    this.operator = ''
-  }
-
-  // if it literally is just '>' or '' then allow anything.
-  if (!m[2]) {
-    this.semver = ANY
-  } else {
-    this.semver = new SemVer(m[2], this.options.loose)
-  }
-}
-
-Comparator.prototype.toString = function () {
-  return this.value
-}
-
-Comparator.prototype.test = function (version) {
-  debug('Comparator.test', version, this.options.loose)
-
-  if (this.semver === ANY) {
-    return true
-  }
-
-  if (typeof version === 'string') {
-    version = new SemVer(version, this.options)
-  }
-
-  return cmp(version, this.operator, this.semver, this.options)
-}
-
-Comparator.prototype.intersects = function (comp, options) {
-  if (!(comp instanceof Comparator)) {
-    throw new TypeError('a Comparator is required')
-  }
-
-  if (!options || typeof options !== 'object') {
-    options = {
-      loose: !!options,
-      includePrerelease: false
-    }
-  }
-
-  var rangeTmp
-
-  if (this.operator === '') {
-    rangeTmp = new Range(comp.value, options)
-    return satisfies(this.value, rangeTmp, options)
-  } else if (comp.operator === '') {
-    rangeTmp = new Range(this.value, options)
-    return satisfies(comp.semver, rangeTmp, options)
-  }
-
-  var sameDirectionIncreasing =
-    (this.operator === '>=' || this.operator === '>') &&
-    (comp.operator === '>=' || comp.operator === '>')
-  var sameDirectionDecreasing =
-    (this.operator === '<=' || this.operator === '<') &&
-    (comp.operator === '<=' || comp.operator === '<')
-  var sameSemVer = this.semver.version === comp.semver.version
-  var differentDirectionsInclusive =
-    (this.operator === '>=' || this.operator === '<=') &&
-    (comp.operator === '>=' || comp.operator === '<=')
-  var oppositeDirectionsLessThan =
-    cmp(this.semver, '<', comp.semver, options) &&
-    ((this.operator === '>=' || this.operator === '>') &&
-    (comp.operator === '<=' || comp.operator === '<'))
-  var oppositeDirectionsGreaterThan =
-    cmp(this.semver, '>', comp.semver, options) &&
-    ((this.operator === '<=' || this.operator === '<') &&
-    (comp.operator === '>=' || comp.operator === '>'))
-
-  return sameDirectionIncreasing || sameDirectionDecreasing ||
-    (sameSemVer && differentDirectionsInclusive) ||
-    oppositeDirectionsLessThan || oppositeDirectionsGreaterThan
-}
-
-exports.Range = Range
-function Range (range, options) {
-  if (!options || typeof options !== 'object') {
-    options = {
-      loose: !!options,
-      includePrerelease: false
-    }
-  }
-
-  if (range instanceof Range) {
-    if (range.loose === !!options.loose &&
-        range.includePrerelease === !!options.includePrerelease) {
-      return range
-    } else {
-      return new Range(range.raw, options)
-    }
-  }
-
-  if (range instanceof Comparator) {
-    return new Range(range.value, options)
-  }
-
-  if (!(this instanceof Range)) {
-    return new Range(range, options)
-  }
-
-  this.options = options
-  this.loose = !!options.loose
-  this.includePrerelease = !!options.includePrerelease
-
-  // First, split based on boolean or ||
-  this.raw = range
-  this.set = range.split(/\s*\|\|\s*/).map(function (range) {
-    return this.parseRange(range.trim())
-  }, this).filter(function (c) {
-    // throw out any that are not relevant for whatever reason
-    return c.length
-  })
-
-  if (!this.set.length) {
-    throw new TypeError('Invalid SemVer Range: ' + range)
-  }
-
-  this.format()
-}
-
-Range.prototype.format = function () {
-  this.range = this.set.map(function (comps) {
-    return comps.join(' ').trim()
-  }).join('||').trim()
-  return this.range
-}
-
-Range.prototype.toString = function () {
-  return this.range
-}
-
-Range.prototype.parseRange = function (range) {
-  var loose = this.options.loose
-  range = range.trim()
-  // `1.2.3 - 1.2.4` => `>=1.2.3 <=1.2.4`
-  var hr = loose ? re[HYPHENRANGELOOSE] : re[HYPHENRANGE]
-  range = range.replace(hr, hyphenReplace)
-  debug('hyphen replace', range)
-  // `> 1.2.3 < 1.2.5` => `>1.2.3 <1.2.5`
-  range = range.replace(re[COMPARATORTRIM], comparatorTrimReplace)
-  debug('comparator trim', range, re[COMPARATORTRIM])
-
-  // `~ 1.2.3` => `~1.2.3`
-  range = range.replace(re[TILDETRIM], tildeTrimReplace)
-
-  // `^ 1.2.3` => `^1.2.3`
-  range = range.replace(re[CARETTRIM], caretTrimReplace)
-
-  // normalize spaces
-  range = range.split(/\s+/).join(' ')
-
-  // At this point, the range is completely trimmed and
-  // ready to be split into comparators.
-
-  var compRe = loose ? re[COMPARATORLOOSE] : re[COMPARATOR]
-  var set = range.split(' ').map(function (comp) {
-    return parseComparator(comp, this.options)
-  }, this).join(' ').split(/\s+/)
-  if (this.options.loose) {
-    // in loose mode, throw out any that are not valid comparators
-    set = set.filter(function (comp) {
-      return !!comp.match(compRe)
-    })
-  }
-  set = set.map(function (comp) {
-    return new Comparator(comp, this.options)
-  }, this)
-
-  return set
-}
-
-Range.prototype.intersects = function (range, options) {
-  if (!(range instanceof Range)) {
-    throw new TypeError('a Range is required')
-  }
-
-  return this.set.some(function (thisComparators) {
-    return thisComparators.every(function (thisComparator) {
-      return range.set.some(function (rangeComparators) {
-        return rangeComparators.every(function (rangeComparator) {
-          return thisComparator.intersects(rangeComparator, options)
-        })
-      })
-    })
-  })
-}
-
-// Mostly just for testing and legacy API reasons
-exports.toComparators = toComparators
-function toComparators (range, options) {
-  return new Range(range, options).set.map(function (comp) {
-    return comp.map(function (c) {
-      return c.value
-    }).join(' ').trim().split(' ')
-  })
-}
-
-// comprised of xranges, tildes, stars, and gtlt's at this point.
-// already replaced the hyphen ranges
-// turn into a set of JUST comparators.
-function parseComparator (comp, options) {
-  debug('comp', comp, options)
-  comp = replaceCarets(comp, options)
-  debug('caret', comp)
-  comp = replaceTildes(comp, options)
-  debug('tildes', comp)
-  comp = replaceXRanges(comp, options)
-  debug('xrange', comp)
-  comp = replaceStars(comp, options)
-  debug('stars', comp)
-  return comp
-}
-
-function isX (id) {
-  return !id || id.toLowerCase() === 'x' || id === '*'
-}
-
-// ~, ~> --> * (any, kinda silly)
-// ~2, ~2.x, ~2.x.x, ~>2, ~>2.x ~>2.x.x --> >=2.0.0 <3.0.0
-// ~2.0, ~2.0.x, ~>2.0, ~>2.0.x --> >=2.0.0 <2.1.0
-// ~1.2, ~1.2.x, ~>1.2, ~>1.2.x --> >=1.2.0 <1.3.0
-// ~1.2.3, ~>1.2.3 --> >=1.2.3 <1.3.0
-// ~1.2.0, ~>1.2.0 --> >=1.2.0 <1.3.0
-function replaceTildes (comp, options) {
-  return comp.trim().split(/\s+/).map(function (comp) {
-    return replaceTilde(comp, options)
-  }).join(' ')
-}
-
-function replaceTilde (comp, options) {
-  var r = options.loose ? re[TILDELOOSE] : re[TILDE]
-  return comp.replace(r, function (_, M, m, p, pr) {
-    debug('tilde', comp, _, M, m, p, pr)
-    var ret
-
-    if (isX(M)) {
-      ret = ''
-    } else if (isX(m)) {
-      ret = '>=' + M + '.0.0 <' + (+M + 1) + '.0.0'
-    } else if (isX(p)) {
-      // ~1.2 == >=1.2.0 <1.3.0
-      ret = '>=' + M + '.' + m + '.0 <' + M + '.' + (+m + 1) + '.0'
-    } else if (pr) {
-      debug('replaceTilde pr', pr)
-      ret = '>=' + M + '.' + m + '.' + p + '-' + pr +
-            ' <' + M + '.' + (+m + 1) + '.0'
-    } else {
-      // ~1.2.3 == >=1.2.3 <1.3.0
-      ret = '>=' + M + '.' + m + '.' + p +
-            ' <' + M + '.' + (+m + 1) + '.0'
-    }
-
-    debug('tilde return', ret)
-    return ret
-  })
-}
-
-// ^ --> * (any, kinda silly)
-// ^2, ^2.x, ^2.x.x --> >=2.0.0 <3.0.0
-// ^2.0, ^2.0.x --> >=2.0.0 <3.0.0
-// ^1.2, ^1.2.x --> >=1.2.0 <2.0.0
-// ^1.2.3 --> >=1.2.3 <2.0.0
-// ^1.2.0 --> >=1.2.0 <2.0.0
-function replaceCarets (comp, options) {
-  return comp.trim().split(/\s+/).map(function (comp) {
-    return replaceCaret(comp, options)
-  }).join(' ')
-}
-
-function replaceCaret (comp, options) {
-  debug('caret', comp, options)
-  var r = options.loose ? re[CARETLOOSE] : re[CARET]
-  return comp.replace(r, function (_, M, m, p, pr) {
-    debug('caret', comp, _, M, m, p, pr)
-    var ret
-
-    if (isX(M)) {
-      ret = ''
-    } else if (isX(m)) {
-      ret = '>=' + M + '.0.0 <' + (+M + 1) + '.0.0'
-    } else if (isX(p)) {
-      if (M === '0') {
-        ret = '>=' + M + '.' + m + '.0 <' + M + '.' + (+m + 1) + '.0'
-      } else {
-        ret = '>=' + M + '.' + m + '.0 <' + (+M + 1) + '.0.0'
-      }
-    } else if (pr) {
-      debug('replaceCaret pr', pr)
-      if (M === '0') {
-        if (m === '0') {
-          ret = '>=' + M + '.' + m + '.' + p + '-' + pr +
-                ' <' + M + '.' + m + '.' + (+p + 1)
-        } else {
-          ret = '>=' + M + '.' + m + '.' + p + '-' + pr +
-                ' <' + M + '.' + (+m + 1) + '.0'
-        }
-      } else {
-        ret = '>=' + M + '.' + m + '.' + p + '-' + pr +
-              ' <' + (+M + 1) + '.0.0'
-      }
-    } else {
-      debug('no pr')
-      if (M === '0') {
-        if (m === '0') {
-          ret = '>=' + M + '.' + m + '.' + p +
-                ' <' + M + '.' + m + '.' + (+p + 1)
-        } else {
-          ret = '>=' + M + '.' + m + '.' + p +
-                ' <' + M + '.' + (+m + 1) + '.0'
-        }
-      } else {
-        ret = '>=' + M + '.' + m + '.' + p +
-              ' <' + (+M + 1) + '.0.0'
-      }
-    }
-
-    debug('caret return', ret)
-    return ret
-  })
-}
-
-function replaceXRanges (comp, options) {
-  debug('replaceXRanges', comp, options)
-  return comp.split(/\s+/).map(function (comp) {
-    return replaceXRange(comp, options)
-  }).join(' ')
-}
-
-function replaceXRange (comp, options) {
-  comp = comp.trim()
-  var r = options.loose ? re[XRANGELOOSE] : re[XRANGE]
-  return comp.replace(r, function (ret, gtlt, M, m, p, pr) {
-    debug('xRange', comp, ret, gtlt, M, m, p, pr)
-    var xM = isX(M)
-    var xm = xM || isX(m)
-    var xp = xm || isX(p)
-    var anyX = xp
-
-    if (gtlt === '=' && anyX) {
-      gtlt = ''
-    }
-
-    if (xM) {
-      if (gtlt === '>' || gtlt === '<') {
-        // nothing is allowed
-        ret = '<0.0.0'
-      } else {
-        // nothing is forbidden
-        ret = '*'
-      }
-    } else if (gtlt && anyX) {
-      // we know patch is an x, because we have any x at all.
-      // replace X with 0
-      if (xm) {
-        m = 0
-      }
-      p = 0
-
-      if (gtlt === '>') {
-        // >1 => >=2.0.0
-        // >1.2 => >=1.3.0
-        // >1.2.3 => >= 1.2.4
-        gtlt = '>='
-        if (xm) {
-          M = +M + 1
-          m = 0
-          p = 0
-        } else {
-          m = +m + 1
-          p = 0
-        }
-      } else if (gtlt === '<=') {
-        // <=0.7.x is actually <0.8.0, since any 0.7.x should
-        // pass.  Similarly, <=7.x is actually <8.0.0, etc.
-        gtlt = '<'
-        if (xm) {
-          M = +M + 1
-        } else {
-          m = +m + 1
-        }
-      }
-
-      ret = gtlt + M + '.' + m + '.' + p
-    } else if (xm) {
-      ret = '>=' + M + '.0.0 <' + (+M + 1) + '.0.0'
-    } else if (xp) {
-      ret = '>=' + M + '.' + m + '.0 <' + M + '.' + (+m + 1) + '.0'
-    }
-
-    debug('xRange return', ret)
-
-    return ret
-  })
-}
-
-// Because * is AND-ed with everything else in the comparator,
-// and '' means "any version", just remove the *s entirely.
-function replaceStars (comp, options) {
-  debug('replaceStars', comp, options)
-  // Looseness is ignored here.  star is always as loose as it gets!
-  return comp.trim().replace(re[STAR], '')
-}
-
-// This function is passed to string.replace(re[HYPHENRANGE])
-// M, m, patch, prerelease, build
-// 1.2 - 3.4.5 => >=1.2.0 <=3.4.5
-// 1.2.3 - 3.4 => >=1.2.0 <3.5.0 Any 3.4.x will do
-// 1.2 - 3.4 => >=1.2.0 <3.5.0
-function hyphenReplace ($0,
-  from, fM, fm, fp, fpr, fb,
-  to, tM, tm, tp, tpr, tb) {
-  if (isX(fM)) {
-    from = ''
-  } else if (isX(fm)) {
-    from = '>=' + fM + '.0.0'
-  } else if (isX(fp)) {
-    from = '>=' + fM + '.' + fm + '.0'
-  } else {
-    from = '>=' + from
-  }
-
-  if (isX(tM)) {
-    to = ''
-  } else if (isX(tm)) {
-    to = '<' + (+tM + 1) + '.0.0'
-  } else if (isX(tp)) {
-    to = '<' + tM + '.' + (+tm + 1) + '.0'
-  } else if (tpr) {
-    to = '<=' + tM + '.' + tm + '.' + tp + '-' + tpr
-  } else {
-    to = '<=' + to
-  }
-
-  return (from + ' ' + to).trim()
-}
-
-// if ANY of the sets match ALL of its comparators, then pass
-Range.prototype.test = function (version) {
-  if (!version) {
-    return false
-  }
-
-  if (typeof version === 'string') {
-    version = new SemVer(version, this.options)
-  }
-
-  for (var i = 0; i < this.set.length; i++) {
-    if (testSet(this.set[i], version, this.options)) {
-      return true
-    }
-  }
-  return false
-}
-
-function testSet (set, version, options) {
-  for (var i = 0; i < set.length; i++) {
-    if (!set[i].test(version)) {
-      return false
-    }
-  }
-
-  if (version.prerelease.length && !options.includePrerelease) {
-    // Find the set of versions that are allowed to have prereleases
-    // For example, ^1.2.3-pr.1 desugars to >=1.2.3-pr.1 <2.0.0
-    // That should allow `1.2.3-pr.2` to pass.
-    // However, `1.2.4-alpha.notready` should NOT be allowed,
-    // even though it's within the range set by the comparators.
-    for (i = 0; i < set.length; i++) {
-      debug(set[i].semver)
-      if (set[i].semver === ANY) {
-        continue
-      }
-
-      if (set[i].semver.prerelease.length > 0) {
-        var allowed = set[i].semver
-        if (allowed.major === version.major &&
-            allowed.minor === version.minor &&
-            allowed.patch === version.patch) {
-          return true
-        }
-      }
-    }
-
-    // Version has a -pre, but it's not one of the ones we like.
-    return false
-  }
-
-  return true
-}
-
-exports.satisfies = satisfies
-function satisfies (version, range, options) {
-  try {
-    range = new Range(range, options)
-  } catch (er) {
-    return false
-  }
-  return range.test(version)
-}
-
-exports.maxSatisfying = maxSatisfying
-function maxSatisfying (versions, range, options) {
-  var max = null
-  var maxSV = null
-  try {
-    var rangeObj = new Range(range, options)
-  } catch (er) {
-    return null
-  }
-  versions.forEach(function (v) {
-    if (rangeObj.test(v)) {
-      // satisfies(v, range, options)
-      if (!max || maxSV.compare(v) === -1) {
-        // compare(max, v, true)
-        max = v
-        maxSV = new SemVer(max, options)
-      }
-    }
-  })
-  return max
-}
-
-exports.minSatisfying = minSatisfying
-function minSatisfying (versions, range, options) {
-  var min = null
-  var minSV = null
-  try {
-    var rangeObj = new Range(range, options)
-  } catch (er) {
-    return null
-  }
-  versions.forEach(function (v) {
-    if (rangeObj.test(v)) {
-      // satisfies(v, range, options)
-      if (!min || minSV.compare(v) === 1) {
-        // compare(min, v, true)
-        min = v
-        minSV = new SemVer(min, options)
-      }
-    }
-  })
-  return min
-}
-
-exports.minVersion = minVersion
-function minVersion (range, loose) {
-  range = new Range(range, loose)
-
-  var minver = new SemVer('0.0.0')
-  if (range.test(minver)) {
-    return minver
-  }
-
-  minver = new SemVer('0.0.0-0')
-  if (range.test(minver)) {
-    return minver
-  }
-
-  minver = null
-  for (var i = 0; i < range.set.length; ++i) {
-    var comparators = range.set[i]
-
-    comparators.forEach(function (comparator) {
-      // Clone to avoid manipulating the comparator's semver object.
-      var compver = new SemVer(comparator.semver.version)
-      switch (comparator.operator) {
-        case '>':
-          if (compver.prerelease.length === 0) {
-            compver.patch++
-          } else {
-            compver.prerelease.push(0)
-          }
-          compver.raw = compver.format()
-          /* fallthrough */
-        case '':
-        case '>=':
-          if (!minver || gt(minver, compver)) {
-            minver = compver
-          }
-          break
-        case '<':
-        case '<=':
-          /* Ignore maximum versions */
-          break
-        /* istanbul ignore next */
-        default:
-          throw new Error('Unexpected operation: ' + comparator.operator)
-      }
-    })
-  }
-
-  if (minver && range.test(minver)) {
-    return minver
-  }
-
-  return null
-}
-
-exports.validRange = validRange
-function validRange (range, options) {
-  try {
-    // Return '*' instead of '' so that truthiness works.
-    // This will throw if it's invalid anyway
-    return new Range(range, options).range || '*'
-  } catch (er) {
-    return null
-  }
-}
-
-// Determine if version is less than all the versions possible in the range
-exports.ltr = ltr
-function ltr (version, range, options) {
-  return outside(version, range, '<', options)
-}
-
-// Determine if version is greater than all the versions possible in the range.
-exports.gtr = gtr
-function gtr (version, range, options) {
-  return outside(version, range, '>', options)
-}
-
-exports.outside = outside
-function outside (version, range, hilo, options) {
-  version = new SemVer(version, options)
-  range = new Range(range, options)
-
-  var gtfn, ltefn, ltfn, comp, ecomp
-  switch (hilo) {
-    case '>':
-      gtfn = gt
-      ltefn = lte
-      ltfn = lt
-      comp = '>'
-      ecomp = '>='
-      break
-    case '<':
-      gtfn = lt
-      ltefn = gte
-      ltfn = gt
-      comp = '<'
-      ecomp = '<='
-      break
-    default:
-      throw new TypeError('Must provide a hilo val of "<" or ">"')
-  }
-
-  // If it satisifes the range it is not outside
-  if (satisfies(version, range, options)) {
-    return false
-  }
-
-  // From now on, variable terms are as if we're in "gtr" mode.
-  // but note that everything is flipped for the "ltr" function.
-
-  for (var i = 0; i < range.set.length; ++i) {
-    var comparators = range.set[i]
-
-    var high = null
-    var low = null
-
-    comparators.forEach(function (comparator) {
-      if (comparator.semver === ANY) {
-        comparator = new Comparator('>=0.0.0')
-      }
-      high = high || comparator
-      low = low || comparator
-      if (gtfn(comparator.semver, high.semver, options)) {
-        high = comparator
-      } else if (ltfn(comparator.semver, low.semver, options)) {
-        low = comparator
-      }
-    })
-
-    // If the edge version comparator has a operator then our version
-    // isn't outside it
-    if (high.operator === comp || high.operator === ecomp) {
-      return false
-    }
-
-    // If the lowest version comparator has an operator and our version
-    // is less than it then it isn't higher than the range
-    if ((!low.operator || low.operator === comp) &&
-        ltefn(version, low.semver)) {
-      return false
-    } else if (low.operator === ecomp && ltfn(version, low.semver)) {
-      return false
-    }
-  }
-  return true
-}
-
-exports.prerelease = prerelease
-function prerelease (version, options) {
-  var parsed = parse(version, options)
-  return (parsed && parsed.prerelease.length) ? parsed.prerelease : null
-}
-
-exports.intersects = intersects
-function intersects (r1, r2, options) {
-  r1 = new Range(r1, options)
-  r2 = new Range(r2, options)
-  return r1.intersects(r2)
-}
-
-exports.coerce = coerce
-function coerce (version) {
-  if (version instanceof SemVer) {
-    return version
-  }
-
-  if (typeof version !== 'string') {
-    return null
-  }
-
-  var match = version.match(re[COERCE])
-
-  if (match == null) {
-    return null
-  }
-
-  return parse(match[1] +
-    '.' + (match[2] || '0') +
-    '.' + (match[3] || '0'))
-}
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -43473,13 +39284,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	methods: {
-		signInButtonClicked() {
-			this.$store.dispatch("signIn", {username: "admin", password: "AdminAdmin123"}).then(() => {
-				this.$router.push("/");
-			});
-		}
-	}
+	name: "App"
 });
 
 
@@ -43682,7 +39487,8 @@ __webpack_require__.r(__webpack_exports__);
 		autocomplete: {type: String},
 		errorMessage: {type: String},
 		isRequired: {type: Boolean},
-		helpMessage: {type: String}
+		helpMessage: {type: String},
+		buttonName: {type: String}
 	},
 	data() {
 		return {
@@ -43958,16 +39764,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/DashboardPage.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_VPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/VPage */ "./src/js/components/VPage.vue");
+/* harmony import */ var _components_VPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/VPage */ "./src/js/components/VPage.vue");
+/* harmony import */ var _components_VPageTitle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/VPageTitle */ "./src/js/components/VPageTitle.vue");
+/* harmony import */ var _DashboardPageWoman__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DashboardPageWoman */ "./src/js/pages/DashboardPage/DashboardPageWoman.vue");
+/* harmony import */ var _components_VPageLead__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/VPageLead */ "./src/js/components/VPageLead.vue");
 //
 //
 //
@@ -43975,11 +39784,216 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: "DashboardPage",
-	components: {VPage: _components_VPage__WEBPACK_IMPORTED_MODULE_0__["default"]}
+	components: {VPageLead: _components_VPageLead__WEBPACK_IMPORTED_MODULE_3__["default"], DashboardPageWoman: _DashboardPageWoman__WEBPACK_IMPORTED_MODULE_2__["default"], VPageTitle: _components_VPageTitle__WEBPACK_IMPORTED_MODULE_1__["default"], VPage: _components_VPage__WEBPACK_IMPORTED_MODULE_0__["default"]},
+	computed: {
+		fullName() {
+			return this.$store.state.auth.user.fullName;
+		}
+	}
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	name: "DashboardPageWoman"
 });
 
 
@@ -44728,7 +40742,10 @@ var render = function() {
     _vm._b(
       {
         ref: "input",
-        attrs: { type: _vm.showPassword ? "text" : "password" },
+        attrs: {
+          type: _vm.showPassword ? "text" : "password",
+          "button-name": "Show or hide password"
+        },
         on: {
           onButtonClick: function($event) {
             _vm.showPassword = !_vm.showPassword
@@ -44992,7 +41009,7 @@ var render = function() {
           "button",
           {
             staticClass: "input-button",
-            attrs: { type: "button" },
+            attrs: { type: "button", name: _vm.buttonName },
             on: {
               click: function($event) {
                 return _vm.$emit("onButtonClick")
@@ -45387,10 +41404,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage.vue?vue&type=template&id=1e558f2a&":
-/*!*****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/DashboardPage.vue?vue&type=template&id=1e558f2a& ***!
-  \*****************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=template&id=21286702&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=template&id=21286702&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -45402,7 +41419,815 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("VPage", [_vm._v("\n\tdashboard page\n")])
+  return _c(
+    "VPage",
+    { staticClass: "dashboard-page" },
+    [
+      _c("VPageTitle", { staticClass: "page-title" }, [
+        _vm._v("\n\t\tHello, " + _vm._s(_vm.fullName) + "!\n\t")
+      ]),
+      _vm._v(" "),
+      _c(
+        "VPageLead",
+        [
+          _c("router-link", { attrs: { to: "/sign-out" } }, [
+            _vm._v("Sign out")
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("DashboardPageWoman", { staticClass: "woman" })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=template&id=30b84773&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=template&id=30b84773& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      attrs: {
+        width: "302",
+        height: "467",
+        viewBox: "0 0 302 467",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        "xmlns:xlink": "http://www.w3.org/1999/xlink"
+      }
+    },
+    [
+      _c("rect", {
+        attrs: {
+          x: "-67.1884",
+          y: "432.071",
+          width: "442.458",
+          height: "57.5841",
+          fill: "url(#pattern0)"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M91.4259 394.073L53.8383 468.696",
+          stroke: "#E16162",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("rect", {
+        attrs: {
+          x: "-62.353",
+          y: "346.034",
+          width: "79.8031",
+          height: "57.112",
+          fill: "url(#pattern1)"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M40.4276 394.073L2.83984 468.696",
+          stroke: "#E16162",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M163.438 394.073L206.55 468.696",
+          stroke: "#E16162",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M227.28 394.073L270.345 468.696",
+          stroke: "#E16162",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M98.9813 394.073L61.3936 468.696",
+          stroke: "#E16162",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M47.9829 394.073L10.3952 468.696",
+          stroke: "#E16162",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M170.993 394.073L214.058 468.696",
+          stroke: "#E16162",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M234.835 394.073L277.901 468.696",
+          stroke: "#E16162",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M136.994 254.361C135.861 254.691 134.68 255.022 133.547 254.738C132.13 254.361 131.139 253.086 130.289 251.906C117.303 234.159 104.364 216.365 91.3787 198.618C88.5927 194.794 85.8067 190.971 83.3512 186.959C81.8401 184.458 80.4235 181.814 79.9513 178.935C79.1013 173.743 81.5096 168.551 84.4845 164.209C87.4594 159.866 91.1426 155.949 93.4564 151.229C95.7702 146.509 96.4313 140.467 93.4092 136.172C92.8898 135.417 92.1815 134.709 91.2843 134.473C89.3954 134.001 87.7899 135.794 86.6566 137.352C79.7624 146.886 71.5933 155.43 62.3852 162.793C58.4659 165.908 54.2632 168.976 51.8078 173.318C47.5579 181.012 49.9662 190.594 52.8466 198.901C64.5574 232.649 82.8318 264.084 106.348 290.988C108.52 293.49 110.881 296.038 113.95 297.266C116.878 298.493 120.183 298.351 123.347 298.162C141.055 296.982 158.527 293.018 175.007 286.362C176.754 285.654 178.595 284.852 179.776 283.342C180.862 281.878 181.192 280.038 181.429 278.197C182.42 270.55 182.515 262.81 181.617 255.163C181.287 252.095 185.962 246.95 183.27 244.874C179.87 242.325 183.884 235.386 180.059 236.519C170.19 239.493 146.91 251.482 136.994 254.361Z",
+          fill: "#F58A6C"
+        }
+      }),
+      _vm._v(" "),
+      _c("rect", {
+        attrs: {
+          width: "126.544",
+          height: "80.2451",
+          transform:
+            "matrix(0.925159 -0.379557 0.379843 0.925042 69.5406 262.056)",
+          fill: "url(#pattern2)"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M141.952 314.635C113.195 280.179 80.3291 248.98 43.6386 223.067C34.4777 216.601 24.7031 210.323 13.6534 208.246C3.07597 206.311 -7.78482 208.388 -18.2678 210.89C-40.2727 216.129 -61.8998 223.067 -82.8185 231.658C-84.8018 232.46 -86.8795 233.404 -87.8239 235.292C-88.5322 236.755 -88.4378 238.454 -88.2961 240.059C-85.5101 273.241 -75.8299 305.762 -75.216 339.038C-65.6774 335.262 -55.9027 331.344 -48.2057 324.5C-40.4615 317.562 -35.4562 308.169 -31.2535 298.682C-24.6426 283.766 -18.1734 266.727 -14.7735 250.726C-7.17094 260.025 0.478821 269.37 6.5703 279.754C24.3253 310.151 28.9057 349.374 55.8215 372.03C68.9961 383.122 84.3428 387.37 101.012 389.683C125.236 393.082 150.971 395.017 174.346 386.19C200.175 376.373 212.358 355.558 223.974 332.052",
+          fill: "#389679"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M196.539 114.554C192.384 117.386 189.22 121.493 186.906 126.071C184.451 130.933 182.562 136.55 181.806 142.308C181.806 143.913 181.948 145.47 182.137 147.028C182.137 146.886 182.137 146.745 182.137 146.65C182.704 136.88 187.001 127.629 192.573 119.558C193.753 117.811 195.075 116.065 196.539 114.554Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M186.576 165.908C186.953 166.427 187.378 166.946 187.803 167.418C185.867 164.728 184.451 161.66 183.506 158.45C182.751 156.562 182.137 154.627 181.665 152.645C182.231 157.365 183.79 161.943 186.576 165.908Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M202.017 110.495C192.195 112.808 185.631 121.918 183.081 131.641C186.103 122.767 191.581 114.224 200.742 111.156C201.167 110.92 201.592 110.684 202.017 110.495Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M203.008 182.475C202.3 180.068 200.6 178.322 198.57 176.764C199.373 177.566 200.081 178.463 200.742 179.407C202.867 182.57 203.15 185.968 202.253 189.178C203.245 187.054 203.67 184.741 203.008 182.475Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M53.8383 117.198L59.8354 182.145L185.065 206.358C185.254 206.028 185.443 205.698 185.631 205.367C188.37 201.119 193.092 198.665 197.012 195.455C197.531 195.03 198.003 194.606 198.475 194.181C200.884 190.263 202.489 185.826 200.223 181.437C198.287 177.708 194.745 175.301 191.534 172.799C186.434 168.834 182.845 163.878 181.145 157.601C179.87 152.834 179.776 147.83 180.39 142.969C180.343 138.626 180.862 134.331 182.043 130.272C185.112 119.652 193.281 109.457 204.897 108.796C207.4 106.955 209.431 104.454 211.744 102.33C221.283 93.5504 236.488 91.8512 247.963 97.704C247.585 95.7688 247.585 93.7864 247.916 91.8512C248.01 91.1904 249.143 91.332 249.096 91.9928C248.907 94.2584 249.002 96.3824 249.427 98.4592C249.474 98.4592 249.521 98.5064 249.568 98.5064C249.285 96.3352 249.757 93.9752 250.654 91.9928C252.354 88.3112 255.801 85.7152 259.485 84.2048C263.546 82.5056 268.504 81.5616 272.754 83.1192C280.403 83.4024 287.959 86.848 292.681 92.8896C292.87 93.1728 293.106 93.456 293.295 93.692C298.206 96.6656 300.661 103.179 300.85 108.89C300.992 113.28 300.142 117.906 297.733 121.634C296.647 123.286 295.325 124.75 293.72 125.93C293.295 126.213 292.87 126.496 292.397 126.732C292.114 129.517 292.256 132.254 293.389 135.039C295.42 139.948 299.008 144.338 302.314 148.444C313.316 161.896 327.152 172.988 336.643 187.714C340.563 193.803 343.538 200.411 345.521 207.35C347.835 212.542 349.44 217.97 350.007 223.681C350.479 228.495 350.196 233.31 349.346 238.077L623.415 291.082V0L53.8383 117.198Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M261.184 85.4792C261.845 85.1488 262.507 84.9128 263.168 84.6296C262.27 84.8656 261.373 85.1016 260.571 85.432C254.29 87.8392 250.04 93.3616 251.315 99.6864C251.457 99.7808 251.646 99.9224 251.788 100.017C250.607 93.9752 255.565 88.1696 261.184 85.4792Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M292.681 124.986C293.342 124.561 293.956 124.042 294.522 123.475C297.497 120.454 298.914 116.301 299.292 112.194C299.717 107.238 298.678 101.669 295.656 97.8928C299.575 106.53 298.583 117.434 292.681 124.986C292.681 124.938 292.681 124.986 292.681 124.986Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M312.466 162.179C307.225 156.704 302.078 151.134 297.592 145.046C304.486 156.846 314.497 166.899 323.846 177.047C329.277 182.947 334.707 189.225 339.193 195.927C332.629 183.136 322.571 172.705 312.466 162.179Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M41.4664 269.134C26.0725 262.668 11.434 254.408 -4.24326 248.508C-6.88762 247.517 -9.62641 246.573 -12.4597 246.526C-17.0873 246.431 -21.4316 248.744 -24.9732 251.765C-35.0312 260.355 -39.0922 273.902 -42.6337 286.646C-49.2918 310.623 -55.95 334.601 -62.6081 358.531C-36.0228 372.314 -2.5433 371.134 21.3032 389.306C26.6391 375.948 28.528 361.222 26.6391 346.967C26.6391 352.301 26.6863 357.587 26.6863 362.921C50.58 378.119 79.4319 385.341 107.67 383.264C135.908 381.187 163.39 369.812 184.829 351.31C198.05 339.887 206.55 323.178 209.667 305.998C213.444 285.277 195.973 279.943 179.02 278.008C166.79 276.592 155.08 280.604 143.038 282.209C129.25 284.002 115.272 285.985 101.39 284.522C80.8958 282.303 60.4019 277.3 41.4664 269.134Z",
+          fill: "#389679"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M120.325 307.838C92.2759 274.185 36.6499 236.708 14.0784 222.17C8.55354 218.63 1.84822 217.781 -4.43214 219.81L-94.7182 249.216L-94.8599 248.744L-4.57382 219.338C1.80098 217.262 8.69521 218.158 14.3145 221.793C36.9332 236.33 92.6065 273.807 120.703 307.555L120.325 307.838Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M110.031 321.054C98.0368 303.968 40.0026 259.128 15.5894 240.673C7.60913 234.631 -2.77942 233.026 -12.1763 236.378L-85.5574 262.432L-85.699 262.007L-12.318 236C-2.73219 232.602 7.79802 234.254 15.92 240.39C40.3331 258.892 98.4146 303.732 110.409 320.866L110.031 321.054Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M94.0231 327.002L8.55354 260.45C1.98985 255.352 -6.17936 252.945 -14.4902 253.747L-15.4818 253.842L-15.5291 253.37L-14.5374 253.275C-6.13213 252.473 2.17873 254.88 8.83685 260.072L94.2592 326.671L94.0231 327.002Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M-0.207783 271.955L-0.494507 272.33L98.8251 348.193L99.1118 347.818L-0.207783 271.955Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M124.905 372.125C119.097 372.125 113.336 370.567 108.284 367.499L22.2947 315.862L22.5308 315.438L108.473 367.074C116.406 371.842 125.991 372.927 134.775 370.048C148.846 365.47 174.015 355.982 184.781 344.23L185.112 344.56C174.818 355.794 152.152 364.903 134.916 370.52C131.658 371.606 128.258 372.125 124.905 372.125Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M132.366 386.568C104.27 386.568 43.2608 354.944 42.647 354.614L42.8831 354.189C43.4969 354.519 104.412 386.096 132.414 386.096C160.368 386.096 206.22 341.539 206.692 341.114L207.022 341.445C206.928 341.539 195.312 352.867 180.437 364.006C166.601 374.296 147.099 386.568 132.366 386.568Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M23.9472 345.091L10.1192 386.257L10.5669 386.407L24.3949 345.242L23.9472 345.091Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M18.4045 307.58L-1.80536 382.698L-1.34935 382.82L18.8605 307.703L18.4045 307.58Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M7.41443 287.378L-19.4857 382.736L-19.0312 382.864L7.86893 287.507L7.41443 287.378Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M26.8084 341.048L26.5771 341.459L38.6406 348.232L38.8718 347.82L26.8084 341.048Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M27.4302 354.183L27.1993 354.595L50.6395 367.725L50.8704 367.313L27.4302 354.183Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M179.773 283.155L125.126 295.175L125.227 295.636L179.875 283.616L179.773 283.155Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M190.96 293.051L143.6 303.911L143.705 304.371L191.066 293.511L190.96 293.051Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M167.231 340.99L132.055 353.957L132.218 354.4L167.394 341.433L167.231 340.99Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M272.659 341.35C275.445 337.669 278.231 333.893 281.064 330.258C279.081 327.662 275.776 326.341 272.47 327.002L271.101 327.285L123.772 331.486C120.986 331.58 118.625 334.176 117.917 337.858L117.161 341.917C116.925 343.191 117.633 344.418 118.625 344.418L271.904 340.029L272.659 341.35Z",
+          fill: "#A3A9D5"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M212.453 122.201C211.744 129.753 211.083 137.352 210.375 144.904C209.808 150.993 209.242 157.176 210.611 163.17C211.933 169.118 215.475 174.923 221.047 177.425C224.872 179.124 229.263 179.313 232.994 181.295C237.527 183.702 238.235 188.706 235.874 193.048C234.552 195.502 232.569 197.485 230.68 199.514C230.113 200.128 228.649 201.686 229.169 202.63C229.452 203.196 231.011 203.574 231.672 203.904C234.269 205.131 237.102 205.698 239.935 206.075C244.516 206.689 249.096 206.972 253.724 206.878C255.943 206.83 258.399 206.594 259.957 204.99C255.093 198.854 251.315 191.254 248.624 183.891C247.207 180.068 246.593 175.914 246.782 171.855C246.829 170.628 248.057 160.433 249.568 160.48C252.638 160.622 255.896 159.536 257.832 157.176C259.768 154.816 260.051 151.04 258.068 148.68C256.085 146.32 251.835 146.226 250.088 148.774C252.024 142.686 248.293 135.417 242.249 133.434C244.327 134.898 245.979 136.974 246.924 139.382C244.091 136.88 241.021 134.614 237.763 132.632C234.694 130.791 231.483 129.186 228.319 127.582C225.863 126.354 223.219 124.844 220.716 123.664C213.68 120.218 212.547 120.69 212.453 122.201Z",
+          fill: "#F58A6C"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M303.825 228.023C300 221.132 292.492 217.309 285.409 213.91C279.506 211.078 273.604 208.199 267.701 205.367C263.923 203.526 255.565 201.591 254.574 196.824C254.196 194.889 254.432 192.906 254.054 190.971C253.676 189.036 252.354 187.054 250.371 186.912C249.049 186.818 247.868 187.62 246.641 188.186C243.43 189.744 239.557 189.744 236.299 188.281C235.638 187.998 234.93 187.62 234.221 187.714C233.277 187.856 232.663 188.8 232.474 189.697C232.285 190.594 232.427 191.538 232.427 192.482C232.427 194.275 232.002 195.927 231.199 197.485C226.005 207.822 205.7 212.919 197.153 216.129C185.254 220.66 172.268 225.616 172.079 240.673C171.985 246.95 174.534 252.898 176.329 258.892C178.123 264.886 179.162 271.636 176.234 277.206C174.534 280.462 188.606 291.649 190.873 293.206C195.642 296.416 199.75 297.926 204.52 298.776C208.061 295.189 213.161 293.112 217.93 291.79C223.975 290.091 230.16 289.619 236.394 289.572C242.721 289.525 249.049 289.808 255.235 291.082C260.996 292.262 266.662 294.434 271.29 298.115C274.17 300.428 263.309 299.39 265.104 302.458C267.276 299.626 287.156 290.186 289.092 287.354C298.017 274.09 300.094 269.701 304.203 254.219C304.344 253.747 304.439 253.322 304.58 252.85C306.753 244.685 307.98 235.481 303.825 228.023Z",
+          fill: "#E8E4E6"
+        }
+      }),
+      _vm._v(" "),
+      _c("rect", {
+        attrs: {
+          x: "186.512",
+          y: "246.534",
+          width: "52.8874",
+          height: "73.632",
+          fill: "url(#pattern3)"
+        }
+      }),
+      _vm._v(" "),
+      _c("rect", {
+        attrs: {
+          x: "243.242",
+          y: "179.928",
+          width: "79.803",
+          height: "114.224",
+          fill: "url(#pattern4)"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M243.477 236.614C230.208 253.653 220.575 273.477 215.333 294.386",
+          stroke: "#F58A6C",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M158.338 304.676C143.133 305.62 128.211 306.139 113.242 308.83C111.353 309.16 109.417 309.538 107.67 310.34C104.837 311.709 102.759 314.258 100.776 316.712C95.3926 323.414 91.3316 328.134 94.4481 336.961C96.7619 343.522 99.548 349.941 102.806 356.077C105.214 360.702 109.181 365.847 114.281 364.95C114.706 367.405 116.878 369.482 119.381 369.765C120.42 369.906 121.6 369.765 122.497 370.284C123.725 370.945 124.15 372.455 125.094 373.446C127.267 375.759 131.658 374.438 133.122 371.936C134.491 369.576 134.397 365.092 133.925 362.543C133.405 359.758 132.366 357.068 132.083 354.283C131.658 350.271 132.744 346.118 135.105 342.861C135.483 342.342 135.861 341.87 136.38 341.586C136.9 341.303 137.513 341.162 138.08 341.067C160.463 336.866 183.081 334.79 205.842 333.751C209.619 333.562 251.693 330.872 251.552 330.4C249.804 323.414 246.829 314.824 242.249 309.113C235.969 301.325 226.288 293.112 215.9 292.074C214.53 291.932 210.989 294.481 209.619 295.094C207.353 296.086 205.039 297.03 202.678 297.879C197.814 299.626 192.809 301.042 187.756 302.08C178.076 303.921 168.207 304.062 158.338 304.676Z",
+          fill: "#F58A6C"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M74.2376 165.672C76.032 168.457 78.0153 171.1 80.1402 173.649C80.8485 170.298 82.5485 167.041 84.5317 164.209C87.5066 159.866 91.1899 155.949 93.5037 151.229C95.8175 146.509 96.4786 140.467 93.4565 136.172C92.9371 135.417 92.2287 134.709 91.3315 134.473C89.4427 134.001 87.8372 135.794 86.7039 137.352C81.6513 144.338 75.8903 150.804 69.5627 156.657C70.7433 159.866 72.396 162.887 74.2376 165.672Z",
+          fill: "#F58A6C"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M83.54 183.655H53.8382C51.4772 183.655 49.5411 181.72 49.5411 179.36V121.493C49.5411 119.133 51.4772 117.198 53.8382 117.198H83.54C85.9011 117.198 87.8371 119.133 87.8371 121.493V179.407C87.8371 181.767 85.9011 183.655 83.54 183.655Z",
+          fill: "#A3A9D5"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M83.54 117.198H53.8382C51.4772 117.198 49.5411 119.133 49.5411 121.493V179.407C49.5411 181.767 51.4772 183.702 53.8382 183.702H83.54C85.9011 183.702 87.8371 181.767 87.8371 179.407V121.493C87.8371 119.133 85.9011 117.198 83.54 117.198ZM85.9483 179.407C85.9483 180.729 84.8622 181.814 83.54 181.814H53.8382C52.516 181.814 51.43 180.729 51.43 179.407V121.493C51.43 120.171 52.516 119.086 53.8382 119.086H58.3714C59.0325 119.086 59.5991 119.605 59.5991 120.313C59.5991 121.021 60.1658 121.587 60.8741 121.587H76.5986C77.3069 121.587 77.8735 121.021 77.8735 120.313C77.8735 119.652 78.393 119.086 79.1013 119.086H83.6345C84.9567 119.086 86.0427 120.171 86.0427 121.493V179.407H85.9483Z",
+          fill: "#FAF3F3"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M52.705 195.502C57.7576 197.202 63.5185 196.588 68.0989 193.85C69.61 192.954 71.121 191.679 71.4516 189.933C71.7821 188.186 70.8377 186.346 69.4683 185.166C68.0989 183.986 66.3518 183.372 64.6518 182.853C59.7409 181.295 45.9524 175.442 42.2692 181.201C38.5387 187.101 48.0773 193.945 52.705 195.502Z",
+          fill: "#F58A6C"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M53.1771 183.561C55.491 183.797 58.0409 183.608 59.8353 182.145C60.7797 181.342 61.488 180.257 61.9602 179.124C63.2352 176.103 63.0935 172.28 60.9213 169.826C59.788 168.551 58.2298 167.702 56.7187 166.946C50.6272 163.737 32.0695 149.53 33.1083 165.011C33.7694 174.782 43.9691 182.664 53.1771 183.561Z",
+          fill: "#F58A6C"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M35.2334 144.196C37.9249 143.205 40.8998 144.432 43.5442 145.612C47.6996 147.5 51.855 149.388 56.0104 151.229C57.1909 151.748 58.3714 152.314 59.2686 153.164C62.1491 155.807 61.6769 160.905 58.8909 163.69C48.219 174.168 24.9393 158.592 35.2334 144.196Z",
+          fill: "#F58A6C"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M40.9942 128.242C42.033 125.174 42.458 121.918 42.2219 118.661C42.1275 117.339 41.9386 115.923 42.6941 114.838C43.4497 113.799 44.9135 113.469 46.1885 113.563C50.3911 113.846 53.8382 117.339 55.2076 121.304C56.6242 125.269 56.3881 129.611 55.9159 133.765C55.3965 138.91 54.5938 144.007 53.5549 149.105C53.4132 149.766 53.2716 150.474 52.7993 150.898C48.9273 154.674 38.6804 150.898 36.6499 146.462C33.8639 140.609 39.1526 133.529 40.9942 128.242Z",
+          fill: "#F58A6C"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M248.152 143.016L236.63 142.591C235.638 137.871 232.049 134.378 227.799 134.378C224.588 134.378 221.755 136.361 220.15 139.429C218.733 138.957 217.222 138.91 215.805 139.334C214.2 136.361 211.367 134.378 208.203 134.378C203.197 134.378 199.089 139.287 199.089 145.282C199.089 151.323 203.15 156.185 208.203 156.185C213.255 156.185 217.316 151.276 217.316 145.282C217.316 143.96 217.128 142.686 216.75 141.506C217.553 141.317 218.45 141.317 219.253 141.6C218.922 142.733 218.733 144.007 218.733 145.282C218.733 151.323 222.794 156.185 227.847 156.185C232.899 156.185 236.96 151.276 236.96 145.282C236.96 145.187 236.96 145.046 236.96 144.951L250.465 145.423C250.465 144.149 249.427 143.063 248.152 143.016Z",
+          fill: "#345C90"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M122.969 372.455L118.011 344.418",
+          stroke: "#389679",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M113.761 367.546L106.678 341.256",
+          stroke: "#389679",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("rect", {
+        attrs: {
+          x: "-61.7836",
+          y: "226.56",
+          width: "140.246",
+          height: "171.336",
+          fill: "url(#pattern5)"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M21.6337 325.491C28.0558 347.722 27.2058 366.886 21.3032 389.306",
+          stroke: "#FAF3F3",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M84.1539 387.276C55.9159 381.659 41.0414 354.425 29.614 330.872C17.9032 306.753 7.98689 282.35 -8.20982 260.686C-10.9958 257.004 -14.3013 253.086 -18.8817 252.378C-30.073 250.632 -34.7479 262.668 -37.7228 270.928C-45.4198 292.451 -56.375 336.442 -62.5609 358.484",
+          stroke: "#FAF3F3",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "M91.4259 257.24C105.545 272.438 119.192 288.109 132.366 304.11",
+          stroke: "#F58A6C",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M314.308 251.246L311.097 248.697C310.105 247.894 308.641 247.942 308.216 248.791L240.502 386.332H29.0474C27.8196 386.332 26.8752 387.465 27.1113 388.645L27.7252 391.996C28.4807 396.102 32.0695 399.076 36.2249 399.076H243.382C247.207 399.076 250.607 396.574 251.693 392.893L252.071 391.571L317.141 259.411C318.463 256.862 317.283 253.558 314.308 251.246Z",
+          fill: "#A3A9D5"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M214.058 294.386L226.619 263.518C226.619 263.518 281.867 249.688 289.186 287.401C289.186 287.401 265.859 326.199 251.599 330.211C237.338 334.27 175.007 328.606 175.007 328.606L214.058 294.386Z",
+          fill: "#F58A6C"
+        }
+      }),
+      _vm._v(" "),
+      _c("rect", {
+        attrs: {
+          x: "202.547",
+          y: "280.971",
+          width: "92.5525",
+          height: "76.936",
+          fill: "url(#pattern6)"
+        }
+      }),
+      _vm._v(" "),
+      _c("rect", {
+        attrs: {
+          x: "96.7949",
+          y: "335.25",
+          width: "36.8321",
+          height: "49.088",
+          fill: "url(#pattern7)"
+        }
+      }),
+      _vm._v(" "),
+      _c("rect", {
+        attrs: {
+          x: "-109.215",
+          y: "190.042",
+          width: "184.161",
+          height: "74.104",
+          fill: "url(#pattern8)"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M48.2662 195.314C48.7856 194.889 49.5412 195.078 50.155 195.314C56.2465 197.343 63.188 196.682 68.7601 193.52C69.7989 192.906 70.8378 192.198 71.4516 191.16C72.3016 189.602 71.9238 187.573 70.9322 186.11C69.9406 184.646 68.3351 183.655 66.7295 182.9C61.7241 180.54 56.4354 181.012 51.005 180.729C48.219 180.587 44.158 179.738 41.4192 180.587",
+          stroke: "#FAF3F3",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M60.2604 180.823C61.7714 180.115 62.6686 178.51 62.9991 176.906C64.6519 168.787 56.6716 165.294 50.7218 162.557C46.0942 160.433 38.3972 156.326 33.1085 158.309",
+          stroke: "#FAF3F3",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M57.0493 165.766C58.8909 164.822 60.6853 163.029 61.2991 160.999C61.8658 159.206 61.913 157.318 61.5352 155.477C60.4964 150.757 52.5161 148.397 48.5968 146.698C44.5358 144.998 38.2082 141.978 33.7222 143.63",
+          stroke: "#FAF3F3",
+          "stroke-width": "5",
+          "stroke-miterlimit": "10"
+        }
+      }),
+      _vm._v(" "),
+      _c("defs", [
+        _c(
+          "pattern",
+          {
+            attrs: {
+              id: "pattern0",
+              patternContentUnits: "objectBoundingBox",
+              width: "1",
+              height: "1"
+            }
+          },
+          [_c("use", { attrs: { "xlink:href": "#image0" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "pattern",
+          {
+            attrs: {
+              id: "pattern1",
+              patternContentUnits: "objectBoundingBox",
+              width: "1",
+              height: "1"
+            }
+          },
+          [_c("use", { attrs: { "xlink:href": "#image1" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "pattern",
+          {
+            attrs: {
+              id: "pattern2",
+              patternContentUnits: "objectBoundingBox",
+              width: "1",
+              height: "1"
+            }
+          },
+          [_c("use", { attrs: { "xlink:href": "#image2" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "pattern",
+          {
+            attrs: {
+              id: "pattern3",
+              patternContentUnits: "objectBoundingBox",
+              width: "1",
+              height: "1"
+            }
+          },
+          [_c("use", { attrs: { "xlink:href": "#image3" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "pattern",
+          {
+            attrs: {
+              id: "pattern4",
+              patternContentUnits: "objectBoundingBox",
+              width: "1",
+              height: "1"
+            }
+          },
+          [_c("use", { attrs: { "xlink:href": "#image4" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "pattern",
+          {
+            attrs: {
+              id: "pattern5",
+              patternContentUnits: "objectBoundingBox",
+              width: "1",
+              height: "1"
+            }
+          },
+          [_c("use", { attrs: { "xlink:href": "#image5" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "pattern",
+          {
+            attrs: {
+              id: "pattern6",
+              patternContentUnits: "objectBoundingBox",
+              width: "1",
+              height: "1"
+            }
+          },
+          [_c("use", { attrs: { "xlink:href": "#image6" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "pattern",
+          {
+            attrs: {
+              id: "pattern7",
+              patternContentUnits: "objectBoundingBox",
+              width: "1",
+              height: "1"
+            }
+          },
+          [_c("use", { attrs: { "xlink:href": "#image7" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "pattern",
+          {
+            attrs: {
+              id: "pattern8",
+              patternContentUnits: "objectBoundingBox",
+              width: "1",
+              height: "1"
+            }
+          },
+          [_c("use", { attrs: { "xlink:href": "#image8" } })]
+        ),
+        _vm._v(" "),
+        _c("image", {
+          attrs: {
+            id: "image0",
+            "xlink:href":
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6oAAAB7CAYAAAB99n0JAAAACXBIWXMAAAsSAAALEgHS3X78AAAA"
+          }
+        }),
+        _vm._v(" "),
+        _c("image", {
+          attrs: {
+            id: "image1",
+            "xlink:href":
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAAB6CAYAAAAvSMitAAAACXBIWXMAAAsSAAALEgHS3X78AAAA"
+          }
+        }),
+        _vm._v(" "),
+        _c("image", {
+          attrs: {
+            id: "image2",
+            "xlink:href":
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQwAAACqCAYAAABYvnHUAAAACXBIWXMAAAsSAAALEgHS3X78AAAA"
+          }
+        }),
+        _vm._v(" "),
+        _c("image", {
+          attrs: {
+            id: "image3",
+            "xlink:href":
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAACdCAYAAACD+JcpAAAACXBIWXMAAAsSAAALEgHS3X78AAAA"
+          }
+        }),
+        _vm._v(" "),
+        _c("image", {
+          attrs: {
+            id: "image4",
+            "xlink:href":
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAADzCAYAAAAW9429AAAACXBIWXMAAAsSAAALEgHS3X78AAAA"
+          }
+        }),
+        _vm._v(" "),
+        _c("image", {
+          attrs: {
+            id: "image5",
+            "xlink:href":
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASoAAAFsCAYAAAB7O/ReAAAACXBIWXMAAAsSAAALEgHS3X78AAAA"
+          }
+        }),
+        _vm._v(" "),
+        _c("image", {
+          attrs: {
+            id: "image6",
+            "xlink:href":
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMUAAACkCAYAAAAnkOoPAAAACXBIWXMAAAsSAAALEgHS3X78AAAA"
+          }
+        }),
+        _vm._v(" "),
+        _c("image", {
+          attrs: {
+            id: "image7",
+            "xlink:href":
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE8AAABpCAYAAAB7wX6tAAAACXBIWXMAAAsSAAALEgHS3X78AAAA"
+          }
+        }),
+        _vm._v(" "),
+        _c("image", {
+          attrs: {
+            id: "image8",
+            "xlink:href":
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYcAAACeCAYAAADZsMaZAAAACXBIWXMAAAsSAAALEgHS3X78AAAA"
+          }
+        })
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -50063,6 +46888,27 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! ../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
 var update = add("f8b79aac", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-resources-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-resources-loader/lib/loader.js??ref--0-3!./node_modules/vue-loader/lib??vue-loader-options!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/sass-loader/dist/cjs.js!../../../../node_modules/sass-resources-loader/lib/loader.js??ref--0-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-resources-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss&");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("2145cbb2", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
@@ -60098,8 +56944,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/cloneDeep */ "./node_modules/lodash/cloneDeep.js");
 /* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jsonwebtoken */ "./node_modules/jsonwebtoken/index.js");
-/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var njwt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! njwt */ "./node_modules/njwt/index.js");
+/* harmony import */ var njwt__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(njwt__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/find */ "./node_modules/lodash/find.js");
 /* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_find__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var lodash_omit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/omit */ "./node_modules/lodash/omit.js");
@@ -60111,9 +56957,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const users = [
-	{id: uuid__WEBPACK_IMPORTED_MODULE_0___default.a.v4(), fullName: "admin", email: "admin@admin.admin", password: "AdminAdmin123"},
-	{id: uuid__WEBPACK_IMPORTED_MODULE_0___default.a.v4(), fullName: "petya", email: "petya@petya.petya", password: "VueIs2Awesome"}
+	{id: "9604b77e-cfde-42a7-8a00-877e90eeaf5e", fullName: "admin", email: "admin@admin.admin", password: "AdminAdmin123"},
+	{id: "955dfdc8-2ba0-433d-88c6-f50bd1b3cb37", fullName: "petya", email: "petya@petya.petya", password: "VueIs2Awesome"}
 ];
 
 const secretKey = "iYcuprLU3gKiO6hACtVUab9U";
@@ -60130,11 +56977,11 @@ function prepareUser(user) {
 	return lodash_omit__WEBPACK_IMPORTED_MODULE_4___default()(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1___default()(user), "password");
 }
 
-function signUp({fullName, email, password}) {
+function signUp(fullName, email, password) {
 	return delay((resolve, reject) => {
 		const user = {id: uuid__WEBPACK_IMPORTED_MODULE_0___default.a.v4(), fullName, email, password};
 		users.push(user);
-		const jwt = jsonwebtoken__WEBPACK_IMPORTED_MODULE_2___default.a.sign({userID: user.id}, secretKey);
+		const jwt = njwt__WEBPACK_IMPORTED_MODULE_2___default.a.create({userID: user.id}, secretKey).compact();
 		resolve({jwt, user: prepareUser(user)});
 	});
 }
@@ -60146,18 +56993,19 @@ function signIn(email, password) {
 			reject();
 			return;
 		}
-		const jwt = jsonwebtoken__WEBPACK_IMPORTED_MODULE_2___default.a.sign({userID: user.id}, secretKey);
+		const jwt = njwt__WEBPACK_IMPORTED_MODULE_2___default.a.create({userID: user.id}, secretKey).compact();
 		resolve({jwt, user: prepareUser(user)});
 	});
 }
 
 function checkAuth(jwt) {
 	return delay((resolve, reject) => {
-		jsonwebtoken__WEBPACK_IMPORTED_MODULE_2___default.a.verify(jwt, secretKey, (error, decoded) => {
+		njwt__WEBPACK_IMPORTED_MODULE_2___default.a.verify(jwt, secretKey, (error, decoded) => {
 			if (error) {
 				reject();
 				return;
 			}
+			console.log(decoded);
 			const user = lodash_find__WEBPACK_IMPORTED_MODULE_3___default()(users, {id: decoded.userID});
 			resolve(prepareUser(user));
 		});
@@ -61395,18 +58243,105 @@ _store_store__WEBPACK_IMPORTED_MODULE_3__["store"].dispatch("signInFromLocalStor
 
 /***/ }),
 
-/***/ "./src/js/pages/DashboardPage.vue":
-/*!****************************************!*\
-  !*** ./src/js/pages/DashboardPage.vue ***!
-  \****************************************/
+/***/ "./src/js/pages/DashboardPage/DashboardPage.vue":
+/*!******************************************************!*\
+  !*** ./src/js/pages/DashboardPage/DashboardPage.vue ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DashboardPage_vue_vue_type_template_id_1e558f2a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DashboardPage.vue?vue&type=template&id=1e558f2a& */ "./src/js/pages/DashboardPage.vue?vue&type=template&id=1e558f2a&");
-/* harmony import */ var _DashboardPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DashboardPage.vue?vue&type=script&lang=js& */ "./src/js/pages/DashboardPage.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _DashboardPage_vue_vue_type_template_id_21286702_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DashboardPage.vue?vue&type=template&id=21286702&scoped=true& */ "./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=template&id=21286702&scoped=true&");
+/* harmony import */ var _DashboardPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DashboardPage.vue?vue&type=script&lang=js& */ "./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _DashboardPage_vue_vue_type_style_index_0_id_21286702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss& */ "./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _DashboardPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DashboardPage_vue_vue_type_template_id_21286702_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DashboardPage_vue_vue_type_template_id_21286702_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "21286702",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/js/pages/DashboardPage/DashboardPage.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib??vue-loader-options!./DashboardPage.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss&":
+/*!****************************************************************************************************************!*\
+  !*** ./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss& ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ref_0_3_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_style_index_0_id_21286702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-style-loader!../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/sass-loader/dist/cjs.js!../../../../node_modules/sass-resources-loader/lib/loader.js??ref--0-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss& */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-resources-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=style&index=0&id=21286702&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ref_0_3_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_style_index_0_id_21286702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ref_0_3_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_style_index_0_id_21286702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ref_0_3_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_style_index_0_id_21286702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ref_0_3_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_style_index_0_id_21286702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ref_0_3_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_style_index_0_id_21286702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=template&id=21286702&scoped=true&":
+/*!*************************************************************************************************!*\
+  !*** ./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=template&id=21286702&scoped=true& ***!
+  \*************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_template_id_21286702_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./DashboardPage.vue?vue&type=template&id=21286702&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPage.vue?vue&type=template&id=21286702&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_template_id_21286702_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_template_id_21286702_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/js/pages/DashboardPage/DashboardPageWoman.vue":
+/*!***********************************************************!*\
+  !*** ./src/js/pages/DashboardPage/DashboardPageWoman.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DashboardPageWoman_vue_vue_type_template_id_30b84773___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DashboardPageWoman.vue?vue&type=template&id=30b84773& */ "./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=template&id=30b84773&");
+/* harmony import */ var _DashboardPageWoman_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DashboardPageWoman.vue?vue&type=script&lang=js& */ "./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -61415,9 +58350,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DashboardPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DashboardPage_vue_vue_type_template_id_1e558f2a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DashboardPage_vue_vue_type_template_id_1e558f2a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _DashboardPageWoman_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DashboardPageWoman_vue_vue_type_template_id_30b84773___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DashboardPageWoman_vue_vue_type_template_id_30b84773___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -61427,38 +58362,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "src/js/pages/DashboardPage.vue"
+component.options.__file = "src/js/pages/DashboardPage/DashboardPageWoman.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./src/js/pages/DashboardPage.vue?vue&type=script&lang=js&":
-/*!*****************************************************************!*\
-  !*** ./src/js/pages/DashboardPage.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************/
+/***/ "./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib??vue-loader-options!./DashboardPage.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPageWoman_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib??vue-loader-options!./DashboardPageWoman.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPageWoman_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./src/js/pages/DashboardPage.vue?vue&type=template&id=1e558f2a&":
-/*!***********************************************************************!*\
-  !*** ./src/js/pages/DashboardPage.vue?vue&type=template&id=1e558f2a& ***!
-  \***********************************************************************/
+/***/ "./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=template&id=30b84773&":
+/*!******************************************************************************************!*\
+  !*** ./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=template&id=30b84773& ***!
+  \******************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_template_id_1e558f2a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./DashboardPage.vue?vue&type=template&id=1e558f2a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage.vue?vue&type=template&id=1e558f2a&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_template_id_1e558f2a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPageWoman_vue_vue_type_template_id_30b84773___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./DashboardPageWoman.vue?vue&type=template&id=30b84773& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/pages/DashboardPage/DashboardPageWoman.vue?vue&type=template&id=30b84773&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPageWoman_vue_vue_type_template_id_30b84773___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPage_vue_vue_type_template_id_1e558f2a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DashboardPageWoman_vue_vue_type_template_id_30b84773___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -61947,7 +58882,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_SignInPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/SignInPage */ "./src/js/pages/SignInPage.vue");
 /* harmony import */ var _pages_EnterPage_EnterPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/EnterPage/EnterPage */ "./src/js/pages/EnterPage/EnterPage.vue");
 /* harmony import */ var _pages_NotFoundPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/NotFoundPage */ "./src/js/pages/NotFoundPage.vue");
-/* harmony import */ var _pages_DashboardPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/DashboardPage */ "./src/js/pages/DashboardPage.vue");
+/* harmony import */ var _pages_DashboardPage_DashboardPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/DashboardPage/DashboardPage */ "./src/js/pages/DashboardPage/DashboardPage.vue");
 /* harmony import */ var _pages_SignOutPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/SignOutPage */ "./src/js/pages/SignOutPage.vue");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
@@ -61968,7 +58903,7 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_7__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_6__["default"]);
 
 const routes = [
-	{path: "/dashboard", alias: "/", component: _pages_DashboardPage__WEBPACK_IMPORTED_MODULE_4__["default"], meta: {redirectToIfNotSignedIn: "/enter"}},
+	{path: "/dashboard", alias: "/", component: _pages_DashboardPage_DashboardPage__WEBPACK_IMPORTED_MODULE_4__["default"], meta: {redirectToIfNotSignedIn: "/enter"}},
 	{path: "/enter", component: _pages_EnterPage_EnterPage__WEBPACK_IMPORTED_MODULE_2__["default"], meta: {redirectToIfSignedIn: "/"}},
 	{path: "/sign-up", component: _pages_SignUpPage__WEBPACK_IMPORTED_MODULE_0__["default"], meta: {redirectToIfSignedIn: "/"}},
 	{path: "/sign-in", component: _pages_SignInPage__WEBPACK_IMPORTED_MODULE_1__["default"], meta: {redirectToIfSignedIn: "/"}},
@@ -62120,7 +59055,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _modules_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/auth */ "./src/js/store/modules/auth.js");
-/* harmony import */ var _modules_notifications__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/notifications */ "./src/js/store/modules/notifications.js");
+/* harmony import */ var _modules_notifications__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/notifications */ "./src/js/store/modules/notifications.js");
 
 
 
@@ -62131,7 +59066,7 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
 const store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 	modules: {
 		auth: _modules_auth__WEBPACK_IMPORTED_MODULE_2__["default"],
-		notifications: _modules_notifications__WEBPACK_IMPORTED_MODULE_4__["default"]
+		notifications: _modules_notifications__WEBPACK_IMPORTED_MODULE_3__["default"]
 	}
 });
 
@@ -62200,4 +59135,4 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(v_tooltip__WEBPACK_IMPORTED_MODU
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.main.6ed564f268e31952473e.js.map
+//# sourceMappingURL=bundle.main.4670444e84f6a2174024.js.map

@@ -2,7 +2,7 @@ import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 import EnterPage from "./pages/EnterPage/EnterPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import DashboardPage from "./pages/DashboardPage";
+import DashboardPage from "./pages/DashboardPage/DashboardPage";
 import SignOutPage from "./pages/SignOutPage";
 import VueRouter from "vue-router";
 import Vue from "vue";

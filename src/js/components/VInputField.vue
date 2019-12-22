@@ -7,7 +7,7 @@
 		<input ref="nativeInput" :class="['input', errorMessage ? 'error' : '']" :type="type" :aria-label="label"
 		       :name="id" :id="id" :placeholder="placeholder" :required="isRequired"
 		       v-model="inputValue" :autocomplete="autocomplete"/>
-		<button type="button" v-if="hasButtonSlot" class="input-button" @click="$emit('onButtonClick')">
+		<button type="button" v-if="hasButtonSlot" class="input-button" @click="$emit('onButtonClick')" :name="buttonName">
 			<slot name="button"/>
 		</button>
 		<span v-if="errorMessage" class="error-message">
@@ -36,7 +36,8 @@ export default {
 		autocomplete: {type: String},
 		errorMessage: {type: String},
 		isRequired: {type: Boolean},
-		helpMessage: {type: String}
+		helpMessage: {type: String},
+		buttonName: {type: String}
 	},
 	data() {
 		return {

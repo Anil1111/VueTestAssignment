@@ -7,13 +7,7 @@
 
 <script>
 export default {
-	methods: {
-		signInButtonClicked() {
-			this.$store.dispatch("signIn", {username: "admin", password: "AdminAdmin123"}).then(() => {
-				this.$router.push("/");
-			});
-		}
-	}
+	name: "App"
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
 	<VInputField ref="input" :type="showPassword ? 'text' : 'password'" v-bind="$attrs"
-	             @onButtonClick="showPassword = !showPassword" v-model="inputValue">
+	             @onButtonClick="showPassword = !showPassword" v-model="inputValue" button-name="Show or hide password">
 		<template v-slot:button>
 			<CrossedEyeIcon v-if="showPassword"/>
 			<EyeIcon v-else/>

@@ -62,7 +62,10 @@ export default {
 
 			this.$store
 				.dispatch("signUp", {fullName, password, email})
-				.then(() => this.$router.push("/"));
+				.then(() => {
+					this.$router.push("/").catch(() => {});
+					this.$store.dispatch("addNotification", {message: "You have signed up as " + this.$store.state.auth.user.fullName, type: "success"});
+				});
 		},
 		validateForm() {
 			this.resetErrorMessages();

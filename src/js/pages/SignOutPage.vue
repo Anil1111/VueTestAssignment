@@ -12,6 +12,7 @@ export default {
 	mounted() {
 		this.$store.dispatch("signOut");
 		this.$router.push("/").catch(() => {});
+		this.$store.dispatch("addNotification", {message: "You have signed out", type: "success"});
 	}
 };
 </script>
